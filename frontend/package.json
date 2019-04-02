@@ -1,0 +1,25 @@
+{
+  "name": "flamingo-commerce-demo-theme",
+  "version": "1.0.1",
+  "description": "A flamingo-theme for the commerce carotene demo shop",
+  "engines": {
+    "npm": ">=5.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AOE people",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "css-mqpacker": "^7.0.0",
+    "flamingo-carotene-core": "^6.2.0",
+    "flamingo-carotene-dev-server": "^6.2.0",
+    "flamingo-carotene-postcss": "^6.2.0",
+    "flamingo-carotene-pug": "^6.2.0",
+    "flamingo-carotene-static-asset": "^6.2.0",
+    "flamingo-carotene-webpack": "^6.2.0",
+    "postcss-object-fit-images": "^1.1.2",
+    "postcss-plugin-px2rem": "^0.8.1"
+  }
+}

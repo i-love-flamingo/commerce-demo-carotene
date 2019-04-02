@@ -1,0 +1,31 @@
+[
+  {
+    "id": "checkout.success_message1",
+    "translation": "Your order has been received. Your order number is: {{.OrderId}}"
+  },
+
+  {
+    "id": "checkout.success_message2",
+    "translation": "An confirmation email will be send to {{.Email}}."
+  },
+
+  {
+    "id": "checkout.cart_item_error_hint",
+    "translation": "There are invalid items in your cart. Please check below and resolve the issue."
+  },
+
+  {
+    "id": "checkout.back_to_cart",
+    "translation": "Back to cart"
+  },
+
+  {
+    "id": "checkout.no_items_in_cart",
+    "translation": "No Items in your cart"
+  },
+
+  {
+    "id":"checkout.legalConfirmation.termsAndConditions",
+    "translation": "Check here to indicate that you have read and agree to the <a href=\"{{.PrivacyNoticeUrl}}\" target=\"blank\">privacy policies</a> and <a href=\"{{.TermsAndConditionsUrl}}\" target=\"blank\">terms and conditions</a> of the Heathrow Boutique."
+  }
+]

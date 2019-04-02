@@ -1,0 +1,111 @@
+[
+  {
+    "id": "delivery",
+    "translation": "Home delivery"
+  },
+  {
+    "id": "pickup_store",
+    "translation": "Instore pickup"
+  },
+  {
+    "id": "cart.group.title",
+    "translation": "products"
+  },
+
+  {
+    "id": "cart.column.quantity",
+    "translation": "Quantity"
+  },
+
+  {
+    "id": "cart.column.price",
+    "translation": "Price"
+  },
+
+  {
+    "id": "cart.column.sum",
+    "translation": "Sum"
+  },
+
+  {
+    "id": "cart.item.detail",
+    "translation": "SKU: {{ .SKU }}"
+  },
+
+  {
+    "id": "cart.item.remove",
+    "translation": "remove item"
+  },
+
+  {
+    "id": "cart.loyalty.label",
+    "translation": "Heathrow Reward points"
+  },
+
+  {
+    "id": "cart.total.label",
+    "translation": "Total"
+  },
+
+  {
+    "id": "cart.button.reserveAndCollect",
+    "translation": "Reserve & Collect"
+  },
+
+  {
+    "id": "cart.button.continueShopping",
+    "translation": "Continue Shopping"
+  },
+
+  {
+    "id": "miniCart.removeItem",
+    "translation": "Remove {{.title}}"
+  },
+
+  {
+    "id": "miniCart.hiddenProducts",
+    "translation": "{{.qty}} more products"
+  },
+
+  {
+    "id": "miniCart.hiddenProduct",
+    "translation": "1 more product"
+  },
+
+  {
+    "id": "miniCart.total",
+    "translation": "Total: {{.total}}"
+  },
+
+  {
+    "id": "miniCart.empty",
+    "translation": "Your cart is empty"
+  },
+
+  {
+    "id": "miniCart.buttonCartView",
+    "translation": "Shopping Bag"
+  },
+
+  {
+    "id": "miniCart.buttonReserveAndCollect",
+    "translation": "Reserve & Collect"
+  },
+
+  {
+    "id": "cart.reserveInfo.noPayment",
+    "translation": "No payment is taken and you have no obligation to purchase your reserved shopping requests if you change your mind."
+  },
+
+  {
+    "id": "cart.reserveInfo.collectedAtShop",
+    "translation": "The items must be paid for and collected at the shop you have made the purchase from on your day of travel, prior to flying."
+  },
+
+  {
+    "id": "cart.reserveInfo.individualStorePolicy",
+    "translation": "Reservations will be confirmed in accordance with individual store policy, which our customer service team will verify to you."
+  }
+
+
+]

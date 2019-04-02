@@ -1,0 +1,3 @@
+- path: /
+  name: index
+  controller: flamingo.render(tpl="home/home")

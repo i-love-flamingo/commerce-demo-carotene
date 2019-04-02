@@ -1,0 +1,75 @@
+extends /template/base/base
+
+include /atom/price/price
+include /molecule/productMedia/productMedia
+
+block maincontent
+  //- Detect the baseData of the product depending on its context
+  - var baseData = product.baseData
+
+  main.mt-5.pt-4
+    .container.dark-grey-text.mt-5
+      // Grid row
+      .row.wow.fadeIn
+        // Grid column
+        .col-md-6.mb-4
+          each mediaItem in baseData.media
+            if mediaItem.usage === 'detail' || mediaItem.usage === 'gallery'
+              +productMedia(mediaItem, '480x').media.img-fluid
+        // Grid column
+        // Grid column
+        .col-md-6.mb-4
+          // Content
+          .p-4
+            .mb-3
+              a(href='')
+                span.badge.purple.mr-1 Category 2
+              a(href='')
+                span.badge.blue.mr-1 New
+              a(href='')
+                span.badge.red.mr-1 Bestseller
+            p.lead
+              +price(product)
+            p.lead.font-weight-bold=baseData.title
+            p=baseData.description
+            form.d-flex.justify-content-left(action=url('cart.add',{marketplaceCode:baseData.marketPlaceCode}))
+              // Default input
+              input.form-control(type='number', value='1', aria-label='Search', style='width: 100px', name="qty")
+              button.btn.btn-primary.btn-md.my-0.p(type='submit')
+                | Add for home delivery
+                i.fa.fa-shopping-cart.ml-1
+              button.btn.btn-primary.btn-md.my-0.p(type='submit', name="deliveryCode", value="pickup_store")
+                | Add for pickup
+                i.fa.fa-shopping-cart.ml-1
+          // Content
+        // Grid column
+      // Grid row
+      hr
+      // Grid row
+      .row.d-flex.justify-content-center.wow.fadeIn
+        // Grid column
+        .col-md-6.text-center
+          h4.my-4.h4=__("Additional information")
+          - var attributeKeysForDisplay = config('template.product.descriptionAttributes')
+          each attributeKey in attributeKeysForDisplay
+            if baseData.hasAttribute(attributeKey) && baseData.attributes[attributeKey].value !== ''
+              dt.productDetailsAttribute
+                strong= __('attribute.' + attributeKey, attributeKey) + ':'
+              dd.productDetailsAttributeData
+                - var formattedValue = stripTags(baseData.attributes[attributeKey].value)
+                = __('attribute.' + attributeKey + '.value.' + baseData.attributes[attributeKey].value, formattedValue)
+        // Grid column
+      // Grid row
+      // Grid row
+      .row.wow.fadeIn
+        // Grid column
+        .col-lg-4.col-md-12.mb-4
+          img.img-fluid(src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg', alt='')
+        // Grid column
+        // Grid column
+        .col-lg-4.col-md-6.mb-4
+          img.img-fluid(src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg', alt='')
+        // Grid column
+        // Grid column
+        .col-lg-4.col-md-6.mb-4
+          img.img-fluid(src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg', alt='')

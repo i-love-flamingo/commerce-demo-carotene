@@ -1,0 +1,11 @@
+mixin console(obj, group)
+  if config('debug.mode')
+    if group
+      script!= 'console.group("' + group + '")'
+
+    - var output = debug(obj, true)
+
+    script!= 'console.log(' + output + ')'
+
+    if group
+      script!= 'console.groupEnd()'

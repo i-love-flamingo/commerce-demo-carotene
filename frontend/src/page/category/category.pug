@@ -1,0 +1,33 @@
+extends /template/base/base
+
+include /organism/productList/productList
+
+block maincontent
+  main.mt-5.pt-4.dark-grey-text.category
+    h2.mt-4.h2.text-center=category.name
+    .wrapper
+      nav.m-2(id="sidebar")
+        //+debug(categoryTree)
+        ul.navbar-nav.mr-auto
+          for treeNode in categoryTree.subTrees
+            - var className= ""
+            if treeNode.active
+              - var className= "active"
+            - var categoryUrl = url('category.view', {code: treeNode.code,name: treeNode.name})
+            //- level 1
+            li
+              a(href=url("category.view",{code:treeNode.code, name:treeNode.name}) class=className)=treeNode.name
+              if treeNode.hasChilds
+                ul
+                for subTreeNode in treeNode.subTrees
+                  - var className= ""
+                  if treeNode.active
+                    - var className= "active"
+                  //- level 2
+                  li
+                    - var categoryUrl = url('category.view', {code: subTreeNode.code,name: subTreeNode.name})
+                    a.level2-item(href=categoryUrl class=className)=subTreeNode.name
+      div.m-2(id="content")
+        +productList(productSearchResult)
+    //+debug(productSearchResult)
+    //+debug(categoryTree)

@@ -1,0 +1,20 @@
+extends /template/base/base
+include /organism/cart/cart
+
+block maincontent
+  main.mt-5.pt-4
+    div.container.wow.fadeIn
+      h2.my-5.h2.text-center Checkout
+      div.row
+        div.col-md-8.mb-4
+          div.card
+            div.row.p-5
+              div.col-md-6.mb-4
+                h2 Login
+                p (here link to login - see flamingo.auth module)
+              div.col-md-6.mb-4
+                h2 Guest
+                a.btn.btn-primary.btn-md.my-0.p(href=url("checkout")) Proceed as guest
+        div.col-md-4.mb-4
+          +cart(decoratedCart,cartValidationResult,false)
+

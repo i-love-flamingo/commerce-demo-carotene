@@ -1,0 +1,131 @@
+form(method="post")
+  h4.d-flex.justify-content-between.align-items-center.mb-3
+    span.text-muted Billing Address #{form.hasGeneralErrors}
+
+  //+debug(form)
+  if form.hasAnyGeneralErrors
+    each error in form.getAllGeneralErrors
+      div.alert.alert-error(role="alert", data-error=error.messageKey)=error.defaultLabel
+  div.card
+    - var billingForm = form.billingAddressForm
+    .card-body
+      div.row
+        div.col-md-6.mb-2
+          div.md-form
+            +inputField("billingAddress","firstname","First Name", billingForm, billingForm.data.firstname)
+            +fieldError("firstname",billingForm)
+        div.col-md-6.mb-2
+          div.md-form
+            +inputField("billingAddress","lastname","Last Name", billingForm,billingForm.data.lastname)
+            +fieldError("lastname",billingForm)
+      div.row
+        div.col-md-10.mb-2
+          div.md-form
+            +inputField("billingAddress","street","Street", billingForm,billingForm.data.street)
+            +fieldError("street",billingForm)
+        div.col-md-2.mb-2
+          div.md-form
+            +inputField("billingAddress","streetNr","Nr", billingForm,billingForm.data.streetNr)
+            +fieldError("streetNr",billingForm)
+      div.row
+        div.col-md-4.mb-2
+          div.md-form
+            +inputField("billingAddress","postCode","Post code", billingForm,billingForm.data.postCode)
+            +fieldError("postCode",billingForm)
+        div.col-md-8.mb-2
+          div.md-form
+            +inputField("billingAddress","city","City", billingForm,billingForm.data.city)
+            +fieldError("city",billingForm)
+      div.md-form.mb-5
+        +inputField("billingAddress","email","E-Mail", billingForm,billingForm.data.email)
+        +fieldError("email",billingForm)
+
+
+  each delivery in decoratedCart.cart.deliveries
+    - var deliveryCode = delivery.deliveryInfo.code
+    - var deliveryForm = form.deliveryForms[deliveryCode]
+    - var formFieldNameSpace = "deliveries."+deliveryCode
+    h4(data-deliverycode=delivery.deliveryInfo.code).d-flex.justify-content-between.align-items-center.m-3
+      span.text-muted=__(delivery.deliveryInfo.code)
+
+    if deliveryCode == "delivery"
+      div.card(class=deliveryCode)
+        .card-body
+          div.custom-control.custom-checkbox
+            if deliveryForm.data.useBillingAddress == true
+              input.custom-control-input(name=formFieldNameSpace+".useBillingAddress", type="checkbox", id="useBillingAddress", checked="checked")
+            else
+              input.custom-control-input(name=formFieldNameSpace+".useBillingAddress", type="checkbox", id="useBillingAddress")
+            label.custom-control-label(for="useBillingAddress") Use billing address as shipping address
+          div(id="useBillingAddressToggle")
+            div.row
+              div.col-md-6.mb-2
+                div.md-form
+                  +inputField(formFieldNameSpace,"deliveryAddress.firstname","First Name", deliveryForm,deliveryForm.data.deliveryAddress.firstname)
+                  +fieldError("deliveryAddress.firstname",deliveryForm)
+              div.col-md-6.mb-2
+                div.md-form
+                  +inputField(formFieldNameSpace,"deliveryAddress.lastname","Last Name", deliveryForm, deliveryForm.data.deliveryAddress.lastname)
+                  +fieldError("deliveryAddress.lastname",deliveryForm)
+            div.row
+              div.col-md-10.mb-2
+                div.md-form
+                  +inputField(formFieldNameSpace,"deliveryAddress.street","Street", deliveryForm,deliveryForm.data.deliveryAddress.street)
+                  +fieldError("deliveryAddress.street",deliveryForm)
+              div.col-md-2.mb-2
+                div.md-form
+                  +inputField(formFieldNameSpace,"deliveryAddress.streetNr","Nr", deliveryForm,deliveryForm.data.deliveryAddress.streetNr)
+                  +fieldError("deliveryAddress.streetNr",deliveryForm)
+            div.row
+              div.col-md-4.mb-2
+                div.md-form
+                  +inputField(formFieldNameSpace,"deliveryAddress.postCode","Post code", deliveryForm,deliveryForm.data.deliveryAddress.postCode)
+                  +fieldError("deliveryAddress.postCode",deliveryForm)
+              div.col-md-8.mb-2
+                div.md-form
+                  +inputField(formFieldNameSpace,"deliveryAddress.city","City", billingForm,deliveryForm.data.deliveryAddress.city)
+                  +fieldError("deliveryAddress.city",deliveryForm)
+            div.md-form.mb-5
+              +inputField(formFieldNameSpace,"deliveryAddress.email","E-Mail", billingForm,deliveryForm.data.deliveryAddress.email)
+              +fieldError("deliveryAddress.email",deliveryForm)
+          hr.mb-4
+
+    if deliveryCode == "pickup_store"
+      div.card
+        .card-body
+          p You can pick your products directly in the store.
+          hr.mb-4
+  h4(data-deliverycode=decoratedDelivery.delivery.deliveryInfo.code).d-flex.justify-content-between.align-items-center.m-3
+    span.text-muted Payment
+  div.card
+    .card-body
+      each methods, gateway in availablePayments
+        div.d-block.my-3
+          h5=gateway
+          input(type="hidden", name="payment.gateway", value=gateway)
+          +fieldError("method", form.simplePaymentForm)
+          each method in methods
+            .custom-control.custom-radio
+              if form.simplePaymentForm.data.method == method.code
+                input.custom-control-input(id=method.code, name="payment.method", value=method.code, type="radio", checked="checked", required="1")
+              else
+                input.custom-control-input(id=method.code, name="payment.method", value=method.code, type="radio", required="1")
+              label.custom-control-label(for=method.code)=method.title
+  button.btn.btn-primary.btn-lg.btn-block.waves-effect.waves-light.mt-2(type="submit") Continue to review
+
+
+mixin inputField(formNameSpace, fieldNameInForm, label, form, currentValue)
+  - var nameSpacedFieldName = formNameSpace+"."+fieldNameInForm
+  if form.hasErrorForField(fieldNameInForm)
+    input(type="text", id=nameSpacedFieldName, name=nameSpacedFieldName, class="form-control is-invalid", value=currentValue)
+    label(for=nameSpacedFieldName)=label
+  else
+    input(type="text", id=nameSpacedFieldName, name=nameSpacedFieldName, class="form-control", value=currentValue)
+    label(for=nameSpacedFieldName)=label
+
+
+mixin fieldError(fieldNameInForm, form)
+  if form.hasErrorForField(fieldNameInForm)
+    div.invalid-feedback
+      each fieldError in form.getErrorsForField(fieldNameInForm)
+        span=fieldError.defaultLabel

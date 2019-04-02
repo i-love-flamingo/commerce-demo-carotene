@@ -1,0 +1,12 @@
+extends /template/base/base
+
+
+block content
+  .errorTile
+    h1.errorHeadline= __('error.common.headline', 'Sorry, something went wrong')
+    a(href='/')= __('error.404.homeButton', 'Go to homepage')
+
+  if config('debug.mode')
+    .errorDebug
+      .errorDebugTitle Debug:
+      pre.errorDebugContent= error

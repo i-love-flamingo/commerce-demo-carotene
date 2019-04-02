@@ -1,0 +1,142 @@
+[
+  {
+    "id":"facetoption_lensPolarization_false",
+    "translation":"Not Polarized"
+  },
+  {
+    "id":"facetoption_lensPolarization_true",
+    "translation":"Polarized"
+  },
+  {
+    "id":"facetoption_isExclusiveProduct_false",
+    "translation":"not exclusive"
+  },
+  {
+    "id":"facetoption_isExclusiveProduct_true",
+    "translation":"exclusive"
+  },
+  {
+    "id":"facetoption_isFeatured_false",
+    "translation":"not featured"
+  },
+  {
+    "id":"facetoption_isFeatured_true",
+    "translation":"featured"
+  },
+  {
+    "id":"search.result.titleWithQuery",
+    "translation":"Search results for \"{{ .query }}\""
+  },
+  {
+    "id":"search.result.title",
+    "translation":"Search results"
+  },
+  {
+    "id":"search.noresult.titleWithQuery",
+    "translation":"No results for \"{{ .query }}\""
+  },
+  {
+    "id":"search.noresult.widgetHeadline",
+    "translation":"Trending Results"
+  },
+  {
+    "id":"search.suggestion.title",
+    "translation":"Here are some results for \"{{ .query }}\""
+  },
+  {
+    "id":"search.found.brands",
+    "translation":"Found in Brands"
+  },
+  {
+    "id":"search.found.products",
+    "translation":"Found in Products ({{ .numResults }})"
+  },
+  {
+    "id":"search.found.other",
+    "translation":"Other results (%s)"
+  },
+  {
+    "id":"search.footer.headline",
+    "translation":"Can’t see what you want?"
+  },
+  {
+    "id":"search.footer.description",
+    "translation":"Our Shopping Services team are available to answer any questions that you have about brands, products or services at Heathrow."
+  },
+  {
+    "id":"search.footer.callNow",
+    "translation":"Call now +44 (0)800 678 5324"
+  },
+  {
+    "id":"searchNoResultsHeader.title",
+    "translation":"We couldn't find any results <br>that match your search"
+  },
+  {
+    "id":"searchNoResultsHeader.text",
+    "translation":"Please check for misspellings or broaden your search by using fewer keywords.<br>Alternatively, browse our products by selecting a category from the menu."
+  },
+  {
+    "id":"searchNoResultsHeader.buttonLabel",
+    "translation":"Search again"
+  },
+  {
+    "id": "search.live.label",
+    "translation": "Search"
+  },
+  {
+    "id": "search.live.input.placeholder",
+    "translation": "Search"
+  },
+  {
+    "id": "search.live.input.aria",
+    "translation": "Search website"
+  },
+  {
+    "id": "search.live.submit.aria",
+    "translation": "Submit search"
+  },
+  {
+    "id": "search.live.showAll",
+    "translation": "Show all results"
+  },
+  {
+    "id": "search.live.popular",
+    "translation": "Popular searches"
+  },
+  {
+    "id": "search.live.products",
+    "translation": "Found products"
+  },
+  {
+    "id": "search.live.results",
+    "translation": "Search results"
+  },
+  {
+    "id": "search.live.brands",
+    "translation": "Brands"
+  },
+  {
+    "id": "search.live.retailers",
+    "translation": "Retailers"
+  },
+  {
+    "id": "search.live.contentPages",
+    "translation": "Content pages"
+  },
+  {
+    "id": "search.live.inRetailers",
+    "translation": "in retailers"
+  },
+  {
+    "id": "search.live.reset",
+    "translation": "Reset search"
+  },
+  {
+    "id": "search.live.noResults",
+    "translation": "Sorry, there are no results matching your query."
+  },
+  {
+    "id": "search.live.totalResults",
+    "translation": "Total results"
+  }
+]

@@ -1,0 +1,51 @@
+if config('debug.mode')
+  include /atom/debug/debug
+  include /atom/console/console
+
+doctype html
+html(lang='en')
+  block head
+    include /template/base/molecule/head/head
+  body
+    // Navbar
+    nav.navbar.fixed-top.navbar-expand-lg.navbar-light.white.scrolling-navbar
+      .container
+        // Brand
+        a.navbar-brand.waves-effect(href='/')
+          img.img-fluid(src=asset("asset/img/flamingo-logo-black.png") style="max-height:30px")
+          strong.ml-2  demoshop
+        // Collapse
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        // Links
+        #navbarSupportedContent.collapse.navbar-collapse
+          // Left
+          include /template/base/molecule/categoryMenu/categoryMenu
+          // Right
+          ul.navbar-nav.nav-flex-icons
+            li.nav-item
+              a.nav-link.waves-effect(href=url('cart.view'))
+                -
+                  var miniCart = getCart()
+                  var currentCount = miniCart.getCartTeaser.itemCount
+                span.badge.red.z-depth-1.mr-1=currentCount
+                i.fa.fa-shopping-cart
+                span.clearfix.d-none.d-sm-inline-block  Cart
+            li.nav-item
+              a.nav-link.waves-effect(href='https://twitter.com/aoepeople', target='_blank')
+                i.fa.fa-twitter
+            li.nav-item
+              a.nav-link.border.border-light.rounded.waves-effect(href='https://github.com/i-love-flamingo', target='_blank')
+                i.fa.fa-github.mr-2
+                | GitHub
+    // Navbar
+    // Carousel Wrapper
+    block precontent
+    block maincontent
+      main.mt-5.pt-4
+        block content
+
+          // Pagination
+    // Main layout
+    // Footer
+    include /template/base/molecule/footer/footer

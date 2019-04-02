@@ -1,0 +1,39 @@
+footer.page-footer.text-center.font-small.mt-4.wow.fadeIn
+  // /.Call to action
+  hr.my-4
+  // Social icons
+  .pb-4
+    a(href='https://twitter.com/aoepeople', target='_blank')
+      i.fa.fa-twitter.mr-3
+    a(href='https://www.youtube.com/watch?v=7MUISDJ5ZZ4', target='_blank')
+      i.fa.fa-youtube.mr-3
+    a(href='https://github.com/i-love-flamingo', target='_blank')
+      i.fa.fa-github.mr-3
+  // Social icons
+  // Copyright
+  .footer-copyright.py-3
+    | © 2018 Copyright:
+    a(href='https://mdbootstrap.com/bootstrap-tutorial/', target='_blank')  Template based on MDBootstrap.com
+    | © 2018 Copyright:
+    a(href='https://flamingo.me/', target='_blank')  Flamingo by AOE
+  // /.Copyright
+// /.Footer
+// SCRIPTS
+// JQuery
+  link(rel="stylesheet", href=asset("asset/css/bootstrap.min.css"))
+
+
+script(type='text/javascript', src=asset("asset/js/jquery-3.3.1.min.js"))
+// Bootstrap tooltips
+script(type='text/javascript', src=asset("asset/js/popper.min.js"))
+// Bootstrap core JavaScript
+script(type='text/javascript', src=asset("asset/js/bootstrap.min.js"))
+// MDB core JavaScript
+script(type='text/javascript', src=asset("asset/js/mdb.min.js"))
+// Initializations
+script(type='text/javascript').
+    // Animations initialization
+    new WOW().init();
+block js-application
+  //script(src=asset("js/app.js"))
+  script(src=asset("js/main.js"))

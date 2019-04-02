@@ -1,0 +1,59 @@
+include /atom/price/price
+include /molecule/productMedia/productMedia
+include /molecule/productTile/productTileTruncate
+include /atom/debug/debug
+
+mixin productTile(productData)
+  - var teaserData = productData.teaserData
+
+  - var baseData = productData.baseData
+  case productData.type
+    when 'simple'
+      - var productUrl = url('product.view', {marketplacecode: teaserData.marketPlaceCode, name: teaserData.shortTitle})
+    when 'configurable'
+      - var variantcode = teaserData.preSelectedVariantSku ? teaserData.preSelectedVariantSku : null
+
+      if variantcode
+        - var productUrl = url('product.view', {marketplacecode: teaserData.marketPlaceCode, variantcode: variantcode, name: teaserData.shortTitle})
+      else
+        - var productUrl = url('product.view', {marketplacecode: teaserData.marketPlaceCode, name: teaserData.shortTitle})
+    default
+      - throw 'unknown product type'
+
+  if baseData
+    // init brandLabel and set to brandName
+    - var brandLabel = ""
+    if (baseData.attributes.brandName)
+      - var brandLabel = baseData.attributes.brandName.value
+
+    //- Check for promo badge
+    - var hasPromoBadge = false
+    - var promoCode = null
+    if baseData.attributes.campaignCodes && baseData.attributes.campaignCodes.values.length > 0
+      - hasPromoBadge = true
+      - promoCode = baseData.attributes.campaignCodes.values[0]
+
+    if !hasPromoBadge && productData.type === 'configurable'
+      if productData.variants && productData.variants.length > 0
+        each variant, index in productData.variants
+          if variant.baseData.attributes.campaignCodes && variant.baseData.attributes.campaignCodes.values.length > 0
+            - hasPromoBadge = true
+            // use first promo code of variants
+            if !promoCode
+              - promoCode = variant.baseData.attributes.campaignCodes.values[0]
+
+    a.productTile(href=productUrl title=teaserData.shortTitle)&attributes(attributes)
+      .productTileFigure
+        - var inserted = false
+        each mediaItem in teaserData.media
+          if (!inserted && mediaItem.usage === 'list')
+            - inserted = true
+            +productMedia(mediaItem, '400x').productTileImage
+      if hasPromoBadge
+        +promoBadge()
+      p.productTileBrand
+        +productTileTruncate(brandLabel, 15)
+      h5.productTileTitle
+        +productTileTruncate(teaserData.shortTitle, 50)
+
+      +price(productData, productData.type, true, promoCode).productTilePrice

@@ -1,0 +1,10 @@
+extends /template/base/base
+include /organism/cart/cart
+
+block maincontent
+  main.mt-5.pt-4
+    div.container.wow.fadeIn
+      h2.my-5.h2.text-center Checkout
+      h3 Your cart is empty
+      a.btn.btn-primary.btn-md.my-0.p(href=url("index")) Back to home
+

@@ -1,0 +1,142 @@
+cart.button.continueShopping:
+  other: Continue Shopping
+cart.button.reserveAndCollect:
+  other: Reserve & Collect
+cart.column.price:
+  other: Price
+cart.column.quantity:
+  other: Quantity
+cart.column.sum:
+  other: Sum
+cart.group.title:
+  other: products
+cart.item.detail:
+  other: 'SKU: {{ .SKU }}'
+cart.item.remove:
+  other: remove item
+cart.loyalty.label:
+  other: Heathrow Reward points
+cart.reserveInfo.collectedAtShop:
+  other: The items must be paid for and collected at the shop you have made the purchase
+    from on your day of travel, prior to flying.
+cart.reserveInfo.individualStorePolicy:
+  other: Reservations will be confirmed in accordance with individual store policy,
+    which our customer service team will verify to you.
+cart.reserveInfo.noPayment:
+  other: No payment is taken and you have no obligation to purchase your reserved
+    shopping requests if you change your mind.
+cart.total.label:
+  other: Total
+checkout.back_to_cart:
+  other: Back to cart
+checkout.cart_item_error_hint:
+  other: There are invalid items in your cart. Please check below and resolve the
+    issue.
+checkout.legalConfirmation.termsAndConditions:
+  other: Check here to indicate that you have read and agree to the <a href="{{.PrivacyNoticeUrl}}"
+    target="blank">privacy policies</a> and <a href="{{.TermsAndConditionsUrl}}" target="blank">terms
+    and conditions</a> of the Heathrow Boutique.
+checkout.no_items_in_cart:
+  other: No Items in your cart
+checkout.success_message1:
+  other: 'Your order has been received. Your order number is: {{.OrderId}}'
+checkout.success_message2:
+  other: An confirmation email will be send to {{.Email}}.
+delivery:
+  other: Home delivery
+facetoption_isExclusiveProduct_false:
+  other: not exclusive
+facetoption_isExclusiveProduct_true:
+  other: exclusive
+facetoption_isFeatured_false:
+  other: not featured
+facetoption_isFeatured_true:
+  other: featured
+facetoption_lensPolarization_false:
+  other: Not Polarized
+facetoption_lensPolarization_true:
+  other: Polarized
+miniCart.buttonCartView:
+  other: Shopping Bag
+miniCart.buttonReserveAndCollect:
+  other: Reserve & Collect
+miniCart.empty:
+  other: Your cart is empty
+miniCart.hiddenProduct:
+  other: 1 more product
+miniCart.hiddenProducts:
+  other: '{{.qty}} more products'
+miniCart.removeItem:
+  other: Remove {{.title}}
+miniCart.total:
+  other: 'Total: {{.total}}'
+pickup_store:
+  other: Instore pickup
+product.attribute.__group_packageSizes:
+  other: Package size
+product.attribute.baseColor:
+  other: Base color
+product.attribute.manufacturerColor:
+  other: Manufacturer color
+product.attribute.washingInstructions:
+  other: Washing Instruction
+search.footer.callNow:
+  other: Call now +44 (0)800 678 5324
+search.footer.description:
+  other: Our Shopping Services team are available to answer any questions that you
+    have about brands, products or services at Heathrow.
+search.footer.headline:
+  other: Can’t see what you want?
+search.found.brands:
+  other: Found in Brands
+search.found.other:
+  other: Other results (%s)
+search.found.products:
+  other: Found in Products ({{ .numResults }})
+search.live.brands:
+  other: Brands
+search.live.contentPages:
+  other: Content pages
+search.live.inRetailers:
+  other: in retailers
+search.live.input.aria:
+  other: Search website
+search.live.input.placeholder:
+  other: Search
+search.live.label:
+  other: Search
+search.live.noResults:
+  other: Sorry, there are no results matching your query.
+search.live.popular:
+  other: Popular searches
+search.live.products:
+  other: Found products
+search.live.reset:
+  other: Reset search
+search.live.results:
+  other: Search results
+search.live.retailers:
+  other: Retailers
+search.live.showAll:
+  other: Show all results
+search.live.submit.aria:
+  other: Submit search
+search.live.totalResults:
+  other: Total results
+search.noresult.titleWithQuery:
+  other: No results for "{{ .query }}"
+search.noresult.widgetHeadline:
+  other: Trending Results
+search.result.title:
+  other: Search results
+search.result.titleWithQuery:
+  other: Search results for "{{ .query }}"
+search.suggestion.title:
+  other: Here are some results for "{{ .query }}"
+searchNoResultsHeader.buttonLabel:
+  other: Search again
+searchNoResultsHeader.text:
+  other: Please check for misspellings or broaden your search by using fewer keywords.<br>Alternatively,
+    browse our products by selecting a category from the menu.
+searchNoResultsHeader.title:
+  other: We couldn't find any results <br>that match your search

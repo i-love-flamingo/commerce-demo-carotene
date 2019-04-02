@@ -1,0 +1,9 @@
+mixin debug(obj, headline)
+  if config('debug.mode')
+    - var title = 'Debug:'
+    if headline
+      - title= 'Debug: ' + headline
+
+    .utilDebug
+      h5.utilDebugTitle= title
+      pre.utilDebugContents= debug(obj)

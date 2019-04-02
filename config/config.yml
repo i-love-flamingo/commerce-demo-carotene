@@ -1,0 +1,128 @@
+
+# Flamingo core related configurations:
+debug.mode: false
+
+flamingo:
+  router:
+    path: /en
+
+zap.loglevel: Info
+
+
+locale:
+  locale: en-gb
+  translationFiles:
+  - translations/merged/en-gb.all.yaml
+  accounting:
+    thousand: ','
+    decimal: '.'
+    formatZero: '%s -.-'
+    format: "%s %v"
+  numbers:
+    decimal:  '.'
+    thousand: ','
+    precision: 1
+  date:
+    dateFormat:  02 Jan 2006
+    timeFormat: 15:04
+    dateTimeFormat: 02 Jan 2006 15:04:05
+    location: Europe/London
+
+flamingo.template.err404: error/404
+flamingo.template.err503: error/503
+
+
+pagination:
+  showFirstPage: false
+  showLastPage: false
+  defaultPageSize: 8
+  showAroundActivePageAmount: 2
+
+prefixrouter:
+  pingPongHandler.enabled: true
+  rootRedirectHandler:
+    enabled: true
+    redirectTarget: "/en/"
+
+
+oauth:
+  server: '%%ENV:KEYCLOAK_HOSTNAME%%auth/realms/customer'
+  secret: '%%ENV:KEYCLOAK_SECRET%%'
+  clientid: flamingo
+  myhost: '%%ENV:FLAMINGO_HOSTNAME%%'
+  disableOfflineToken: true
+  mapping.idToken:
+    groups: "UserType"
+
+# in prod you will use something like redis
+session:
+  cookie:
+    secure: false
+    #path: /tmp/ #use for persisted session in file
+  backend: memory
+
+# By convention "template" is the namespace of configs just used in the template
+template:
+  defaultTitle: "Flamingo Commerce Demo"
+  product:
+    descriptionAttributes:
+    - size
+    - color
+
+
+
+# Configs for flamingo-commerce modules
+
+checkout:
+  showEmptyCartPageIfNoItems: true
+
+commerce.payment.enableOfflinePaymentGateway: true
+
+commerce:
+  cart:
+    defaultDeliveryCode: delivery
+    enableCartCache: false
+    useInMemoryCartServiceAdapters: true
+    emailAdapter:
+      emailAddress: test@test.de
+    useEmailPlaceOrderAdapter: true
+    inMemoryCartServiceAdapter:
+      defaultTaxRate: 19
+  product:
+    priceIsGross: true
+  customer:
+    useNilCustomerAdapter: true
+  category:
+    useCategoryFixedAdapter: true
+    categoryServiceFixed:
+      tree:
+        electronics:
+          code: pc_laptops
+          name: Electronics
+          sort: 1
+          childs:
+            flat-screen_tvs:
+              code: flat-screen_tvs
+              name: Flat Screens & TV
+            headphones:
+              code: headphones
+              name: Headphones
+              childs:
+                headphone_accessories:
+                  code: headphone_accessories
+                  name: Accessories
+            tablets:
+              code: tablets
+              name: Tablets
+        clothing:
+          code: clothing
+          name: Clothes & Fashion
+          sort: 2
+
+
+
+# Configure the module flamingo-commerce-adapter-standalone
+flamingo-commerce-adapter-standalone.csvCommerce.productCsvPath: "ressources/products/products.csv"
+flamingo-commerce-adapter-standalone.csvCommerce.locale: "en_GB"
+flamingo-commerce-adapter-standalone.csvCommerce.currency: "GBP"
+flamingo-commerce-adapter-standalone.csvCommerce.allowedImageResizeParamaters: "500x,200x"

@@ -1,0 +1,156 @@
+$priceStrikeColor: $colorMonotoneMid1
+$priceTaxAndDutyFreeColor: $colorMonotoneMid2
+$priceDiscountedPromoColor: $colorPrimaryRegular
+$priceMobileCenterBorderColor: $colorMonotoneLight
+$priceAdditionalBreakpoint: 375px
+
+.price
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+
+  &.priceHasPromoDiscountContainer:not(.priceTypeTileView)
+    justify-content: flex-start
+
+  &.priceTypeTileView
+    display: flex
+    justify-content: center
+
+  +respondFrom(s)
+    display: block
+
+
+.priceRegular
+  font-size: 18px
+
+  +respondFrom(s)
+    padding-bottom: 15px
+    font-size: 22px
+
+  .priceTypeTileView &
+    font-size: 14px
+    line-height: 22px
+    padding: 0 6px
+
+  .priceShowDiscounted &
+    color: $priceStrikeColor
+
+  .priceHasPromoDiscountContainer:not(.priceTypeTileView) &
+    border-left: 1px solid $priceMobileCenterBorderColor
+    padding-left: 16px
+
+    +respondFrom($priceAdditionalBreakpoint)
+      padding-left: 30px
+
+    +respondFrom(s)
+      border-left: 0
+      padding-left: 0
+
+
+.priceTaxAndDutyFree
+  color: $priceTaxAndDutyFreeColor
+  letter-spacing: .2px
+  font-size: 14px
+  line-height: 18px
+  width: 100%
+  margin-top: 15px
+
+  +respondFrom(s)
+    font-size: 16px
+    line-height: 24px
+
+
+.pricePromoDiscount
+  width: 50%
+  border-right: 1px solid $priceMobileCenterBorderColor
+  padding-right: 16px
+  display: flex
+  justify-content: flex-end
+
+  .priceTypeTileView &
+    width: auto
+    border-right: 0
+    display: block
+    padding-right: 0
+    margin-bottom: 0
+
+  +respondFrom($priceAdditionalBreakpoint)
+    padding-right: 30px
+
+  +respondFrom(s)
+    width: auto
+    border-right: 0
+    padding: 0
+    display: block
+    margin-bottom: 30px
+
+.pricePromoDiscountInner
+  text-align: center
+
+  +respondFrom(s)
+    text-align: left
+
+.pricePromoDiscountLabel,
+.priceLabel
+  +caps
+  line-height: 16px
+  padding-bottom: 2px
+  font-size: 12px
+  text-decoration: none
+
+  +respondFrom(s)
+    padding-bottom: 10px
+
+.pricePromoDiscountLabel
+  color: $priceDiscountedPromoColor
+
+.pricePromo,
+.priceDiscounted
+  color: $priceDiscountedPromoColor
+  font-size: 18px
+  font-weight: bold
+  display: block
+
+  +respondFrom(s)
+    font-size: 22px
+
+  .priceTypeTileView &
+    font-size: 14px
+    line-height: 22px
+    padding: 0 6px
+
+.pricePromoComponent
+  display: block
+
+  .priceTypeTileView &
+    display: inline
+
+.pricePromoComponentSecondary
+    margin-top: 5px
+    font-weight: normal
+    font-size: 14px
+
+    +respondFrom(s)
+      margin-top: 10px
+      font-size: 16px
+
+    .priceTypeTileView &
+      font-weight: inherit
+      font-size: inherit
+
+
+.priceValue
+    .priceShowDiscounted &
+      text-decoration: line-through
+
+
+.priceTermsConditionLink
+  display: inline-block
+  margin-top: 5px
+  color: $priceDiscountedPromoColor
+  text-decoration: underline
+  font-size: 14px
+
+  +respondFrom(s)
+    margin-top: 10px
+    font-size: 16px

@@ -1,0 +1,23 @@
+extends /template/base/base
+include /organism/cart/cart
+
+block maincontent
+  main.mt-5.pt-4
+    div.container
+      h2.my-5.h2.text-center Checkout
+      if errorInfos
+        if errorInfos.hasError
+          if errorInfos.hasPaymentError
+            div.alert.alert-error(role="alert") Payment Error
+          div.alert.alert-warning(role="alert")=errorInfos.errorMessage
+      div.row
+        div.col-md-8.mb-4
+          include /page/checkout/organism/checkoutform.pug
+        div.col-md-4.mb-4
+          if cartValidationResult
+            if cartValidationResult.hasCommonError
+              div.alert.alert-warning(role="alert")=cartValidationResult.commonErrorMessageKey
+            each itemResult in cartValidationResult.itemResults
+              div.alert.alert-warning(role="alert")=itemResult.errorMessageKey
+          +cart(decoratedCart,cartValidationResult,false)
+

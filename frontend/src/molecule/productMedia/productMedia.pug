@@ -1,0 +1,13 @@
+mixin productMedia(mediaItem, size)
+  if !size
+    - var size = "200x"
+
+  case mediaItem.type
+    when 'image-external'
+      img(src=mediaItem.reference alt=mediaItem.title)&attributes(attributes)
+    when 'csvCommerceReference'
+      img(src=url("csvcommerce.image.get", {
+          "size": size,
+          "filename": mediaItem.reference
+      }) alt=mediaItem.title)&attributes(attributes)
+

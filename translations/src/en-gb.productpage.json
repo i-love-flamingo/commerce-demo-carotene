@@ -1,0 +1,18 @@
+[
+  {
+    "id": "product.attribute.__group_packageSizes",
+    "translation": "Package size"
+  },
+  {
+    "id": "product.attribute.washingInstructions",
+    "translation": "Washing Instruction"
+  },
+  {
+    "id": "product.attribute.baseColor",
+    "translation": "Base color"
+  },
+  {
+    "id": "product.attribute.manufacturerColor",
+    "translation": "Manufacturer color"
+  }
+]

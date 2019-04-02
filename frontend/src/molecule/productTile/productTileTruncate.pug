@@ -1,0 +1,5 @@
+mixin productTileTruncate(text, maxLength)
+  if text.length > maxLength
+    = text.slice(0, maxLength-1) + '…'
+  else
+    = text

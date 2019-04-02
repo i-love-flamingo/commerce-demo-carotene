@@ -1,0 +1,38 @@
+include /atom/dropdown/dropdown
+
+mixin price(product)
+  case product.type()
+    when 'simple'
+      - var baseData = product.baseData
+      - var saleableProductData = product.saleableData
+    when 'configurable'
+      - var baseData = product.baseData
+      - var saleableProductData = false
+    when 'configurable_with_activevariant'
+      - var baseData = product.activeVariant.baseData
+      - var saleableProductData = product.activeVariant.saleableData
+    default
+      - throw 'No proper productType given'
+
+  if saleableProductData
+    - var priceInfo = saleableProductData.activePrice
+    if priceInfo.isDiscounted
+      span.mr-1
+        del=commercePriceFormat(priceInfo.default)
+      span=commercePriceFormat(priceInfo.discounted)
+    else
+      span=commercePriceFormat(priceInfo.default)
+  else
+    span Select a Variant
+      +dropdown()(name="variant-selector" id="variant-selector" data-qa="productVariants" )
+        each variant in product.variants
+          option(value=variant.baseData.marketPlaceCode)= variant.baseData.title
+
+mixin teaserPrice(product)
+  - var priceInfo = product.teaser.teaserPrice
+  if priceInfo.isDiscounted
+    span.mr-1
+      del=commercePriceFormat(priceInfo.default)
+    span=commercePriceFormat(priceInfo.discounted)
+  else
+    span=commercePriceFormat(priceInfo.default)

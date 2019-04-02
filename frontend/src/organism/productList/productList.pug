@@ -1,0 +1,33 @@
+include /molecule/productMedia/productMedia
+include /molecule/pagination/pagination
+include /atom/price/price
+include /atom/debug/debug
+
+mixin productList(productSearchResult)
+  //+debug(productSearchResult)
+  .row.wow.fadeIn.productList
+    // Grid column
+    each product in productSearchResult.products
+      //+debug(product)
+      .col-lg-3.col-md-6.mb-4
+        // Card
+        .card.product-card
+          // Card image
+          .view.overlay
+            +productMedia(product.baseData.getListMedia,"200x").product-image
+            a(href=getProductUrl(product))
+              .mask.rgba-white-slight
+          // Card image
+          // Card content
+          .card-body.text-center
+            // Category & Title
+            a.grey-text(href=getProductUrl(product))
+              h5=product.baseData.title
+            h5
+              strong
+                a.dark-grey-text(href=getProductUrl(product))
+                  span.badge.badge-pill.danger-color NEW
+                  span.badge.badge-pill.primary-color=product.type()
+            h4.font-weight-bold.blue-text
+              +teaserPrice(product)
+  +pagination(productSearchResult.paginationInfo)

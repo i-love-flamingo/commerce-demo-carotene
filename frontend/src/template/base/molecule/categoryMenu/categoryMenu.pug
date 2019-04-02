@@ -1,0 +1,18 @@
+ul.navbar-nav.mr-auto
+  - var rootTreeNode = data("category.tree",{'code': ''})
+  li.nav-item.active
+    a.nav-link.waves-effect(href='/')
+      | Home
+      span.sr-only (current)
+  for treeNode in rootTreeNode.subTrees
+    - var categoryUrl = url('category.view', {code: treeNode.code,name: treeNode.name})
+    if treeNode.hasChilds
+      li.nav-item.dropdown
+        a(href="#", id="navbarDropdown", role="button",data-toggle="dropdown", aria-haspopup="true", aria-expanded="false").nav-link.dropdown-toggle=treeNode.name
+        div(aria-labelledby="navbarDropdown").dropdown-menu.waves-effect
+          for subTreeNode in treeNode.subTrees
+            - var categoryUrl = url('category.view', {code: subTreeNode.code,name: subTreeNode.name})
+            a.dropdown-item(href=categoryUrl)=subTreeNode.name
+    else
+      li.nav-item
+        a(href=categoryUrl).nav-link=treeNode.name

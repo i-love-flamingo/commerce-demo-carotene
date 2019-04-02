@@ -1,0 +1,58 @@
+extends /template/base/base
+include /organism/cart/cart
+
+block maincontent
+  main.mt-5.pt-4
+    div.container
+      //+debug(decoratedCart.cart)
+      h2.my-5.h2.text-center Checkout
+      if errorInfos
+        if errorInfos.hasError
+          if errorInfos.hasPaymentError
+            div.alert.alert-error(role="alert") Payment Error
+          div.alert.alert-warning(role="alert")=errorInfos.errorMessage
+      div.row
+        div.col-md-8.mb-4
+          h4.d-flex.justify-content-between.align-items-center.mb-3
+            span.text-muted Review your data
+          div.card
+            .card-body
+              h5.mt-1.mb-2
+                span.text-muted Billing
+              +renderAddress(decoratedCart.cart.billingAdress)
+              each delivery in decoratedCart.cart.deliveries
+                - var deliveryCode = delivery.deliveryInfo.code
+                h5(data-deliverycode=delivery.deliveryInfo.code).mt-5.mb-2
+                  span.text-muted=__(delivery.deliveryInfo.code)
+
+                if deliveryCode == "delivery"
+                  if delivery.deliveryInfo.deliveryLocation.useBillingAddress
+                    p
+                      strong same as billing
+                  else
+                    +renderAddress(delivery.deliveryInfo.deliveryLocation.address)
+              h5.mt-5.mb-2
+                span.text-muted Payment
+              p Gateway: #{decoratedCart.cart.paymentSelection.gateway}
+              each chargeSplit in decoratedCart.cart.paymentSelection.chargeSplits
+                p #{commercePriceFormat(chargeSplit.amount)} with Method: #{chargeSplit.method}
+          form(action=url("checkout.review"))
+            div.custom-control.custom-checkbox.mt-3.mb-1
+              input.custom-control-input(type="checkbox", id="termsAndConditions", name="termsAndConditions", value="1")
+              label.custom-control-label(for="termsAndConditions") I accept terms and conditions
+            input(type='hidden' name='proceed' value='1')
+            button.btn.btn-primary.btn-lg.btn-block.waves-effect.waves-light(type="submit") Pay and place order
+        div.col-md-4.mb-4
+          if cartValidationResult
+            if cartValidationResult.hasCommonError
+              div.alert.alert-warning(role="alert")=cartValidationResult.commonErrorMessageKey
+            each itemResult in cartValidationResult.itemResults
+              div.alert.alert-warning(role="alert")=itemResult.errorMessageKey
+          +cart(decoratedCart,cartValidationResult,false)
+
+
+mixin renderAddress(address)
+  p #{address.firstname} #{address.lastname}
+  p #{address.email}
+  p #{address.street} #{address.streetNr}
+  p #{address.postCode} #{address.city}

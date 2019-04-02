@@ -1,0 +1,42 @@
+extends /template/base/base
+
+include /organism/productList/productList
+
+block precontent
+  include /page/home/molecule/carousel/carousel
+
+block maincontent
+  main
+    .container
+      // Sub-Navbar for findProducts (TODO)
+      //nav.navbar.navbar-expand-lg.navbar-dark.mdb-color.lighten-3.mt-3.mb-5
+        // Navbar brand
+        span.navbar-brand Categories:
+        // Collapse button
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#basicExampleNav', aria-controls='basicExampleNav', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        // Collapsible content
+        #basicExampleNav.collapse.navbar-collapse
+          // Links
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='#')
+                | All
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='#') Shirts
+            li.nav-item
+              a.nav-link(href='#') Sport wears
+            li.nav-item
+              a.nav-link(href='#') Outwears
+          // Links
+          form.form-inline
+            .md-form.my-0
+              input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+        // Collapsible content
+      // /.Navbar
+      // Section: Products v.3
+      section.text-center.mb-4
+        // Grid row
+        //+productList(findProducts("homepagewidget",{"query":"","pageSize": "10","sortDirection":"A","sortBy":'name'},{"categories":['laptops']}))
+        +productList(findProducts("homepagewidget",{"query":"","pageSize": "8","sortDirection":"A","sortBy":'name'},{}))

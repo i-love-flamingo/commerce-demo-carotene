@@ -1,0 +1,80 @@
+#carousel-example-1z.carousel.slide.carousel-fade.pt-4(data-ride='carousel')
+  // Indicators
+  ol.carousel-indicators
+    li.active(data-target='#carousel-example-1z', data-slide-to='0')
+    li(data-target='#carousel-example-1z', data-slide-to='1')
+    //- li(data-target='#carousel-example-1z', data-slide-to='2')
+  // /.Indicators
+  // Slides
+  .carousel-inner(role='listbox')
+    // First slide
+    .carousel-item.active
+      // https://pixabay.com/de/flamingo-valentin-herz-valentinstag-600205/
+      - var imageStyle =  "background-image: url('"+asset("asset/img/visuals/flamingo-scetch.jpg")+"'); background-repeat: no-repeat; background-size: cover;"
+      .view(style=imageStyle)
+        // Mask & flexbox options
+        .mask.d-flex.justify-content-center.align-items-center
+          // Content
+          .text-center.black-text.mx-5.wow.fadeIn
+            h1.mb-4
+              strong Flamingo commerce
+            //p Blazing fast modern eCommerce frontend framework ideally for your microservice architecture.
+            p.mb-4.d-none.d-md-block= __("header.welcome.subtitle")
+            a.btn.btn-dark.btn-lg(target='_blank', href='https://flamingo.me/')
+              | Learn more
+              i.fa.fa-graduation-cap.ml-2
+          // Content
+        // Mask & flexbox options
+    // /First slide
+    // Second slide
+    //- .carousel-item
+      // https://pixabay.com/de/digitale-kunst-digital-art-flamingo-3054735/
+      - var imageStyle =  "background-image: url('"+asset("asset/img/visuals/digital-art-3054735_1280.jpg")+"'); background-repeat: no-repeat; background-size: cover;"
+      .view(style=imageStyle)
+        // Mask & flexbox options
+        .mask.d-flex.justify-content-center.align-items-center
+          // Content
+          .text-center.white-text.mx-5.wow.fadeIn
+            h1.mb-4
+              strong Flamingo eCommerce
+            p
+              strong The head for our eCommerce architecture
+            p.mb-4.d-none.d-md-block
+              strong
+                | Blazing fast modern eCommerce frontend framework ideally for your microservice architecture.
+            a.btn.btn-outline-white.btn-lg(target='_blank', href='https://flamingo.me/')
+              | Read more
+              i.fa.fa-graduation-cap.ml-2
+          // Content
+        // Mask & flexbox options
+    // /Second slide
+    // Third slide
+    .carousel-item
+      - var imageStyle =  "background-image: url('"+asset("asset/img/visuals/digital-art-3054735_1280.jpg")+"'); background-repeat: no-repeat; background-size: cover;"
+      .view(style=imageStyle)
+        // Mask & flexbox options
+        .mask.rgba-black-strong.d-flex.justify-content-center.align-items-center
+          // Content
+          .white-text.mx-5.wow.fadeIn
+            h1.mb-4
+              strong Highlights
+            p.mb-4.d-none.d-md-block
+              ul
+                li golang powered high performance rendering
+                li build with developer happiness in mind.
+                li ports and adapters - easy to connect to microservices
+                li flexible commerce domain models
+          // Content
+        // Mask & flexbox options
+    // /Third slide
+  // /.Slides
+  // Controls
+  a.carousel-control-prev(href='#carousel-example-1z', role='button', data-slide='prev')
+    span.carousel-control-prev-icon(aria-hidden='true')
+    span.sr-only Previous
+  a.carousel-control-next(href='#carousel-example-1z', role='button', data-slide='next')
+    span.carousel-control-next-icon(aria-hidden='true')
+    span.sr-only Next
+  // /.Controls
+// /.Carousel Wrapper
+// Main layout

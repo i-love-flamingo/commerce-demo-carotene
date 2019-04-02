@@ -1,0 +1,12 @@
+debug.mode: true
+
+zap:
+  loglevel: Debug
+  colored: true
+
+
+session:
+  cookie:
+    secure: false
+    #path: /tmp/ #use for persisted session in file
+  backend: memory

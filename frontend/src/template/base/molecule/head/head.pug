@@ -1,0 +1,18 @@
+head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(http-equiv='x-ua-compatible', content='ie=edge')
+  block title
+    title= config('template.defaultTitle')
+  block styles
+
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    // Bootstrap core CSS
+    link(rel="stylesheet", href=asset("asset/css/bootstrap.min.css"))
+    //our build app.css
+    link(rel="stylesheet", href=asset("css/main.css"))
+
+  block js-vendor
+    //script(src=asset("js/vendor.js"))
+

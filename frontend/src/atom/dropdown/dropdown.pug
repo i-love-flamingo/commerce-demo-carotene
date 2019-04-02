@@ -1,0 +1,25 @@
+//-
+  param: cfg [Object] The config object
+  {
+    size: 'medium' | 'large'
+    emptyOption: true | false
+  }
+
+mixin dropdown(cfg)
+    -
+        cfg = cfg || {}
+        cfg.size = cfg.size || 'medium'
+
+        if (Object.keys(cfg).indexOf('emptyOption') > -1)
+        cfg.emptyOption = cfg.emptyOption
+        else
+        cfg.emptyOption = true
+
+        var sizeClass = 'dropdownSize' + cfg.size.charAt(0).toUpperCase() + cfg.size.slice(1)
+
+    .dropdownWrapper(class=sizeClass)
+        select&attributes(attributes)
+            if cfg.emptyOption
+                option(value='')= __('Please select')
+            if block
+                block

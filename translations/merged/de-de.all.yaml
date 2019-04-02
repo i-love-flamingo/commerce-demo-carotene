@@ -1,0 +1,136 @@
+cart.button.continueShopping:
+  other: ""
+cart.button.reserveAndCollect:
+  other: ""
+cart.column.price:
+  other: ""
+cart.column.quantity:
+  other: ""
+cart.column.sum:
+  other: ""
+cart.group.title:
+  other: ""
+cart.item.detail:
+  other: ""
+cart.item.remove:
+  other: ""
+cart.loyalty.label:
+  other: ""
+cart.reserveInfo.collectedAtShop:
+  other: ""
+cart.reserveInfo.individualStorePolicy:
+  other: ""
+cart.reserveInfo.noPayment:
+  other: ""
+cart.total.label:
+  other: ""
+checkout.back_to_cart:
+  other: ""
+checkout.cart_item_error_hint:
+  other: ""
+checkout.legalConfirmation.termsAndConditions:
+  other: ""
+checkout.no_items_in_cart:
+  other: ""
+checkout.success_message1:
+  other: ""
+checkout.success_message2:
+  other: ""
+delivery:
+  other: ""
+facetoption_isExclusiveProduct_false:
+  other: ""
+facetoption_isExclusiveProduct_true:
+  other: ""
+facetoption_isFeatured_false:
+  other: ""
+facetoption_isFeatured_true:
+  other: ""
+facetoption_lensPolarization_false:
+  other: ""
+facetoption_lensPolarization_true:
+  other: ""
+header.welcome.subtitle:
+  other: Standart demo shop mit carotene templates
+miniCart.buttonCartView:
+  other: ""
+miniCart.buttonReserveAndCollect:
+  other: ""
+miniCart.empty:
+  other: ""
+miniCart.hiddenProduct:
+  other: ""
+miniCart.hiddenProducts:
+  other: ""
+miniCart.removeItem:
+  other: ""
+miniCart.total:
+  other: ""
+pickup_store:
+  other: ""
+product.attribute.__group_packageSizes:
+  other: ""
+product.attribute.baseColor:
+  other: ""
+product.attribute.manufacturerColor:
+  other: ""
+product.attribute.washingInstructions:
+  other: ""
+search.footer.callNow:
+  other: ""
+search.footer.description:
+  other: ""
+search.footer.headline:
+  other: ""
+search.found.brands:
+  other: ""
+search.found.other:
+  other: ""
+search.found.products:
+  other: ""
+search.live.brands:
+  other: ""
+search.live.contentPages:
+  other: ""
+search.live.inRetailers:
+  other: ""
+search.live.input.aria:
+  other: ""
+search.live.input.placeholder:
+  other: ""
+search.live.label:
+  other: ""
+search.live.noResults:
+  other: ""
+search.live.popular:
+  other: ""
+search.live.products:
+  other: ""
+search.live.reset:
+  other: ""
+search.live.results:
+  other: ""
+search.live.retailers:
+  other: ""
+search.live.showAll:
+  other: ""
+search.live.submit.aria:
+  other: ""
+search.live.totalResults:
+  other: ""
+search.noresult.titleWithQuery:
+  other: ""
+search.noresult.widgetHeadline:
+  other: ""
+search.result.title:
+  other: ""
+search.result.titleWithQuery:
+  other: ""
+search.suggestion.title:
+  other: ""
+searchNoResultsHeader.buttonLabel:
+  other: ""
+searchNoResultsHeader.text:
+  other: ""
+searchNoResultsHeader.title:
+  other: ""
