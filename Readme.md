@@ -5,8 +5,8 @@
 git clone git@github.com:i-love-flamingo/commerce-demo-carotene.git
 cd commerce-demo-carotene
 
-# Download the test catalog (csv and images):
-make downloaddata
+# Download the test catalog  - you only need to do it once - it includes products.csv and images:
+make download-product-data
 
 # Build the flamingo-carotene bases templates:
 make frontend-build

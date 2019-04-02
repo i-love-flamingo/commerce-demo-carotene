@@ -16,5 +16,6 @@ junit.xml
 /integration-test/shared
 context_local.yml
 ressources/products
+ressources/products.zip
 **/logs/pact.log
 **/pacts/*.json

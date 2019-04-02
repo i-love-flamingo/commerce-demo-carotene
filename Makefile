@@ -4,8 +4,11 @@ DROPREPLACE?=-dropreplace flamingo.me/flamingo/v3 -dropreplace flamingo.me/flami
 
 .PHONY: serve local unlocal commit frontend frontend-build translation bookingserviceVuku rabbitmqInDocker
 
-downloaddata:
-	cd ressources && wget https://github.com/i-love-flamingo/commerce-demo-carotene/releases/download/productdata1/products.zip && unzip/products.zip
+prepare-product-data:
+	cd ressources && zip -r products.zip products
+
+download-product-data:
+	cd ressources && wget https://github.com/i-love-flamingo/commerce-demo-carotene/releases/download/productdata1/products.zip && unzip products.zip
 
 build:
 	go build main.go
