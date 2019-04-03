@@ -125,8 +125,6 @@ commerce:
 flamingo-commerce-adapter-standalone.csvCommerce.productCsvPath: "ressources/products/products.csv"
 flamingo-commerce-adapter-standalone.csvCommerce.locale: "en_GB"
 flamingo-commerce-adapter-standalone.csvCommerce.currency: "GBP"
-flamingo-commerce-adapter-standalone.csvCommerce.allowedImageResizeParamaters: "500x,200x"
-
 
 opencensus:
   tracing:
@@ -134,3 +132,6 @@ opencensus:
       "blacklist":
         - "/image"
         - "/static"
+
+flamingo-commerce-adapter-standalone.csvCommerce.allowedImageResizeParamaters: "500x,200x,700x"
+

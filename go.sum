@@ -11,6 +11,8 @@ flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1 h1:GJ7OKKgWJx455dZJYCh/cHtdmIa+NE
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1/go.mod h1:Dv0jLLTiSeFbhX7JNW2YXZ8kvelvGVzmGQ+zmr4qhHc=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190404204137-7e1474dc0db0 h1:Ri3MEkACRo+DTraSh0ugMjyab5KgG1/MLzDvGEUB+XQ=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190404204137-7e1474dc0db0/go.mod h1:xjg/fqalgf9nTNSEzlZ7z7augHbLGikcyLyjSjjUYok=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190402215213-dfbf3253cdea h1:vqzvBk1jpiEQ3147PYeUMk6g3gFyiP7rrjyuQr5lYzM=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190402215213-dfbf3253cdea/go.mod h1:xjg/fqalgf9nTNSEzlZ7z7augHbLGikcyLyjSjjUYok=
 flamingo.me/flamingo/v3 v3.0.0-beta.1 h1:re3uxGtUWSwKpsFANXGOBX0qJoP2AA5V1yZ3Jb2ZbQ4=
 flamingo.me/flamingo/v3 v3.0.0-beta.1/go.mod h1:DUYtZWF8zGyACglnKKcqWsKtgUSUJFZoZh7NpBzQ9wQ=
 flamingo.me/flamingo/v3 v3.0.0-beta.1.0.20190402212643-e7f067aac32f h1:csqLyMf3JsBynzlYh6o7tgGL8WCAACslYY4+WWalXkQ=

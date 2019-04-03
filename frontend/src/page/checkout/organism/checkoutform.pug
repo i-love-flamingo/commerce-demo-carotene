@@ -94,6 +94,7 @@ form(method="post")
       div.card
         .card-body
           p You can pick your products directly in the store.
+          input(name=formFieldNameSpace + ".useBillingAddress", type="hidden", value="1")
           hr.mb-4
   h4(data-deliverycode=decoratedDelivery.delivery.deliveryInfo.code).d-flex.justify-content-between.align-items-center.m-3
     span.text-muted Payment
