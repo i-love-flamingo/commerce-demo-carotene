@@ -1,8 +1,16 @@
 # Official Commerce Flamingo Demo
 
 ## Getting Started
+
+### Preconditions
+
+This demo uses Flamingo Carotene, so you should have `npm`installed. (https://www.npmjs.com/get-npm)
+Also you need go installed. (https://golang.org/)
+
+### Run the demo shop
 ```
-git clone git@github.com:i-love-flamingo/commerce-demo-carotene.git
+# clone the repo:
+git clone https://github.com/i-love-flamingo/commerce-demo-carotene.git
 cd commerce-demo-carotene
 
 # Download the test catalog  - you only need to do it once - it includes products.csv and images:
@@ -27,7 +35,7 @@ The following things have been changed:
 - Markup is transformed to pug and splittet according to atomic design
 - SaSS is used instead of scss (  docker run -it -v "$(pwd)":/workdir unibeautify/sass-convert -R . --from scss --to sass )
 
-Building the frontend:
+You can start watch mode with rebuilding the frontend after changes with this command:
 ```
 make frontend
 ```

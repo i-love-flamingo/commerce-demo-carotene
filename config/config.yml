@@ -46,8 +46,8 @@ prefixrouter:
 
 
 oauth:
-  server: '%%ENV:KEYCLOAK_HOSTNAME%%auth/realms/customer'
-  secret: '%%ENV:KEYCLOAK_SECRET%%'
+  server: 'https://accounts.google.com'
+  secret: '%%ENV:OAUTH_SECRET%%'
   clientid: flamingo
   myhost: '%%ENV:FLAMINGO_HOSTNAME%%'
   disableOfflineToken: true

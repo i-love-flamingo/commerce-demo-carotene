@@ -7,8 +7,8 @@ replace (
 
 require (
 	flamingo.me/dingo v0.1.4
-	flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta
-	flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1
+	flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190403104122-417423215225
+	flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190404204137-7e1474dc0db0
 	flamingo.me/flamingo/v3 v3.0.0-beta.1.0.20190402212643-e7f067aac32f
 	flamingo.me/form v1.0.0-alpha.1
 	flamingo.me/pugtemplate v1.0.0-alpha.1
@@ -17,9 +17,3 @@ require (
 	golang.org/x/sys v0.0.0-20190213121743-983097b1a8a3 // indirect
 	gopkg.in/square/go-jose.v2 v2.2.2 // indirect
 )
-
-replace flamingo.me/flamingo/v3 => ../flamingo
-
-replace flamingo.me/flamingo-commerce/v3 => ../flamingo-commerce
-
-replace flamingo.me/flamingo-commerce-adapter-standalone => ../flamingo-commerce-adapter-standalone
