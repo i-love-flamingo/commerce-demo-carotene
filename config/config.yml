@@ -6,7 +6,7 @@ flamingo:
   router:
     path: /en
 
-zap.loglevel: Info
+zap.loglevel: Warn
 
 
 locale:
@@ -126,3 +126,11 @@ flamingo-commerce-adapter-standalone.csvCommerce.productCsvPath: "ressources/pro
 flamingo-commerce-adapter-standalone.csvCommerce.locale: "en_GB"
 flamingo-commerce-adapter-standalone.csvCommerce.currency: "GBP"
 flamingo-commerce-adapter-standalone.csvCommerce.allowedImageResizeParamaters: "500x,200x"
+
+
+opencensus:
+  tracing:
+    "sampler":
+      "blacklist":
+        - "/image"
+        - "/static"
