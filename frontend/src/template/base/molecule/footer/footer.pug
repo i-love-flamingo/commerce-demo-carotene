@@ -37,3 +37,13 @@ script(type='text/javascript').
 block js-application
   //script(src=asset("js/app.js"))
   script(src=asset("js/main.js"))
+//<!-- Global site tag (gtag.js) - Google Analytics -->
+script(async src="https://www.googletagmanager.com/gtag/js?id=UA-129655449-1")
+script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129655449-1');
