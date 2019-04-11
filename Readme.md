@@ -8,6 +8,15 @@ This demo uses Flamingo Carotene, so you should have `npm`installed. (https://ww
 Also you need go installed. (https://golang.org/)
 
 ### Run the demo shop
+
+#### Try out with docker:
+
+```
+docker run --rm -p 3210:3210 iloveflamingo/flamingo-commerce-demo-carotene:latest
+```
+Now open http://localhost:3210/
+
+#### Run local from source code:
 ```
 # clone the repo:
 git clone https://github.com/i-love-flamingo/commerce-demo-carotene.git
