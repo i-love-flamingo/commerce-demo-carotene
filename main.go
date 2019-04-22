@@ -22,6 +22,7 @@ import (
 	"flamingo.me/flamingo/v3/framework/systemendpoint"
 	"flamingo.me/form"
 	"flamingo.me/pugtemplate"
+	//"flamingo.me/flamingo-commerce-adapter-magento2/magento2"
 )
 
 // main is our entry point
@@ -54,6 +55,11 @@ func main() {
 		//flamingo-commerce-adpater-standalone
 		new(csvcommerce.ProductClientModule),
 		new(csvcommerce.SearchClientModule),
+
+		//flamingo-commerce-adpater-magento2
+		//new(magento2.Module),
+		//new(magento2.ProductModule),
+		//new(magento2.ProductSearchModule),
 	}, flamingo.ChildAreas(
 		config.NewArea("de", nil),
 	))

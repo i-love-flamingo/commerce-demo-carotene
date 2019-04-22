@@ -35,7 +35,7 @@ block maincontent
                 span.text-muted Payment
               p Gateway: #{decoratedCart.cart.paymentSelection.gateway}
               each chargeSplit in decoratedCart.cart.paymentSelection.chargeSplits
-                p #{commercePriceFormat(chargeSplit.amount)} with Method: #{chargeSplit.method}
+                p #{commercePriceFormat(chargeSplit.charge.price)} with Method: #{chargeSplit.method}
           form(action=url("checkout.review"))
             div.custom-control.custom-checkbox.mt-3.mb-1
               input.custom-control-input(type="checkbox", id="termsAndConditions", name="termsAndConditions", value="1")

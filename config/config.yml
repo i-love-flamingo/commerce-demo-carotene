@@ -135,3 +135,10 @@ opencensus:
 
 flamingo-commerce-adapter-standalone.csvCommerce.allowedImageResizeParamaters: "500x,200x,700x"
 
+
+flamingo-commerce-adapter-magento2:
+  magento2:
+    accessToken: n8iyqcgi91pjguql9j5imwcn51kodtrx
+    host: local.magento
+    scheme: http
+    path: /rest/default
