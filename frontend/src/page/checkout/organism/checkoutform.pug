@@ -2,7 +2,6 @@ form(method="post")
   h4.d-flex.justify-content-between.align-items-center.mb-3
     span.text-muted Billing Address #{form.hasGeneralErrors}
 
-  //+debug(form)
   if form.hasAnyGeneralErrors
     each error in form.getAllGeneralErrors
       div.alert.alert-error(role="alert", data-error=error.messageKey)=error.defaultLabel

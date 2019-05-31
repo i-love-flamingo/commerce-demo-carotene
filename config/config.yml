@@ -2,11 +2,13 @@
 # Flamingo core related configurations:
 debug.mode: false
 
-flamingo:
-  router:
-    path: /en
 
 zap.loglevel: Warn
+
+prefixrouter:
+  rootRedirectHandler:
+    enabled: true
+    redirectTarget: "/en/"
 
 
 locale:
@@ -14,10 +16,11 @@ locale:
   translationFiles:
   - translations/merged/en-gb.all.yaml
   accounting:
-    thousand: ','
-    decimal: '.'
-    formatZero: '%s -.-'
-    format: "%s %v"
+    default:
+      thousand: ','
+      decimal: '.'
+      formatZero: '%s -.-'
+      format: "%s %v"
   numbers:
     decimal:  '.'
     thousand: ','
@@ -31,18 +34,20 @@ locale:
 flamingo.template.err404: error/404
 flamingo.template.err503: error/503
 
+flamingo:
+  web:
+    filter:
+      cachestrategy:
+        default:
+          # disable http caching by default
+          revalidateEachTime: true
+          isReusable: false
 
 pagination:
   showFirstPage: false
   showLastPage: false
   defaultPageSize: 8
   showAroundActivePageAmount: 2
-
-prefixrouter:
-  pingPongHandler.enabled: true
-  rootRedirectHandler:
-    enabled: true
-    redirectTarget: "/en/"
 
 
 oauth:
@@ -121,10 +126,6 @@ commerce:
 
 
 
-# Configure the module flamingo-commerce-adapter-standalone
-flamingo-commerce-adapter-standalone.csvCommerce.productCsvPath: "ressources/products/products.csv"
-flamingo-commerce-adapter-standalone.csvCommerce.locale: "en_GB"
-flamingo-commerce-adapter-standalone.csvCommerce.currency: "GBP"
 
 opencensus:
   tracing:
@@ -132,13 +133,3 @@ opencensus:
       "blacklist":
         - "/image"
         - "/static"
-
-flamingo-commerce-adapter-standalone.csvCommerce.allowedImageResizeParamaters: "500x,200x,700x"
-
-
-flamingo-commerce-adapter-magento2:
-  magento2:
-    accessToken: n8iyqcgi91pjguql9j5imwcn51kodtrx
-    host: local.magento
-    scheme: http
-    path: /rest/default

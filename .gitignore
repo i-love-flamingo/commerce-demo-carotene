@@ -19,3 +19,4 @@ ressources/products
 ressources/products.zip
 **/logs/pact.log
 **/pacts/*.json
+config/config.local

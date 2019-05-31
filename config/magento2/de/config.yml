@@ -1,0 +1,25 @@
+flamingo:
+  router:
+    path: /magento/de
+
+locale:
+  locale: de-de
+  fallbackLocales:
+  - en-gb
+  translationFiles:
+  - translations/merged/de-de.all.yaml
+  - translations/merged/en-gb.all.yaml
+  accounting:
+    thousand: '.'
+    decimal: ','
+    formatZero: '-,- %s'
+    format: "%v %s"
+  numbers:
+    decimal:  '.'
+    thousand: ','
+    precision: 1
+  date:
+    dateFormat:  02 Jan 2006
+    timeFormat: 15:04
+    dateTimeFormat: 02 Jan 2006 15:04:05
+    location: Europe/Berlin

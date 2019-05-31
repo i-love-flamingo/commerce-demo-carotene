@@ -1,5 +1,15 @@
 # Official Commerce Flamingo Demo
 
+## Whats inside
+
+The demo shop comes with 2 different context that already demonstrate the locatlisation and configuration concept of flamingo:
+
+1.  Standalone Adapter:
+    * http://localhost:3210/en  and http://localhost:3210/de use the "flamingo-commerce-adapter-standalone" Modules and show a simple shop that gets its products from a CSV file
+    
+2.  Magento Adapter (disabled):
+    * http://localhost:3210/magento/en and http://localhost:3210/magento/de use the (very beta) "flamingo-commerce-adapter-magento2"
+
 ## Getting Started
 
 ### Preconditions

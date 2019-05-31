@@ -1,6 +1,6 @@
 CONTEXT?=dev:testproducts
-REPLACE?=-replace flamingo.me/flamingo/v3=../flamingo -replace flamingo.me/flamingo-commerce/v3=../flamingo-commerce -replace flamingo.me/flamingo-commerce-adapter-standalone=../flamingo-commerce-adapter-standalone -replace flamingo.me/flamingo-commerce-adapter-magento2=../flamingo-commerce-adapter-magento2
-DROPREPLACE?=-dropreplace flamingo.me/flamingo/v3 -dropreplace flamingo.me/flamingo-commerce/v3 -dropreplace flamingo.me/flamingo-commerce-adapter-standalone -dropreplace flamingo.me/flamingo-commerce-adapter-magento2
+REPLACE?=-replace flamingo.me/flamingo/v3=../flamingo -replace flamingo.me/flamingo-commerce/v3=../flamingo-commerce -replace flamingo.me/flamingo-commerce-adapter-standalone=../flamingo-commerce-adapter-standalone -replace flamingo.me/flamingo-commerce-adapter-magento2=../flamingo-commerce-adapter-magento2 -replace flamingo.me/form=../form
+DROPREPLACE?=-dropreplace flamingo.me/flamingo/v3 -dropreplace flamingo.me/flamingo-commerce/v3 -dropreplace flamingo.me/flamingo-commerce-adapter-standalone -dropreplace flamingo.me/flamingo-commerce-adapter-magento2 -dropreplace flamingo.me/form
 
 .PHONY: serve local unlocal commit frontend frontend-build translation bookingserviceVuku rabbitmqInDocker
 

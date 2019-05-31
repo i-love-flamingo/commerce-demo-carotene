@@ -1,0 +1,10 @@
+flamingo:
+  router:
+    path: /magento
+
+flamingo-commerce-adapter-magento2:
+  magento2:
+    #accessToken: REPLACEME
+    #host: local.magento
+    #scheme: http
+    path: /rest/default

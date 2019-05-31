@@ -1,0 +1,19 @@
+
+
+
+
+
+# Configure the module flamingo-commerce-adapter-standalone
+flamingo-commerce-adapter-standalone.csvCommerce.productCsvPath: "ressources/products/products.csv"
+flamingo-commerce-adapter-standalone.csvCommerce.locale: "en_GB"
+flamingo-commerce-adapter-standalone.csvCommerce.currency: "GBP"
+flamingo-commerce-adapter-standalone.csvCommerce.allowedImageResizeParamaters: "500x,200x,700x,40x"
+
+
+
+flamingo-commerce-adapter-magento2:
+  magento2:
+    accessToken: n8iyqcgi91pjguql9j5imwcn51kodtrx
+    host: local.magento
+    scheme: http
+    path: /rest/default
