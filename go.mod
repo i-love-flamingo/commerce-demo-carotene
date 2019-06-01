@@ -7,7 +7,6 @@ replace (
 
 require (
 	flamingo.me/dingo v0.1.5
-	flamingo.me/flamingo-commerce-adapter-magento2 v0.0.1
 	flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190531212503-8170a3684ed3
 	flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190422194850-9dc0a7083957
 	flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190515120627-9cabe248cf01
@@ -17,13 +16,3 @@ require (
 	github.com/mattn/go-colorable v0.1.0 // indirect
 	gopkg.in/square/go-jose.v2 v2.2.2 // indirect
 )
-
-replace flamingo.me/flamingo/v3 => ../flamingo
-
-replace flamingo.me/flamingo-commerce/v3 => ../flamingo-commerce
-
-replace flamingo.me/flamingo-commerce-adapter-standalone => ../flamingo-commerce-adapter-standalone
-
-replace flamingo.me/flamingo-commerce-adapter-magento2 => ../flamingo-commerce-adapter-magento2
-
-replace flamingo.me/form => ../form
