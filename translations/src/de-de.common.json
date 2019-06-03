@@ -1,0 +1,14 @@
+[
+  {
+    "id": "error.common.headline",
+    "translation": "Error occured"
+  },
+  {
+    "id": "error.404.headline",
+    "translation": "Error 404"
+  },
+  {
+    "id": "error.503.headline",
+    "translation": "Error 503"
+  }
+]

@@ -31,7 +31,7 @@ block maincontent
             p.lead
               +price(product)
             p.lead.font-weight-bold=baseData.title
-            p=baseData.description
+            p !{baseData.description}
             form.d-flex.justify-content-left(action=url('cart.add',{marketplaceCode:baseData.marketPlaceCode}))
               // Default input
               input.form-control(type='number', value='1', aria-label='Search', style='width: 100px', name="qty")

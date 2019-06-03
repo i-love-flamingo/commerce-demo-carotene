@@ -4,7 +4,7 @@ extends /template/base/base
 block content
   .errorTile
     h1.errorHeadline= __('error.503.headline', 'Sorry, something has gone wrong…')
-    a(href='/')= __('error.503.homeButton', 'Go to homepage')
+    a(href='/')= __('error.homeButton', 'Go to homepage')
 
   if config('debug.mode')
     .errorDebug

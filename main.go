@@ -2,6 +2,8 @@ package main
 
 import (
 	"flamingo.me/dingo"
+	//"flamingo.me/flamingo-commerce-adapter-magento2/magento2"
+
 	// "flamingo.me/flamingo-commerce-adapter-magento2/magento2"
 	"flamingo.me/flamingo-commerce-adapter-standalone/csvcommerce"
 	"flamingo.me/flamingo-commerce-adapter-standalone/productSearch"
@@ -59,7 +61,7 @@ func main() {
 			},
 			config.NewArea("de", nil),
 		),
-		/*config.NewArea("magento2",
+	/*	config.NewArea("magento2",
 			[]dingo.Module{
 				new(oauth.Module),
 				//form module (required by commerce)
@@ -74,6 +76,7 @@ func main() {
 				new(checkout.Module),
 				//flamingo-commerce-adpater-standalone:productSearch
 				new(productSearch.Module),
+				new(productSearch.CategoryModule),
 				//flamingo-commerce-adpater-magento2
 				new(magento2.Module),
 				new(magento2.ProductModule),

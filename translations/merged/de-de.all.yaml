@@ -38,6 +38,12 @@ checkout.success_message2:
   other: ""
 delivery:
   other: ""
+error.404.headline:
+  other: Error 404
+error.503.headline:
+  other: Error 503
+error.common.headline:
+  other: Error occured
 facetoption_isExclusiveProduct_false:
   other: ""
 facetoption_isExclusiveProduct_true:
