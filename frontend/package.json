@@ -11,14 +11,14 @@
   "author": "AOE people",
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^9.5.0",
+    "autoprefixer": "^9.6.0",
     "css-mqpacker": "^7.0.0",
-    "flamingo-carotene-core": "^6.2.0",
-    "flamingo-carotene-dev-server": "^6.2.0",
-    "flamingo-carotene-postcss": "^6.2.0",
-    "flamingo-carotene-pug": "^6.2.0",
-    "flamingo-carotene-static-asset": "^6.2.0",
-    "flamingo-carotene-webpack": "^6.2.0",
+    "flamingo-carotene-core": "^6.2.8",
+    "flamingo-carotene-dev-server": "^6.2.8",
+    "flamingo-carotene-postcss": "^6.2.1",
+    "flamingo-carotene-pug": "^6.2.8",
+    "flamingo-carotene-static-asset": "^6.2.1",
+    "flamingo-carotene-webpack": "^6.2.9",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-plugin-px2rem": "^0.8.1"
   }
