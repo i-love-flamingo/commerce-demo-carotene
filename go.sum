@@ -26,12 +26,16 @@ flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190422194850-9dc0a7083957 h1:
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190422194850-9dc0a7083957/go.mod h1:xjg/fqalgf9nTNSEzlZ7z7augHbLGikcyLyjSjjUYok=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190621094837-4aa90134516d h1:YuW0O4Fuwr/OvVQCXPXAESk2lCp5sL7jnKVo3b0hbzI=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190621094837-4aa90134516d/go.mod h1:kVO3LSUkHvUOWxmGEU8j6ZJ7D1txmgq9l0+e22B/p0Y=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190725123136-3941b7744d0f h1:cBn9EOHuoutrerrS/pbI2MawK8SqTzhc/sPd+hTSizM=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190725123136-3941b7744d0f/go.mod h1:kVO3LSUkHvUOWxmGEU8j6ZJ7D1txmgq9l0+e22B/p0Y=
 flamingo.me/flamingo/v3 v3.0.0-beta.1 h1:re3uxGtUWSwKpsFANXGOBX0qJoP2AA5V1yZ3Jb2ZbQ4=
 flamingo.me/flamingo/v3 v3.0.0-beta.1/go.mod h1:DUYtZWF8zGyACglnKKcqWsKtgUSUJFZoZh7NpBzQ9wQ=
 flamingo.me/flamingo/v3 v3.0.0-beta.1.0.20190402212643-e7f067aac32f h1:csqLyMf3JsBynzlYh6o7tgGL8WCAACslYY4+WWalXkQ=
 flamingo.me/flamingo/v3 v3.0.0-beta.1.0.20190402212643-e7f067aac32f/go.mod h1:DUYtZWF8zGyACglnKKcqWsKtgUSUJFZoZh7NpBzQ9wQ=
 flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190515120627-9cabe248cf01 h1:FTEMeRGVaqJIU5AiZsg9g7J7BbUKiGyC/A7erGs/0tU=
 flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190515120627-9cabe248cf01/go.mod h1:iF45z33s6SudAZSwRZlGtutrGIO9oLQ9LpAC0PoLGoo=
+flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190724140606-eb0cc2c22240 h1:jsKjdehelfx/UtqPK0QxfpnSRcIQX5rKfVqNVKffIMg=
+flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190724140606-eb0cc2c22240/go.mod h1:At4i6702TI36uQ7z/hPqfnGjLhBdF/GPvYZ91m6M9oo=
 flamingo.me/form v1.0.0-alpha.1 h1:NARlDnIBMmXk5o2aFejDvKWUe097ZKLK48pBWioxsNY=
 flamingo.me/form v1.0.0-alpha.1/go.mod h1:TliCSseukmM53A0RaEqDoIUY9AVRTbwUGsf5DH4WntY=
 flamingo.me/pugtemplate v1.0.0-alpha.1 h1:j7WSiRz8ibbE3YLGP9K44cNYCHS3wzW7ycqVF9d0MvI=
@@ -140,6 +144,7 @@ github.com/golang/mock v1.1.1/go.mod h1:oTYuIxOrZwtPieC+H1uAHpcLFnEyAGVDL/k47Jfb
 github.com/golang/mock v1.2.0/go.mod h1:oTYuIxOrZwtPieC+H1uAHpcLFnEyAGVDL/k47Jfbm0A=
 github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
+github.com/golang/protobuf v1.3.0 h1:kbxbvI4Un1LUWKxufD+BiE6AEExYYgkQLQmLFqA1LFk=
 github.com/golang/protobuf v1.3.0/go.mod h1:Qd/q+1AKNOZr9uGQzbzCmRO6sUih6GTPZv6a1/R87v0=
 github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db/go.mod h1:/XxbfmMg8lxefKM7IXC3fBNl/7bRcc72aCRzEWrmP2Q=
 github.com/gomodule/redigo v2.0.0+incompatible h1:K/R+8tc58AaqLkqG2Ol3Qk+DR/TlNuhuh457pBFPtt0=
@@ -162,6 +167,7 @@ github.com/grpc-ecosystem/grpc-gateway v1.5.0/go.mod h1:RSKVYQBd5MCa4OVpNdGskqpg
 github.com/grpc-ecosystem/grpc-gateway v1.6.2/go.mod h1:RSKVYQBd5MCa4OVpNdGskqpgL2+G+NZTnrVHpWWfpdw=
 github.com/hashicorp/golang-lru v0.5.0 h1:CL2msUPvZTLb5O648aiLNJw3hnBxN2+1Jq8rCOH9wdo=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
+github.com/hashicorp/golang-lru v0.5.1 h1:0hERBMJE1eitiLkihrMvRVBYAkpHzc/J3QdDN+dAcgU=
 github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/hashicorp/logutils v0.0.0-20150609070431-0dc08b1671f3/go.mod h1:QIAnNjmIWmVIIkWDTG1z5v++HQmx9WQRO+LraFDTW64=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
@@ -243,6 +249,7 @@ github.com/prometheus/procfs v0.0.0-20190117184657-bf6a532e95b1/go.mod h1:c3At6R
 github.com/prometheus/procfs v0.0.0-20190209105433-f8d8b3f739bd/go.mod h1:TjEm7ze935MbeOT/UhFTIMYKhuLP4wbCsTZCD3I8kEA=
 github.com/prometheus/procfs v0.0.0-20190225181712-6ed1f7e10411 h1:36uaMBlK2GZuKRj/x7fKs5QffyHXTYxq+oeBi7KiSrg=
 github.com/prometheus/procfs v0.0.0-20190225181712-6ed1f7e10411/go.mod h1:TjEm7ze935MbeOT/UhFTIMYKhuLP4wbCsTZCD3I8kEA=
+github.com/prometheus/procfs v0.0.0-20190306233201-d0f344d83b0c h1:xAaFC6WmfeVufj49LZocAyA0S4FSB8eB/himN+phUR4=
 github.com/prometheus/procfs v0.0.0-20190306233201-d0f344d83b0c/go.mod h1:TjEm7ze935MbeOT/UhFTIMYKhuLP4wbCsTZCD3I8kEA=
 github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a/go.mod h1:bCqnVzQkZxMG4s8nGwiZ5l3QUCyqpo9Y+/ZMZ9VjZe4=
 github.com/robertkrimen/otto v0.0.0-20180617131154-15f95af6e78d h1:1VUlQbCfkoSGv7qP7Y+ro3ap1P1pPZxgdGVqiTVy5C4=
@@ -309,6 +316,7 @@ golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f/go.mod h1:RxMgew5VJxzue5/jJ
 golang.org/x/sync v0.0.0-20181108010431-42b317875d0f/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
 golang.org/x/sync v0.0.0-20181221193216-37e7f081c4d4 h1:YUO/7uOKsKeq9UokNS62b8FYywz3ker1l1vDZRCRefw=
 golang.org/x/sync v0.0.0-20181221193216-37e7f081c4d4/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
+golang.org/x/sync v0.0.0-20190227155943-e225da77a7e6 h1:bjcUS9ztw9kFmmIxJInhon/0Is3p+EHBKNgquIzo1OI=
 golang.org/x/sync v0.0.0-20190227155943-e225da77a7e6/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
 golang.org/x/sys v0.0.0-20180830151530-49385e6e1522/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20180905080454-ebe1bf3edb33/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
@@ -358,6 +366,7 @@ gopkg.in/sourcemap.v1 v1.0.5/go.mod h1:2RlvNNSMglmRrcvhfuzp4hQHwOtjxlbjX7UPY/GXb
 gopkg.in/square/go-jose.v2 v2.1.9/go.mod h1:M9dMgbHiYLoDGQrXy7OpJDJWiKiU//h+vD76mk0e1AI=
 gopkg.in/square/go-jose.v2 v2.2.2 h1:orlkJ3myw8CN1nVQHBFfloD+L3egixIa4FvUP6RosSA=
 gopkg.in/square/go-jose.v2 v2.2.2/go.mod h1:M9dMgbHiYLoDGQrXy7OpJDJWiKiU//h+vD76mk0e1AI=
+gopkg.in/square/go-jose.v2 v2.3.0 h1:nLzhkFyl5bkblqYBoiWJUt5JkWOzmiaBtCxdJAqJd3U=
 gopkg.in/square/go-jose.v2 v2.3.0/go.mod h1:M9dMgbHiYLoDGQrXy7OpJDJWiKiU//h+vD76mk0e1AI=
 gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7/go.mod h1:dt/ZhP58zS4L8KSrWDmTeBkI65Dw0HsyUHuEVlX15mw=
 gopkg.in/yaml.v2 v2.2.1/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
