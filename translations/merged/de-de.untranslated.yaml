@@ -32,6 +32,8 @@ checkout.back_to_cart:
 checkout.cart_item_error_hint:
   other: There are invalid items in your cart. Please check below and resolve the
     issue.
+checkout.error.terms_and_conditions_required:
+  other: Please accept the terms and conditions.
 checkout.legalConfirmation.termsAndConditions:
   other: Check here to indicate that you have read and agree to the <a href="{{.PrivacyNoticeUrl}}"
     target="blank">privacy policies</a> and <a href="{{.TermsAndConditionsUrl}}" target="blank">terms
@@ -44,6 +46,14 @@ checkout.success_message2:
   other: An confirmation email will be send to {{.Email}}.
 delivery:
   other: Home delivery
+error.404.headline:
+  other: Error 404
+error.503.headline:
+  other: Error 503
+error.common.headline:
+  other: Error occured
+error.homeButton:
+  other: Back to home
 facetoption_isExclusiveProduct_false:
   other: not exclusive
 facetoption_isExclusiveProduct_true:

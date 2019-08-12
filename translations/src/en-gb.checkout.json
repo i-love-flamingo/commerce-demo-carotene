@@ -27,5 +27,10 @@
   {
     "id":"checkout.legalConfirmation.termsAndConditions",
     "translation": "Check here to indicate that you have read and agree to the <a href=\"{{.PrivacyNoticeUrl}}\" target=\"blank\">privacy policies</a> and <a href=\"{{.TermsAndConditionsUrl}}\" target=\"blank\">terms and conditions</a> of the Heathrow Boutique."
+  },
+
+  {
+    "id":"checkout.error.terms_and_conditions_required",
+    "translation": "Please accept the terms and conditions."
   }
 ]

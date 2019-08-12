@@ -10,7 +10,7 @@ block maincontent
         if errorInfos.hasError
           if errorInfos.hasPaymentError
             div.alert.alert-error(role="alert") Payment Error
-          div.alert.alert-warning(role="alert")=errorInfos.errorMessage
+          div.alert.alert-warning(role="alert")=__("checkout.error."+errorInfos.errorMessage)
       div.row
         div.col-md-8.mb-4
           h4.d-flex.justify-content-between.align-items-center.mb-3

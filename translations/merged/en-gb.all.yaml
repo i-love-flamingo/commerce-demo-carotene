@@ -32,6 +32,8 @@ checkout.back_to_cart:
 checkout.cart_item_error_hint:
   other: There are invalid items in your cart. Please check below and resolve the
     issue.
+checkout.error.terms_and_conditions_required:
+  other: Please accept the terms and conditions.
 checkout.legalConfirmation.termsAndConditions:
   other: Check here to indicate that you have read and agree to the <a href="{{.PrivacyNoticeUrl}}"
     target="blank">privacy policies</a> and <a href="{{.TermsAndConditionsUrl}}" target="blank">terms
