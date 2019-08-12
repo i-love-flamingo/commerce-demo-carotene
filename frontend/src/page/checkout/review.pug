@@ -19,7 +19,7 @@ block maincontent
             .card-body
               h5.mt-1.mb-2
                 span.text-muted Billing
-              +renderAddress(decoratedCart.cart.billingAdress)
+              +renderAddress(decoratedCart.cart.billingAddress)
               each delivery in decoratedCart.cart.deliveries
                 - var deliveryCode = delivery.deliveryInfo.code
                 h5(data-deliverycode=delivery.deliveryInfo.code).mt-5.mb-2
