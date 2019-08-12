@@ -4,6 +4,10 @@
     "translation": "Error occured"
   },
   {
+    "id": "error.homeButton",
+    "translation": "Back to home"
+  },
+  {
     "id": "error.404.headline",
     "translation": "Error 404"
   },

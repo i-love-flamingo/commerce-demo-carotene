@@ -44,6 +44,14 @@ checkout.success_message2:
   other: An confirmation email will be send to {{.Email}}.
 delivery:
   other: Home delivery
+error.404.headline:
+  other: Error 404
+error.503.headline:
+  other: Error 503
+error.common.headline:
+  other: Error occured
+error.homeButton:
+  other: Back to home
 facetoption_isExclusiveProduct_false:
   other: not exclusive
 facetoption_isExclusiveProduct_true:
