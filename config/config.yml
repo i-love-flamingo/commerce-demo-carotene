@@ -1,7 +1,5 @@
-
 # Flamingo core related configurations:
 debug.mode: false
-
 
 zap.loglevel: Warn
 
@@ -9,7 +7,6 @@ prefixrouter:
   rootRedirectHandler:
     enabled: true
     redirectTarget: "/en/"
-
 
 locale:
   locale: en-gb
@@ -31,9 +28,6 @@ locale:
     dateTimeFormat: 02 Jan 2006 15:04:05
     location: Europe/London
 
-flamingo.template.err404: error/404
-flamingo.template.err503: error/503
-
 flamingo:
   web:
     filter:
@@ -42,13 +36,15 @@ flamingo:
           # disable http caching by default
           revalidateEachTime: true
           isReusable: false
+  template:
+    err404: error/404
+    err503: error/503
 
 pagination:
   showFirstPage: false
   showLastPage: false
   defaultPageSize: 8
   showAroundActivePageAmount: 2
-
 
 oauth:
   server: 'https://accounts.google.com'
@@ -74,10 +70,7 @@ template:
     - size
     - color
 
-
-
 # Configs for flamingo-commerce modules
-
 checkout:
   showEmptyCartPageIfNoItems: true
 
@@ -123,9 +116,6 @@ commerce:
           code: clothing
           name: Clothes & Fashion
           sort: 2
-
-
-
 
 opencensus:
   tracing:
