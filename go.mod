@@ -9,8 +9,8 @@ require (
 	flamingo.me/dingo v0.1.5
 	flamingo.me/flamingo-commerce-adapter-magento2 v0.0.0-20190603174551-cf9f9f45b257 // indirect
 	flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190603174440-f3912c64baaf
-	flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190621094837-4aa90134516d
-	flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190515120627-9cabe248cf01
+	flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190809113555-b5cedee0391c
+	flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190724140606-eb0cc2c22240
 	flamingo.me/form v1.0.0-alpha.1
 	flamingo.me/pugtemplate v1.0.0-alpha.1
 	github.com/labstack/gommon v0.2.8 // indirect

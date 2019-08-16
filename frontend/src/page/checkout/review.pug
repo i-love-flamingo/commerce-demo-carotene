@@ -10,7 +10,7 @@ block maincontent
         if errorInfos.hasError
           if errorInfos.hasPaymentError
             div.alert.alert-error(role="alert") Payment Error
-          div.alert.alert-warning(role="alert")=errorInfos.errorMessage
+          div.alert.alert-warning(role="alert")=__("checkout.error."+errorInfos.errorMessage)
       div.row
         div.col-md-8.mb-4
           h4.d-flex.justify-content-between.align-items-center.mb-3
@@ -19,7 +19,7 @@ block maincontent
             .card-body
               h5.mt-1.mb-2
                 span.text-muted Billing
-              +renderAddress(decoratedCart.cart.billingAdress)
+              +renderAddress(decoratedCart.cart.billingAddress)
               each delivery in decoratedCart.cart.deliveries
                 - var deliveryCode = delivery.deliveryInfo.code
                 h5(data-deliverycode=delivery.deliveryInfo.code).mt-5.mb-2

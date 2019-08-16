@@ -28,6 +28,8 @@ checkout.back_to_cart:
   other: ""
 checkout.cart_item_error_hint:
   other: ""
+checkout.error.terms_and_conditions_required:
+  other: ""
 checkout.legalConfirmation.termsAndConditions:
   other: ""
 checkout.no_items_in_cart:
@@ -39,11 +41,13 @@ checkout.success_message2:
 delivery:
   other: ""
 error.404.headline:
-  other: Error 404
+  other: ""
 error.503.headline:
-  other: Error 503
+  other: ""
 error.common.headline:
-  other: Error occured
+  other: ""
+error.homeButton:
+  other: ""
 facetoption_isExclusiveProduct_false:
   other: ""
 facetoption_isExclusiveProduct_true:

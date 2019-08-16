@@ -4,7 +4,6 @@ zap:
   loglevel: Debug
   colored: true
 
-
 session:
   cookie:
     secure: false
