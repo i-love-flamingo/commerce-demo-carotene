@@ -13,12 +13,12 @@
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "css-mqpacker": "^7.0.0",
-    "flamingo-carotene-core": "^6.2.8",
-    "flamingo-carotene-dev-server": "^6.2.8",
-    "flamingo-carotene-postcss": "^6.2.1",
-    "flamingo-carotene-pug": "^6.2.8",
-    "flamingo-carotene-static-asset": "^6.2.1",
-    "flamingo-carotene-webpack": "^6.2.9",
+    "flamingo-carotene-core": "^6.2.15",
+    "flamingo-carotene-dev-server": "^6.2.15",
+    "flamingo-carotene-postcss": "^6.2.15",
+    "flamingo-carotene-pug": "^6.2.15",
+    "flamingo-carotene-static-asset": "^6.2.15",
+    "flamingo-carotene-webpack": "^6.2.15",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-plugin-px2rem": "^0.8.1"
   }
