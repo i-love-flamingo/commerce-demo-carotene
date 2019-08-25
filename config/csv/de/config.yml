@@ -9,14 +9,9 @@ locale:
   translationFiles:
   - translations/merged/de-de.all.yaml
   - translations/merged/en-gb.all.yaml
-  accounting:
-    thousand: '.'
-    decimal: ','
-    formatZero: '-,- %s'
-    format: "%v %s"
   numbers:
-    decimal:  '.'
-    thousand: ','
+    decimal:  ','
+    thousand: '.'
     precision: 1
   date:
     dateFormat:  02 Jan 2006
@@ -26,3 +21,7 @@ locale:
 
 
 # Configure the module flamingo-commerce-adapter-standalone
+
+flamingo-commerce-adapter-standalone.csvCommerce.productCsvPath: "ressources/products/products_de.csv"
+flamingo-commerce-adapter-standalone.csvCommerce.locale: "de_DE"
+flamingo-commerce-adapter-standalone.csvCommerce.currency: "EUR"

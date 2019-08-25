@@ -16,3 +16,8 @@ flamingo-commerce-adapter-magento2:
     #host: local.magento
     #scheme: http
     path: /rest/default
+
+
+
+flamingo-commerce-adapter-standalone:
+  enableIndexing: true

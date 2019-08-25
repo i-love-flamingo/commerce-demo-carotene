@@ -18,6 +18,11 @@ locale:
       decimal: '.'
       formatZero: '%s -.-'
       format: "%s %v"
+    EUR:
+      thousand: '.'
+      decimal: ','
+      formatZero: '-,- %s'
+      format: "%v %s"
   numbers:
     decimal:  '.'
     thousand: ','
@@ -123,3 +128,7 @@ opencensus:
       "blacklist":
         - "/image"
         - "/static"
+
+flamingo-commerce-adapter-standalone:
+  enableIndexing: false
+  repositoryAdapter: inmemory

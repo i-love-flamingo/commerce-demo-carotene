@@ -1,23 +1,27 @@
 include /atom/debug/debug
 
 mixin pagination(paginationInfo)
-
   if paginationInfo && paginationInfo.totalHits && paginationInfo.totalHits > 0
     nav.d-flex.justify-content-center.wow.fadeIn
       ul.pagination.pg-blue
         if paginationInfo.previousPage
-          li.page-item.disabled
-            a.page-link(href=paginationInfo.previousPage.url, aria-label='Previous')
+          li.page-item
+            a.page-link(href=paginationInfo.previousPage.uRL, aria-label='Previous')
               span(aria-hidden='true') «
               span.sr-only Previous
         if paginationInfo.pageNavigation.length > 1
           each page in paginationInfo.pageNavigation
-            li.page-item.active
-              a.page-link(href=page.url)=page.page
-                if page.isActive
-                  span.sr-only (current)
+            if page.isSpacer
+              li.page-item ...
+            else
+              if page.isActive
+                li.page-item.active
+                  a.page-link(href=page.uRL)=page.page
+              else
+                li.page-item
+                  a.page-link(href=page.uRL)=page.page
         if paginationInfo.nextPage
           li.page-item
-            a.page-link(href=paginationInfo.nextPage.url, aria-label='Next')
+            a.page-link(href=paginationInfo.nextPage.uRL, aria-label='Next')
               span(aria-hidden='true') »
               span.sr-only Next
