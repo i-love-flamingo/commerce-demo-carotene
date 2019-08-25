@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flamingo.me/commerce-demo-carotene/src/myproduct"
 	"flamingo.me/dingo"
 	//"flamingo.me/flamingo-commerce-adapter-magento2/magento2"
 
@@ -58,6 +59,7 @@ func main() {
 			new(productSearch.Module),
 			//flamingo-commerce-adpater-standalone:csvcommerce
 			new(csvcommerce.ProductModule),
+			new(myproduct.Module),
 			},
 			config.NewArea("de", nil),
 		),
