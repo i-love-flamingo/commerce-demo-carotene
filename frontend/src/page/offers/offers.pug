@@ -1,13 +1,24 @@
 extends /template/base/base
 
 include /organism/productList/productList
+include /molecule/productMedia/productMedia
 
 
 block maincontent
   main.mt-5.pt-4
     .container
       h1=__("special-offers").setDefaultLabel("Special Offers")
+      h2 Highlight:
+      - var product = getProduct("awesome-retailer_6981068")
+      h3=product.teaserData.shortTitle
+      p=product.teaserData.shortDescription
+      if product.hasMedia("teaser","list")
+        +productMedia(product.getMedia("teaser","list"))
+      p
+        strong
+          a(href=getProductUrl(product)) Go to product
+      h2 Checkout more
       section.text-center.mb-4
         // Grid row
         //+productList(findProducts("homepagewidget",{"query":"","pageSize": "10","sortDirection":"A","sortBy":'name'},{"categories":['laptops']}))
-        +productList(findProducts("homepagewidget",{"query":"","pageSize": "8","sortDirection":"A","sortBy":'name'},{}))
+        +productList(findProducts("offers",{"query":"","pageSize": "4","sortDirection":"A","sortBy":'name'},{"specialOffer":["yes"]}))
