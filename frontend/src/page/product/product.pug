@@ -3,6 +3,7 @@ extends /template/base/base
 include /atom/price/price
 include /molecule/productMedia/productMedia
 include /atom/dropdown/dropdown
+include /organism/productList/productList
 
 block maincontent
   //- Detect the baseData of the product depending on its context
@@ -89,14 +90,8 @@ block maincontent
       // Grid row
       // Grid row
       .row.wow.fadeIn
-        // Grid column
-        .col-lg-4.col-md-12.mb-4
-          img.img-fluid(src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg', alt='')
-        // Grid column
-        // Grid column
-        .col-lg-4.col-md-6.mb-4
-          img.img-fluid(src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg', alt='')
-        // Grid column
-        // Grid column
-        .col-lg-4.col-md-6.mb-4
-          img.img-fluid(src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg', alt='')
+        h4.my-4.h4=__("Other products")
+        - var filterByCategory = "headphone_accessories"
+        if baseData.mainCategory.code != ""
+          - var filterByCategory = baseData.mainCategory.code
+        +productList(findProducts("homepagewidget",{"query":"","pageSize": "4","sortDirection":"A","sortBy":'random'},{"categories":[filterByCategory]}))

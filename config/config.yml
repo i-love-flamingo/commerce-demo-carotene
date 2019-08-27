@@ -73,7 +73,8 @@ template:
   product:
     descriptionAttributes:
     - size
-    - color
+    - colour
+    - clothing_size
 
 # Configs for flamingo-commerce modules
 checkout:
