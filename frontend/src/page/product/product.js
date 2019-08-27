@@ -6,4 +6,10 @@ jQuery(function () {
             window.location.href = url
         }
     });
+
+
+    jQuery(".variant-selection").change(function () {
+        let variantselection = jQuery("#variantSelection").data('variantselection')
+        console.log(variantselection)
+    });
 });

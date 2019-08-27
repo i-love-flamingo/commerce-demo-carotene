@@ -9,6 +9,9 @@ block maincontent
   //- Detect the baseData of the product depending on its context
   - var baseData = product.baseData
 
+  //+debug(variantSelection)
+
+
   //+debug(baseData)
   //+debug(product.saleableData)
   main.mt-5.pt-4
@@ -41,7 +44,19 @@ block maincontent
               p Colour: #{product.baseData.attribute("colour").value}
 
             if product.type() == "configurable" || product.type() == "configurable_with_activevariant"
-              .row.p-3
+              div#variantSelection(data-variantselection=variantSelection)
+                each variationAttributes in variantSelection.attributes
+                  .row.p-3
+                    span.col-small=variationAttributes.key
+                    .col
+                      +dropdown()(name=variationAttributes.key class="variant-selection" data-dimension=variationAttributes.key)
+                        each option in variationAttributes.options
+                          if option.selected
+                            option(value=option.key selected="selected")= option.key
+                          else
+                            option(value=option.key)= option.key
+
+              //- .row.p-3
                 span.col-small=__("select_variant").setDefaultLabel("select a variant:")
                 .col
                   +dropdown()(name="variant-selector" id="variant-selector" data-qa="productVariants")
