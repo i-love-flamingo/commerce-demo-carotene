@@ -17,6 +17,8 @@ flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190603174440-f3
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190603174440-f3912c64baaf/go.mod h1:kug8M1yfqwDbaM47qhZwOL+FTTCr6afyItWIem6lm1I=
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190825171540-995fad089934 h1:u46gb+fsEl5UEVO6dA0sxl4mrNcpoqvXdW9h9SX0M2M=
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190825171540-995fad089934/go.mod h1:414bOsgcblZYbkb1nzQifKPE8YlmD2C2+DImYuY8oxY=
+flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190827090357-eb6586767f58 h1:qby9CCBPESLs08TfdtJejasm7D3Nwcw2/V/bJxrjhJo=
+flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190827090357-eb6586767f58/go.mod h1:414bOsgcblZYbkb1nzQifKPE8YlmD2C2+DImYuY8oxY=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1 h1:GJ7OKKgWJx455dZJYCh/cHtdmIa+NEtnHnBvmAKXU/0=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1/go.mod h1:Dv0jLLTiSeFbhX7JNW2YXZ8kvelvGVzmGQ+zmr4qhHc=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190402215213-dfbf3253cdea h1:vqzvBk1jpiEQ3147PYeUMk6g3gFyiP7rrjyuQr5lYzM=
@@ -36,6 +38,10 @@ flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190820115622-ea370ccefc55 h1:
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190820115622-ea370ccefc55/go.mod h1:kVO3LSUkHvUOWxmGEU8j6ZJ7D1txmgq9l0+e22B/p0Y=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190825194943-fc46c3630b49 h1:BrDOLSXq1lNTiNFYQSr4JAbzkfnb2ptV9MviJEXK+Lk=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190825194943-fc46c3630b49/go.mod h1:kVO3LSUkHvUOWxmGEU8j6ZJ7D1txmgq9l0+e22B/p0Y=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190827075432-c440e4ff91ef h1:3+tJ4a7W4X6aiB+ACrV0WgrtgZpHbXvmXlbxOirpzCU=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190827075432-c440e4ff91ef/go.mod h1:kVO3LSUkHvUOWxmGEU8j6ZJ7D1txmgq9l0+e22B/p0Y=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190827092009-43fdce307c90 h1:Z6k1V+TKCKfpt2DBDyoM5HuE640OcOiKu5Wp70IU9Ns=
+flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190827092009-43fdce307c90/go.mod h1:kVO3LSUkHvUOWxmGEU8j6ZJ7D1txmgq9l0+e22B/p0Y=
 flamingo.me/flamingo/v3 v3.0.0-beta.1 h1:re3uxGtUWSwKpsFANXGOBX0qJoP2AA5V1yZ3Jb2ZbQ4=
 flamingo.me/flamingo/v3 v3.0.0-beta.1/go.mod h1:DUYtZWF8zGyACglnKKcqWsKtgUSUJFZoZh7NpBzQ9wQ=
 flamingo.me/flamingo/v3 v3.0.0-beta.1.0.20190402212643-e7f067aac32f h1:csqLyMf3JsBynzlYh6o7tgGL8WCAACslYY4+WWalXkQ=
