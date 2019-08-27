@@ -8,8 +8,8 @@ replace (
 require (
 	flamingo.me/dingo v0.1.5
 	flamingo.me/flamingo-commerce-adapter-magento2 v0.0.0-20190603174551-cf9f9f45b257 // indirect
-	flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190827090357-eb6586767f58
-	flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190827092009-43fdce307c90
+	flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20190827140523-065575853d31
+	flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190827140004-4976ca855396
 	flamingo.me/flamingo/v3 v3.0.0-beta.2.0.20190724140606-eb0cc2c22240
 	flamingo.me/form v1.0.0-alpha.1
 	flamingo.me/pugtemplate v1.0.0-alpha.1
