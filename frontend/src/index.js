@@ -1,2 +1,3 @@
 import 'index.sass'
-import 'page/**/*.js'
+import 'page/checkout/checkout.js'
+import 'page/product/product.js'
