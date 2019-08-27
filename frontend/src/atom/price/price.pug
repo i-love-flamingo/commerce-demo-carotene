@@ -1,4 +1,3 @@
-include /atom/dropdown/dropdown
 
 mixin price(product)
   case product.type()
@@ -23,10 +22,8 @@ mixin price(product)
     else
       span=commercePriceFormat(priceInfo.default)
   else
-    span Select a Variant
-      +dropdown()(name="variant-selector" id="variant-selector" data-qa="productVariants" )
-        each variant in product.variants
-          option(value=variant.baseData.marketPlaceCode)= variant.baseData.title
+    span
+      p Select a Variant to see the price
 
 mixin teaserPrice(product)
   - var priceInfo = product.teaser.teaserPrice

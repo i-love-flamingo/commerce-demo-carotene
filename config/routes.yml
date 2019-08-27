@@ -1,3 +1,7 @@
 - path: /
   name: index
   controller: flamingo.render(tpl="home/home")
+
+- path: /offers
+  name: index
+  controller: flamingo.render(tpl="offers/offers")

@@ -2,11 +2,14 @@ extends /template/base/base
 
 include /atom/price/price
 include /molecule/productMedia/productMedia
+include /atom/dropdown/dropdown
 
 block maincontent
   //- Detect the baseData of the product depending on its context
   - var baseData = product.baseData
 
+  //+debug(baseData)
+  //+debug(product.saleableData)
   main.mt-5.pt-4
     .container.dark-grey-text.mt-5
       // Grid row
@@ -22,25 +25,49 @@ block maincontent
           // Content
           .p-4
             .mb-3
-              a(href='')
-                span.badge.purple.mr-1 Category 2
-              a(href='')
-                span.badge.blue.mr-1 New
-              a(href='')
-                span.badge.red.mr-1 Bestseller
+              - var i = 1
+              each categoryTeaser in product.baseData.categories
+                - var i = i + 1
+                if i<4
+                  a(href='')
+                    span.badge.purple.mr-1=categoryTeaser.name
+
             p.lead
               +price(product)
             p.lead.font-weight-bold=baseData.title
             p !{baseData.description}
-            form.d-flex.justify-content-left(action=url('cart.add',{marketplaceCode:baseData.marketPlaceCode}))
-              // Default input
-              input.form-control(type='number', value='1', aria-label='Search', style='width: 100px', name="qty")
-              button.btn.btn-primary.btn-md.my-0.p(type='submit')
-                | Add for home delivery
-                i.fa.fa-shopping-cart.ml-1
-              button.btn.btn-primary.btn-md.my-0.p(type='submit', name="deliveryCode", value="pickup_store")
-                | Add for pickup
-                i.fa.fa-shopping-cart.ml-1
+            if product.baseData.hasAttribute("colour")
+              p Colour: #{product.baseData.attribute("colour").value}
+
+            if product.type() == "configurable" || product.type() == "configurable_with_activevariant"
+              .row.p-3
+                span.col-small=__("select_variant").setDefaultLabel("select a variant:")
+                .col
+                  +dropdown()(name="variant-selector" id="variant-selector" data-qa="productVariants")
+                    each variant in product.variants
+                      - var configurableActiveVariant = product.getConfigurableWithActiveVariant(variant.baseData.marketPlaceCode)
+                      - var configurableActiveVariantUrl = getProductUrl(configurableActiveVariant)
+                      - var selected = false
+                      if product.type() == "configurable_with_activevariant"
+                        if product.activeVariant.baseData.marketPlaceCode == variant.baseData.marketPlaceCode
+                          - var selected = true
+                      if selected
+                        option(value=variant.baseData.marketPlaceCode data-url=configurableActiveVariantUrl selected="selected")= variant.baseData.title
+                      else
+                        option(value=variant.baseData.marketPlaceCode data-url=configurableActiveVariantUrl)= variant.baseData.title
+
+            if product.isSaleable
+              form.d-flex.justify-content-left(action=url('cart.add',{marketplaceCode:baseData.marketPlaceCode}))
+                // Default input
+                input.form-control(type='number', value='1', aria-label='Search', style='width: 100px', name="qty")
+                button.btn.btn-primary.btn-md.my-0.p(type='submit')
+                  | Add for home delivery
+                  i.fa.fa-shopping-cart.ml-1
+                button.btn.btn-primary.btn-md.my-0.p(type='submit', name="deliveryCode", value="pickup_store")
+                  | Add for pickup
+                  i.fa.fa-shopping-cart.ml-1
+            else
+              p=__("not saleable")
           // Content
         // Grid column
       // Grid row

@@ -1,0 +1,13 @@
+extends /template/base/base
+
+include /organism/productList/productList
+
+
+block maincontent
+  main.mt-5.pt-4
+    .container
+      h1=__("special-offers").setDefaultLabel("Special Offers")
+      section.text-center.mb-4
+        // Grid row
+        //+productList(findProducts("homepagewidget",{"query":"","pageSize": "10","sortDirection":"A","sortBy":'name'},{"categories":['laptops']}))
+        +productList(findProducts("homepagewidget",{"query":"","pageSize": "8","sortDirection":"A","sortBy":'name'},{}))
