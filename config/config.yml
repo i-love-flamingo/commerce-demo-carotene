@@ -79,6 +79,7 @@ template:
 # Configs for flamingo-commerce modules
 checkout:
   showEmptyCartPageIfNoItems: true
+  skipReviewAction: true
 
 commerce.payment.enableOfflinePaymentGateway: true
 
@@ -133,3 +134,6 @@ opencensus:
 flamingo-commerce-adapter-standalone:
   enableIndexing: false
   repositoryAdapter: inmemory
+
+
+

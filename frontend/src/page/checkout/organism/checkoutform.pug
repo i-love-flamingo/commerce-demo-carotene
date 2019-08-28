@@ -94,6 +94,9 @@ form(method="post")
         .card-body
           p You can pick your products directly in the store.
           input(name=formFieldNameSpace + ".useBillingAddress", type="hidden", value="1")
+          p Pickuplocation:
+            // +debug()
+            input(name=formFieldNameSpace + ".locationCode", type="text", value=deliveryForm.data.locationCode)
           hr.mb-4
   h4(data-deliverycode=decoratedDelivery.delivery.deliveryInfo.code).d-flex.justify-content-between.align-items-center.m-3
     span.text-muted Payment
@@ -111,7 +114,11 @@ form(method="post")
               else
                 input.custom-control-input(id=method.code, name="payment.method", value=method.code, type="radio", required="1")
               label.custom-control-label(for=method.code)=method.title
-  button.btn.btn-primary.btn-lg.btn-block.waves-effect.waves-light.mt-2(type="submit") Continue to review
+  input(type='hidden' name='proceed' value='1')
+  div.custom-control.custom-checkbox.mt-3.mb-1
+    input.custom-control-input(type="checkbox", id="termsAndConditions", name="termsAndConditions", value="1")
+    label.custom-control-label(for="termsAndConditions") I accept terms and conditions
+  button.btn.btn-primary.btn-lg.btn-block.waves-effect.waves-light.mt-2(type="submit") Place Order now
 
 
 mixin inputField(formNameSpace, fieldNameInForm, label, form, currentValue)
