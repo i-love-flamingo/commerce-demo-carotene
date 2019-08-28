@@ -16,13 +16,3 @@ require (
 	github.com/labstack/gommon v0.2.8 // indirect
 	github.com/mattn/go-colorable v0.1.0 // indirect
 )
-
-replace flamingo.me/flamingo/v3 => ../flamingo
-
-replace flamingo.me/flamingo-commerce/v3 => ../flamingo-commerce
-
-replace flamingo.me/flamingo-commerce-adapter-standalone => ../flamingo-commerce-adapter-standalone
-
-replace flamingo.me/flamingo-commerce-adapter-magento2 => ../flamingo-commerce-adapter-magento2
-
-replace flamingo.me/form => ../form
