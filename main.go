@@ -2,10 +2,11 @@ package main
 
 import (
 	"flamingo.me/dingo"
+	"flamingo.me/flamingo-commerce-adapter-magento2/magento2"
+
 	//"flamingo.me/flamingo-commerce-adapter-magento2/magento2"
 
-	// "flamingo.me/flamingo-commerce-adapter-magento2/magento2"
-	"flamingo.me/flamingo-commerce-adapter-standalone/csvcommerce"
+	//"flamingo.me/flamingo-commerce-adapter-standalone/csvcommerce"
 	"flamingo.me/flamingo-commerce-adapter-standalone/productSearch"
 	"flamingo.me/flamingo-commerce/v3/cart"
 	"flamingo.me/flamingo-commerce/v3/category"
@@ -42,7 +43,7 @@ func main() {
 		new(systemendpoint.Module),
 		new(healthcheck.Module),
 	}, flamingo.ChildAreas(
-		config.NewArea("csv", []dingo.Module{
+		/*config.NewArea("csv", []dingo.Module{
 			new(oauth.Module),
 			//form module (required by commerce)
 			new(form.Module),
@@ -60,8 +61,8 @@ func main() {
 			new(csvcommerce.ProductModule),
 			},
 			config.NewArea("de", nil),
-		),
-	/*	config.NewArea("magento2",
+		),*/
+		config.NewArea("magento2",
 			[]dingo.Module{
 				new(oauth.Module),
 				//form module (required by commerce)
@@ -82,7 +83,7 @@ func main() {
 				new(magento2.ProductModule),
 			},
 			config.NewArea("de", nil),
-		),*/
+		),
 	),
 	)
 
