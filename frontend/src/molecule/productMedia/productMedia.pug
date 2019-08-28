@@ -6,7 +6,7 @@ mixin productMedia(mediaItem, size)
     when 'image-external'
       img(src=mediaItem.reference alt=mediaItem.title)&attributes(attributes)
     when 'magento-product-image'
-      img(src="http://local.magento/pub/media/catalog/product/"+mediaItem.reference alt=mediaItem.title)&attributes(attributes)
+      img(src=config("flamingo-commerce-adapter-magento2.magento2.scheme")+"://"+config("flamingo-commerce-adapter-magento2.magento2.host")+"/pub/media/catalog/product/"+mediaItem.reference alt=mediaItem.title)&attributes(attributes)
     when 'csvCommerceReference'
       img(src=url("csvcommerce.image.get", {
           "size": size,

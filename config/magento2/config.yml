@@ -13,8 +13,8 @@ flamingo-commerce-adapter-magento2.product.csvPath: "ressources/magento/catalog_
 flamingo-commerce-adapter-magento2:
   magento2:
     #accessToken: REPLACEME
-    #host: local.magento
-    #scheme: http
+    host: local.magento
+    scheme: http
     path: /rest/default
 
 
