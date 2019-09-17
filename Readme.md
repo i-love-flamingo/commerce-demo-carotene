@@ -26,6 +26,9 @@ docker run --rm -p 3210:3210 iloveflamingo/flamingo-commerce-demo-carotene:lates
 ```
 Now open http://localhost:3210/
 
+#### Try the GraphQL API
+open http://localhost:3210/en/graphql-console/
+
 #### Run local from source code:
 ```
 # clone the repo:

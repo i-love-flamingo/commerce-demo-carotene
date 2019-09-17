@@ -133,3 +133,6 @@ opencensus:
 flamingo-commerce-adapter-standalone:
   enableIndexing: false
   repositoryAdapter: inmemory
+
+
+
