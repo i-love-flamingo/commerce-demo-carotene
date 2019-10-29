@@ -5,6 +5,7 @@ package graphql
 import (
 	graphql3 "flamingo.me/flamingo-commerce/v3/cart/interfaces/graphql"
 	graphql2 "flamingo.me/flamingo-commerce/v3/category/interfaces/graphql"
+	graphql5 "flamingo.me/flamingo-commerce/v3/checkout/interfaces/graphql"
 	graphql4 "flamingo.me/flamingo-commerce/v3/product/interfaces/graphql"
 	"flamingo.me/graphql"
 )
@@ -13,8 +14,8 @@ import (
 // it will not be regenerated!
 
 type rootResolver struct {
-	queryResolver    *queryResolver
-	mutationResolver *mutationResolver
+	queryResolver                *queryResolver
+	mutationResolver             *mutationResolver
 }
 
 // interface guard
@@ -36,11 +37,13 @@ func (r *rootResolver) Mutation() MutationResolver {
 	return r.mutationResolver
 }
 
+
 type queryResolver struct {
 	*graphql.FlamingoQueryResolver
-	*graphql2.CommerceCategoryQueryResolver `inject:""`
-	*graphql3.CommerceCartQueryResolver `inject:""`
-	*graphql4.CommerceProductQueryResolver `inject:""`
+	*graphql2.CommerceCategoryQueryResolver    `inject:""`
+	*graphql3.CommerceCartQueryResolver        `inject:""`
+	*graphql4.CommerceProductQueryResolver     `inject:""`
+	*graphql5.CommerceCheckoutMutationResolver `inject:""`
 }
 
 // Inject dependencies
@@ -50,8 +53,9 @@ func (r *queryResolver) Inject(flamingoQueryResolver *graphql.FlamingoQueryResol
 
 type mutationResolver struct {
 	*graphql.FlamingoQueryResolver
-	*graphql3.CommerceCartMutationResolver `inject:""`
-	*graphql2.CommerceCategoryQueryResolver `inject:""`
+	*graphql3.CommerceCartMutationResolver     `inject:""`
+	*graphql2.CommerceCategoryQueryResolver    `inject:""`
+	*graphql5.CommerceCheckoutMutationResolver `inject:""`
 }
 
 // Inject dependencies

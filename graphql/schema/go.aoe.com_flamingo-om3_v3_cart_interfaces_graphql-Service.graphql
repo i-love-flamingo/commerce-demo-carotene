@@ -1,0 +1,40 @@
+type Om3_Cart_FlightLocation {
+  airportCode:        String!
+  airportName:        String!
+  country:            String!
+  terminal:           String!
+  scheduledDateTime:  Time
+}
+
+type Om3_Cart_FlightData {
+  airlineCode: String!
+  airlineName: String!
+  flightNumber: String!
+  origin: Om3_Cart_FlightLocation
+  destination: Om3_Cart_FlightLocation
+}
+
+input Om3_Cart_FlightLocationFormInput {
+  airportCode:        String
+  airportName:        String
+  country:            String
+  terminal:           String
+  scheduledDateTime:  Time!
+}
+
+input Om3_Cart_FlightDataFormInput {
+  airlineCode: String
+  airlineName: String
+  flightNumber: String!
+  origin: Om3_Cart_FlightLocationFormInput
+  destination: Om3_Cart_FlightLocationFormInput
+}
+
+
+extend type Commerce_CartDelivery  {
+  om3_flightData: Om3_Cart_FlightData!
+}
+
+extend type Mutation {
+    Om3_Cart_UpdateFlightData(deliveryCode: String!, flightData: Om3_Cart_FlightDataFormInput!): Om3_Cart_FlightData!
+}
