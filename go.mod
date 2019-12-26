@@ -18,5 +18,6 @@ require (
 	github.com/labstack/gommon v0.2.8 // indirect
 	github.com/mattn/go-colorable v0.1.0 // indirect
 	github.com/vektah/gqlparser v1.1.2
-	go.aoe.com/flamingo-om3/v3 v3.0.0-alpha9
 )
+
+go 1.13
