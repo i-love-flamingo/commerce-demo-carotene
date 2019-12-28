@@ -96,6 +96,8 @@ github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Ompluscator/oauth2 v0.0.0-20190101010101-b7626857 h1:Bf+OK2VS8KJScWjLcgrzWK+5QOFlwYZzS29kCIz0oqo=
 github.com/Ompluscator/oauth2 v0.0.0-20190101010101-b7626857/go.mod h1:gOpvHmFTYa4IltrdGE7lF6nIHvwfUNPOp7c8zoXwtLw=
+github.com/Ompluscator/oauth2 v0.0.0-20190121141151-b76268579942 h1:ddjMFzJI21Pfc5ere67cXwKOcbgiqPK2wjg+Uaooybw=
+github.com/Ompluscator/oauth2 v0.0.0-20190121141151-b76268579942/go.mod h1:gOpvHmFTYa4IltrdGE7lF6nIHvwfUNPOp7c8zoXwtLw=
 github.com/PuerkitoBio/purell v1.1.0/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbtSwDGJws/X0=
 github.com/PuerkitoBio/purell v1.1.1 h1:WEQqlqaGbrPkxLJWfBwQmfEAE1Z7ONdDLqrN38tNFfI=
 github.com/PuerkitoBio/purell v1.1.1/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbtSwDGJws/X0=
@@ -387,6 +389,7 @@ github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJyk=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/thebod/otto v0.0.0-20170712091932-83d297c4b64a/go.mod h1:fesAFlxR1zACVxdf54IiJlGMZLnF5LuHPqp1lQbdsrg=
 github.com/thebod/otto v0.0.0-20180101010101-83d297c4b64aeb2de4268d9a54c9a503ae2d8139 h1:qd0KJi/54GfOobLyM87g5MmZ/lzrp6mmC/GJJuIezso=
 github.com/thebod/otto v0.0.0-20180101010101-83d297c4b64aeb2de4268d9a54c9a503ae2d8139/go.mod h1:fesAFlxR1zACVxdf54IiJlGMZLnF5LuHPqp1lQbdsrg=
 github.com/tinylib/msgp v1.1.0 h1:9fQd+ICuRIu/ue4vxJZu6/LzxN0HwMds2nq/0cFvxHU=

@@ -1,9 +1,6 @@
 module flamingo.me/commerce-demo-carotene
 
-replace (
-	github.com/robertkrimen/otto => github.com/thebod/otto v0.0.0-20170712091932-83d297c4b64a
-	golang.org/x/oauth2 => github.com/Ompluscator/oauth2 v0.0.0-20190121141151-b76268579942
-)
+replace golang.org/x/oauth2 => github.com/Ompluscator/oauth2 v0.0.0-20190121141151-b76268579942
 
 require (
 	flamingo.me/dingo v0.1.6
