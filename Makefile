@@ -13,7 +13,7 @@ download-product-data:
 build:
 	go build main.go
 
-serve: translation
+serve:
 	DEBUG=1 CONTEXT=$(CONTEXT) go run main.go serve
 
 serve-jaeger: translation
