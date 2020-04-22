@@ -1,8 +1,8 @@
 # Official Commerce Flamingo Demo
 
-## Whats inside
+## What's inside
 
-The demo shop comes with 2 different context that already demonstrate the locatlisation and configuration concept of flamingo:
+The demo shop comes with 2 different context that already demonstrate the localisation and configuration concept of flamingo:
 
 1.  Standalone Adapter:
     * http://localhost:3210/en  and http://localhost:3210/de use the "flamingo-commerce-adapter-standalone" Modules and show a simple shop that gets its products from a CSV file
@@ -14,8 +14,8 @@ The demo shop comes with 2 different context that already demonstrate the locatl
 
 ### Preconditions
 
-This demo uses Flamingo Carotene, so you should have `npm`installed. (https://www.npmjs.com/get-npm)
-Also you need go installed. (https://golang.org/)
+This demo uses Flamingo Carotene, so you should have `npm` installed. (https://www.npmjs.com/get-npm)
+Also you need Go installed. (https://golang.org/)
 
 ### Run the demo shop
 
@@ -38,6 +38,9 @@ cd commerce-demo-carotene
 # Download the test catalog  - you only need to do it once - it includes products.csv and images:
 make download-product-data
 
+# Prepare translation files:
+make translation
+
 # Build the flamingo-carotene bases templates:
 make frontend-build
 
@@ -54,8 +57,8 @@ The demo comes with a simple demo template in "frontend/src" that is using carot
 The template is based on: https://github.com/mdbootstrap/Ecommerce-Template-Bootstrap
 
 The following things have been changed:
-- Markup is transformed to pug and splittet according to atomic design
-- SaSS is used instead of scss (  docker run -it -v "$(pwd)":/workdir unibeautify/sass-convert -R . --from scss --to sass )
+- Markup was transformed to pug and split according to atomic design
+- SASS is used instead of scss (`docker run -it -v "$(pwd)":/workdir unibeautify/sass-convert -R . --from scss --to sass`)
 
 You can start watch mode with rebuilding the frontend after changes with this command:
 ```
@@ -85,8 +88,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Production ready?
 
-This demo project is not production ready - at least the following things need to be considered:
+This demo project is **not** production ready - at least the following things need to be considered:
 
-* The template is not optimized and just for demo reasons, in a production template we would probably not use this  bootstrap, material design demo as a start. Rather we would start a clean template based on the screendesign.
-* Proper CI/CD setup for frontend: "frontend/dist" folder should be excluded (gitignore) and only build during CI pipeline.
+* The template is not optimized and just for demo reasons, in a production template we would probably not use this bootstrap, material design demo as a start. Rather we would start a clean template based on the screen design.
 * The Secondary Adapters used in the demo are not full featured
