@@ -1,38 +1,4 @@
 # Flamingo core related configurations:
-debug.mode: false
-
-zap.loglevel: Warn
-
-prefixrouter:
-  rootRedirectHandler:
-    enabled: true
-    redirectTarget: "/en/"
-
-locale:
-  locale: en-gb
-  translationFiles:
-  - translations/merged/en-gb.all.yaml
-  accounting:
-    default:
-      thousand: ','
-      decimal: '.'
-      formatZero: '%s -.-'
-      format: "%s %v"
-    EUR:
-      thousand: '.'
-      decimal: ','
-      formatZero: '-,- %s'
-      format: "%v %s"
-  numbers:
-    decimal:  '.'
-    thousand: ','
-    precision: 1
-  date:
-    dateFormat:  02 Jan 2006
-    timeFormat: 15:04
-    dateTimeFormat: 02 Jan 2006 15:04:05
-    location: Europe/London
-
 flamingo:
   web:
     filter:
@@ -41,31 +7,58 @@ flamingo:
           # disable http caching by default
           revalidateEachTime: true
           isReusable: false
-  template:
-    err404: error/404
-    err503: error/503
+  debug:
+    mode: false
+  session:
+    cookie:
+      secure: false
+    backend: memory # in prod you will use something like redis
+  zap:
+    loglevel: Warn
+  prefixrouter:
+    rootRedirectHandler:
+      enabled: true
+      redirectTarget: "/en/"
+  opencensus:
+    tracing:
+      sample:
+        blacklist:
+          - "/image"
+          - "/static"
 
-pagination:
-  showFirstPage: false
-  showLastPage: false
-  defaultPageSize: 8
-  showAroundActivePageAmount: 2
-
-oauth:
-  server: 'https://accounts.google.com'
-  secret: '%%ENV:OAUTH_SECRET%%'
-  clientid: flamingo
-  myhost: '%%ENV:FLAMINGO_HOSTNAME%%'
-  disableOfflineToken: true
-  mapping.idToken:
-    groups: "UserType"
-
-# in prod you will use something like redis
-session:
-  cookie:
-    secure: false
-    #path: /tmp/ #use for persisted session in file
-  backend: memory
+core:
+  oauth:
+    server: 'https://accounts.google.com'
+    secret: "%%ENV:OAUTH_SECRET%%"
+    clientid: flamingo
+    myhost: '%%ENV:FLAMINGO_HOSTNAME%%'
+    disableOfflineToken: true
+    mapping.idToken:
+      groups: "UserType"
+  locale:
+    locale: en-gb
+    translationFiles:
+      - translations/merged/en-gb.all.yaml
+    accounting:
+      default:
+        thousand: ','
+        decimal: '.'
+        formatZero: '%s -.-'
+        format: "%s %v"
+      EUR:
+        thousand: '.'
+        decimal: ','
+        formatZero: '-,- %s'
+        format: "%v %s"
+    numbers:
+      decimal:  '.'
+      thousand: ','
+      precision: 1
+    date:
+      dateFormat:  02 Jan 2006
+      timeFormat: 15:04
+      dateTimeFormat: 02 Jan 2006 15:04:05
+      location: Europe/London
 
 # By convention "template" is the namespace of configs just used in the template
 template:
@@ -77,11 +70,6 @@ template:
     - clothing_size
 
 # Configs for flamingo-commerce modules
-checkout:
-  showEmptyCartPageIfNoItems: true
-
-commerce.payment.enableOfflinePaymentGateway: true
-
 commerce:
   cart:
     defaultDeliveryCode: delivery
@@ -92,8 +80,10 @@ commerce:
     useEmailPlaceOrderAdapter: true
     inMemoryCartServiceAdapter:
       defaultTaxRate: 19
-  product:
-    priceIsGross: true
+  checkout:
+    showEmptyCartPageIfNoItems: true
+  payment:
+    enableOfflinePaymentGateway: true
   customer:
     useNilCustomerAdapter: true
   category:
@@ -123,16 +113,13 @@ commerce:
           name: Clothes & Fashion
           sort: 2
 
-opencensus:
-  tracing:
-    "sampler":
-      "blacklist":
-        - "/image"
-        - "/static"
+pagination:
+  defaultPageSize: 8
+  showAroundActivePageAmount: 2
+
+graphql:
+  introspectionEnabled: true # should be turned off in prod env
 
 flamingo-commerce-adapter-standalone:
   enableIndexing: false
   repositoryAdapter: inmemory
-
-
-

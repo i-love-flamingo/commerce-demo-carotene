@@ -50,3 +50,6 @@ dockerpublish:
 	GOOS=linux go build -o flamingo-commerce-demo-carotene main.go
 	docker build --no-cache -t iloveflamingo/flamingo-commerce-demo-carotene .
 	docker push iloveflamingo/flamingo-commerce-demo-carotene:latest
+
+generate-graphql:
+	go generate
