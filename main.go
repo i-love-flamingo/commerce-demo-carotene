@@ -26,6 +26,7 @@ import (
 	"flamingo.me/pugtemplate"
 
 	projectGraphql "flamingo.me/commerce-demo-carotene/graphql"
+
 )
 
 //go:generate rm -f graphql/generated.go
