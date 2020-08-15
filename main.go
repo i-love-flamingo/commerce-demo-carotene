@@ -5,6 +5,7 @@ import (
 	"flamingo.me/graphql"
 
 	"flamingo.me/flamingo-commerce-adapter-standalone/csvcommerce"
+	"flamingo.me/flamingo-commerce-adapter-standalone/emailplaceorder"
 	"flamingo.me/flamingo-commerce-adapter-standalone/productSearch"
 	"flamingo.me/flamingo-commerce/v3/cart"
 	"flamingo.me/flamingo-commerce/v3/category"
@@ -26,13 +27,22 @@ import (
 	"flamingo.me/pugtemplate"
 
 	projectGraphql "flamingo.me/commerce-demo-carotene/graphql"
-
+	"flamingo.me/swagger"
 )
 
 //go:generate rm -f graphql/generated.go
 //go:generate go run -tags graphql main.go graphql
+//go:generate go run github.com/swaggo/swag/cmd/swag init --parseDependency=1 --generalInfo=main.go
 
 // main is our entry point
+
+// @title Flamingo Commerce Demo Shop
+// @version 1.0
+// @BasePath /en
+// @license.name MIT
+// @contact.name Flamingo
+// @contact.url https://gitter.im/i-love-flamingo/community#
+// @contact.email flamingo@aoe.com
 func main() {
 
 	flamingo.App([]dingo.Module{
@@ -60,9 +70,10 @@ func main() {
 		//flamingo-commerce-adpater-standalone modules:
 		new(productSearch.Module),
 		new(csvcommerce.ProductModule),
-
+		new(emailplaceorder.Module),
 		new(graphql.Module),
 		new(pugtemplate.Module),
+		new(swagger.Module),
 	}, flamingo.ChildAreas(
 		config.NewArea("csv", nil,
 			config.NewArea("de", nil),

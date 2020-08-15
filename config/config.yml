@@ -75,14 +75,16 @@ commerce:
     defaultPageSize: 8
     showAroundActivePageAmount: 2
   cart:
+    defaultCartAdapter:
+      enabled: true
+      defaultTaxRate: 19
+    placeOrderLogger:
+        enabled: true
+        useFlamingoLog: true
+        logAsFile: true
+        logDirectory: "./orders/"
     defaultDeliveryCode: delivery
     enableCartCache: false
-    useInMemoryCartServiceAdapters: true
-    emailAdapter:
-      emailAddress: test@test.de
-    useEmailPlaceOrderAdapter: true
-    inMemoryCartServiceAdapter:
-      defaultTaxRate: 19
   checkout:
     showEmptyCartPageIfNoItems: true
   payment:
@@ -122,5 +124,13 @@ graphql:
   introspectionEnabled: true # should be turned off in prod env
 
 flamingo-commerce-adapter-standalone:
-  enableIndexing: false
-  repositoryAdapter: inmemory
+  productSearch:
+    enableIndexing: false
+    repositoryAdapter: inmemory
+  emailplaceorder:
+    emailAddress: "flamingo@flamingo.me"
+      fromMail: "flamingo@flamingo.me"
+      fromName: "Flamingo Webstore""
+      SMTPCredentials:
+        server:   smtp.gmail.com
+        port:    465

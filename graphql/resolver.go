@@ -8,6 +8,7 @@ import (
 	graphql5 "flamingo.me/flamingo-commerce/v3/checkout/interfaces/graphql"
 	graphql6 "flamingo.me/flamingo-commerce/v3/customer/interfaces/graphql"
 	graphql4 "flamingo.me/flamingo-commerce/v3/product/interfaces/graphql"
+	graphql7 "flamingo.me/flamingo-commerce/v3/search/interfaces/graphql"
 	"flamingo.me/graphql"
 )
 
@@ -21,6 +22,16 @@ type rootResolver struct {
 
 // interface guard
 var _ ResolverRoot = new(rootResolver)
+
+
+func (r *rootResolver) Commerce_Cart_DefaultPaymentSelection() Commerce_Cart_DefaultPaymentSelectionResolver {
+	return r.queryResolver.CommerceCartQueryResolver
+}
+
+
+func (r *rootResolver) Commerce_Search_Meta() Commerce_Search_MetaResolver {
+	return r.queryResolver.CommerceSearchQueryResolver
+}
 
 // Inject root resolver
 func (r *rootResolver) Inject(queryResolver *queryResolver, mutationResolver *mutationResolver) {
@@ -45,6 +56,7 @@ type queryResolver struct {
 	*graphql4.CommerceProductQueryResolver
 	*graphql5.CommerceCheckoutQueryResolver
 	*graphql6.CustomerResolver
+	*graphql7.CommerceSearchQueryResolver
 }
 
 // Inject dependencies

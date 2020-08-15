@@ -1,0 +1,2164 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Flamingo Commerce Demo Shop",
+        "contact": {
+            "name": "Flamingo",
+            "url": "https://gitter.im/i-love-flamingo/community#",
+            "email": "flamingo@aoe.com"
+        },
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/en",
+    "paths": {
+        "/api/v1/cart": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Get the current cart",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.getCartResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Cleans the cart and returns the cleaned cart",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/applycombinedvouchergift": {
+            "post": {
+                "description": "Use this if you have one user input and that input can be used to either enter a voucher or a gift card",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Apply Gift Card or Voucher (autodetected)",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the couponCode that should be applied as giftcart or voucher",
+                        "name": "couponCode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/applygiftcard": {
+            "put": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Apply Gift Card",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the couponCode that should be applied as giftcart",
+                        "name": "couponCode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/applyvoucher": {
+            "put": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Apply Voucher Code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the couponCode that should be applied",
+                        "name": "couponCode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/billing": {
+            "post": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Adds billing infos to the current cart",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "vat",
+                        "name": "vat",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "firstname",
+                        "name": "firstname",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "lastname",
+                        "name": "lastname",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "middlename",
+                        "name": "middlename",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "title",
+                        "name": "title",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "salutation",
+                        "name": "salutation",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "street",
+                        "name": "street",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "streetNr",
+                        "name": "streetNr",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "addressLine1",
+                        "name": "addressLine1",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "addressLine2",
+                        "name": "addressLine2",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "company",
+                        "name": "company",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "postCode",
+                        "name": "postCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "city",
+                        "name": "city",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "state",
+                        "name": "state",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "regionCode",
+                        "name": "regionCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "country",
+                        "name": "country",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "countryCode",
+                        "name": "countryCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "phoneAreaCode",
+                        "name": "phoneAreaCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "phoneCountryCode",
+                        "name": "phoneCountryCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "phoneNumber",
+                        "name": "phoneNumber",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "email",
+                        "name": "email",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/delivery/{deliveryCode}": {
+            "delete": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Cleans the given delivery from the cart",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the idendifier for the delivery in the cart",
+                        "name": "deliveryCode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/delivery/{deliveryCode}/additem": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Add Item to cart",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the idendifier for the delivery in the cart",
+                        "name": "deliveryCode",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "the product idendifier that should be added",
+                        "name": "marketplaceCode",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "optional the product idendifier of the variant (for configurable products) that should be added",
+                        "name": "variantMarketplaceCode",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "optional the qty that should be added",
+                        "name": "qty",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/controller.CartAPIResult"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/cart.Cart"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/delivery/{deliveryCode}/deliveryinfo": {
+            "post": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Adds delivery infos, such as shipping address to the delivery for the cart",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the idendifier for the delivery in the cart",
+                        "name": "deliveryCode",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "vat",
+                        "name": "deliveryAddress.vat",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "firstname",
+                        "name": "deliveryAddress.firstname",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "lastname",
+                        "name": "deliveryAddress.lastname",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "middlename",
+                        "name": "deliveryAddress.middlename",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "title",
+                        "name": "deliveryAddress.title",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "salutation",
+                        "name": "deliveryAddress.salutation",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "street",
+                        "name": "deliveryAddress.street",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "streetNr",
+                        "name": "deliveryAddress.streetNr",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "addressLine1",
+                        "name": "deliveryAddress.addressLine1",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "addressLine2",
+                        "name": "deliveryAddress.addressLine2",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "company",
+                        "name": "deliveryAddress.company",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "postCode",
+                        "name": "deliveryAddress.postCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "city",
+                        "name": "deliveryAddress.city",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "state",
+                        "name": "deliveryAddress.state",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "regionCode",
+                        "name": "deliveryAddress.regionCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "country",
+                        "name": "deliveryAddress.country",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "countryCode",
+                        "name": "deliveryAddress.countryCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "phoneAreaCode",
+                        "name": "deliveryAddress.phoneAreaCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "phoneCountryCode",
+                        "name": "deliveryAddress.phoneCountryCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "phoneNumber",
+                        "name": "deliveryAddress.phoneNumber",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "email",
+                        "name": "deliveryAddress.email",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "useBillingAddress",
+                        "name": "useBillingAddress",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "shippingMethod",
+                        "name": "shippingMethod",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "shippingCarrier",
+                        "name": "shippingCarrier",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "locationCode",
+                        "name": "locationCode",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/removegiftcard": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Remove Gift Card",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the couponCode that should be deleted as gift card",
+                        "name": "couponCode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/removevoucher": {
+            "delete": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Remove Voucher Code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the couponCode that should be applied",
+                        "name": "couponCode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/cart/updatepaymentselection": {
+            "put": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Cart ajax API"
+                ],
+                "summary": "Update/set the PaymentSelection for the current cart",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "name of the payment gateway - e.g. 'offline'",
+                        "name": "gateway",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "name of the payment method - e.g. 'offlinepayment_cashondelivery'",
+                        "name": "method",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.CartAPIResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/checkout/placeorder": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Checkout ajax API"
+                ],
+                "summary": "Returns the last saved context",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.placeOrderContext"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/checkoutError"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Checkout ajax API"
+                ],
+                "summary": "Starts the place order process, which is a background process handling payment and rollbacks if required.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the returnURL that should be used after an external payment flow",
+                        "name": "returnURL",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.startPlaceOrderResult"
+                        }
+                    },
+                    "201": {
+                        "description": "201 if new process was started",
+                        "schema": {
+                            "$ref": "#/definitions/controller.startPlaceOrderResult"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/checkoutError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/checkoutError"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Checkout ajax API"
+                ],
+                "summary": "Clears the last placed order if in final state",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/checkoutError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/checkout/placeorder/cancel": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Checkout ajax API"
+                ],
+                "summary": "Cancels a running place order process",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/checkoutError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/checkout/placeorder/refresh": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Checkout ajax API"
+                ],
+                "summary": "Returns the current place order context and proceeds the process in a non blocking way",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.placeOrderContext"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/checkoutError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/checkout/placeorder/refreshblocking": {
+            "post": {
+                "description": "This is useful to get the most recent place order context, for example after returning from an external payment provider",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Checkout ajax API"
+                ],
+                "summary": "Proceeds the process and returns the place order context afterwards (blocking)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.placeOrderContext"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/checkoutError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/payment/status": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Payment ajax API"
+                ],
+                "summary": "Get the payment status of current cart (or last placed cart)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/domain.FlowStatus"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/cart.Cart"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/cartResultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/products/{marketplacecode}": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "v1 Product API"
+                ],
+                "summary": "Gets the requested product",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the marketplace code (idendifier) for the product",
+                        "name": "marketplacecode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/controller.APIResult"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "product": {
+                                            "$ref": "#/definitions/domain.SimpleProduct"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/controller.APIResult"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/controller.APIResult"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ProductAttribute": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "description": "Code is the internal attribute identifier",
+                    "type": "string"
+                },
+                "codeLabel": {
+                    "description": "CodeLabel is the human readable (perhaps localized) attribute name",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "Label is the human readable (perhaps localized) attribute value",
+                    "type": "string"
+                },
+                "rawValue": {
+                    "description": "RawValue is the untouched original value of the attribute",
+                    "type": "object"
+                },
+                "unitCode": {
+                    "description": "UnitCode is the internal code of the attribute values measuring unit",
+                    "type": "string"
+                }
+            }
+        },
+        "ProductAttributes": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/ProductAttribute"
+            }
+        },
+        "ProductMedia": {
+            "type": "object",
+            "properties": {
+                "mimeType": {
+                    "type": "string"
+                },
+                "reference": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "usage": {
+                    "type": "string"
+                }
+            }
+        },
+        "application.PlaceOrderPaymentInfo": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "creditCardInfo": {
+                    "type": "object",
+                    "$ref": "#/definitions/placeorder.CreditCardInfo"
+                },
+                "gateway": {
+                    "type": "string"
+                },
+                "method": {
+                    "type": "string"
+                },
+                "paymentProvider": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "cart.AdditionalData": {
+            "type": "object",
+            "properties": {
+                "customAttributes": {
+                    "description": "CustomAttributes list of key values",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "reservedOrderID": {
+                    "description": "ReservedOrderID is an ID already known by the Cart of the future order ID",
+                    "type": "string"
+                }
+            }
+        },
+        "cart.Address": {
+            "type": "object",
+            "properties": {
+                "additionalAddressLines": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "city": {
+                    "type": "string"
+                },
+                "company": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "firstname": {
+                    "type": "string"
+                },
+                "lastname": {
+                    "type": "string"
+                },
+                "middleName": {
+                    "type": "string"
+                },
+                "postCode": {
+                    "type": "string"
+                },
+                "regionCode": {
+                    "type": "string"
+                },
+                "salutation": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "streetNr": {
+                    "type": "string"
+                },
+                "telephone": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "vat": {
+                    "type": "string"
+                }
+            }
+        },
+        "cart.AppliedDiscount": {
+            "type": "object",
+            "properties": {
+                "applied": {
+                    "description": "how much of the discount has been subtracted from cart price, IMPORTANT: always negative",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "campaignCode": {
+                    "description": "unique code of the underlying campaign or rule e.g. \"summer-campaign-2018\"",
+                    "type": "string"
+                },
+                "couponCode": {
+                    "description": "code of discount e.g. provided by user \"summer2018\"",
+                    "type": "string"
+                },
+                "isItemRelated": {
+                    "description": "flag indicating if the discount is applied due to item in cart",
+                    "type": "boolean"
+                },
+                "label": {
+                    "description": "readable name of discount \"Super Summer Sale 2018\"",
+                    "type": "string"
+                },
+                "sortOrder": {
+                    "description": "indicates in which order discount have been applied, low value has been applied before high value",
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "to distinguish between discounts",
+                    "type": "string"
+                }
+            }
+        },
+        "cart.AppliedDiscounts": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/cart.AppliedDiscount"
+            }
+        },
+        "cart.AppliedGiftCard": {
+            "type": "object",
+            "properties": {
+                "applied": {
+                    "description": "how much of the gift card has been subtracted from cart price",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "customAttributes": {
+                    "description": "additional custom attributes",
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "remaining": {
+                    "description": "how much of the gift card is still available",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                }
+            }
+        },
+        "cart.Cart": {
+            "type": "object",
+            "properties": {
+                "additionalData": {
+                    "description": "AdditionalData   can be used for Custom attributes",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.AdditionalData"
+                },
+                "appliedCouponCodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cart.CouponCode"
+                    }
+                },
+                "appliedGiftCards": {
+                    "description": "List of applied gift cards",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cart.AppliedGiftCard"
+                    }
+                },
+                "authenticatedUserID": {
+                    "type": "string"
+                },
+                "belongsToAuthenticatedUser": {
+                    "description": "BelongsToAuthenticatedUser - false = Guest Cart true = cart from the authenticated user",
+                    "type": "boolean"
+                },
+                "billingAddress": {
+                    "description": "BillingAddress - the main billing address (relevant for all payments/invoices)",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Address"
+                },
+                "defaultCurrency": {
+                    "type": "string"
+                },
+                "deliveries": {
+                    "description": "Deliveries - list of desired Deliveries (or Shipments) involved in this cart",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cart.Delivery"
+                    }
+                },
+                "entityID": {
+                    "description": "EntityID is a second identifier that may be used by some backends",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "ID is the main identifier of the cart",
+                    "type": "string"
+                },
+                "paymentSelection": {
+                    "description": "PaymentSelection - the saved PaymentSelection (saves \"how\" the customer want to pay)",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.PaymentSelection"
+                },
+                "purchaser": {
+                    "description": "Purchaser - additional infos for the legal contact person in this order",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Person"
+                },
+                "totalitems": {
+                    "description": "Additional non taxable totals",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cart.Totalitem"
+                    }
+                }
+            }
+        },
+        "cart.CouponCode": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "customAttributes": {
+                    "description": "CustomAttributes can hold additional data for coupon code - keys and values are project specific",
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            }
+        },
+        "cart.Delivery": {
+            "type": "object",
+            "properties": {
+                "cartitems": {
+                    "description": "Cartitems - list of cartitems",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cart.Item"
+                    }
+                },
+                "deliveryInfo": {
+                    "description": "DeliveryInfo - The details for this delivery - normally completed during checkout",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.DeliveryInfo"
+                },
+                "shippingItem": {
+                    "description": "ShippingItem\t- The Shipping Costs that may be involved in this delivery",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.ShippingItem"
+                }
+            }
+        },
+        "cart.DeliveryInfo": {
+            "type": "object",
+            "properties": {
+                "additionalData": {
+                    "description": "AdditionalData  - Possibility for key value based information on the delivery - can be used flexible by each project",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "carrier": {
+                    "description": "Carrier - Optional the name of the Carrier that should be responsible for executing the delivery",
+                    "type": "string"
+                },
+                "code": {
+                    "description": "Code - is a project specific identifier for the Delivery - you need it for the AddToCart Request for example\nThe code can follow the convention in the Readme: Type_Method_LocationType_LocationCode",
+                    "type": "string"
+                },
+                "deliveryLocation": {
+                    "description": "DeliveryLocation The target Location for the delivery",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.DeliveryLocation"
+                },
+                "desiredTime": {
+                    "description": "DesiredTime - Optional - the desired time of the delivery",
+                    "type": "string"
+                },
+                "method": {
+                    "description": "Method - The shippingmethod something that is project specific and that can mean different delivery qualities with different deliverycosts",
+                    "type": "string"
+                },
+                "workflow": {
+                    "description": "Type - The Type of the Delivery - e.g. delivery or pickup - this might trigger different workflows",
+                    "type": "string"
+                }
+            }
+        },
+        "cart.DeliveryLocation": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "description": "Address -  (only relevant for type address)",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Address"
+                },
+                "code": {
+                    "description": "Code - optional identifier of this location/destination - is used in special destination Types",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Type - the type of the delivery - use some of the constant defined in the package like DeliverylocationTypeAddress",
+                    "type": "string"
+                },
+                "useBillingAddress": {
+                    "description": "UseBillingAddress - the address should be taken from billing (only relevant for type address)",
+                    "type": "boolean"
+                }
+            }
+        },
+        "cart.ExistingCustomerData": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "ID of the customer",
+                    "type": "string"
+                }
+            }
+        },
+        "cart.Item": {
+            "type": "object",
+            "properties": {
+                "additionalData": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "appliedDiscounts": {
+                    "description": "AppliedDiscounts contains the details about the discounts applied to this item - they can be \"itemrelated\" or not",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.AppliedDiscounts"
+                },
+                "externalReference": {
+                    "description": "ExternalReference can be used by cart service implementations to separate the representation in an external\ncart service from the unique item ID",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "ID of the item - needs to be unique over the whole cart",
+                    "type": "string"
+                },
+                "marketplaceCode": {
+                    "type": "string"
+                },
+                "productName": {
+                    "type": "string"
+                },
+                "qty": {
+                    "type": "integer"
+                },
+                "rowPriceGross": {
+                    "description": "RowPriceGross",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "rowPriceNet": {
+                    "description": "RowPriceNet",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "rowTaxes": {
+                    "description": "RowPriceGross",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Taxes"
+                },
+                "singlePriceGross": {
+                    "description": "SinglePriceGross brutto (gross) for single product",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "singlePriceNet": {
+                    "description": "SinglePriceNet net price for single product",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "sourceID": {
+                    "description": "Source Id of where the items should be initial picked - This is set by the SourcingLogic",
+                    "type": "string"
+                },
+                "variantMarketPlaceCode": {
+                    "description": "VariantMarketPlaceCode is used for Configurable products",
+                    "type": "string"
+                }
+            }
+        },
+        "cart.PaymentSelection": {
+            "type": "object"
+        },
+        "cart.Person": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Address"
+                },
+                "existingCustomerData": {
+                    "description": "ExistingCustomerData if the current purchaser is an existing customer - this contains infos about existing customer",
+                    "type": "object",
+                    "$ref": "#/definitions/cart.ExistingCustomerData"
+                },
+                "personalDetails": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.PersonalDetails"
+                }
+            }
+        },
+        "cart.PersonalDetails": {
+            "type": "object",
+            "properties": {
+                "dateOfBirth": {
+                    "type": "string"
+                },
+                "nationality": {
+                    "type": "string"
+                },
+                "passportCountry": {
+                    "type": "string"
+                },
+                "passportNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "cart.ShippingItem": {
+            "type": "object",
+            "properties": {
+                "appliedDiscounts": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.AppliedDiscounts"
+                },
+                "priceNet": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "taxAmount": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "cart.Tax": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "rate": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "cart.Taxes": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/cart.Tax"
+            }
+        },
+        "cart.Teaser": {
+            "type": "object",
+            "properties": {
+                "deliveryCodes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "itemCount": {
+                    "type": "integer"
+                },
+                "productCount": {
+                    "type": "integer"
+                }
+            }
+        },
+        "cart.Totalitem": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "cartResultError": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "checkoutError": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.APIResult": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "object",
+                    "$ref": "#/definitions/cartResultError"
+                },
+                "product": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.BasicProduct"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "controller.CartAPIResult": {
+            "type": "object",
+            "properties": {
+                "cartTeaser": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Teaser"
+                },
+                "cartValidationResult": {
+                    "type": "object",
+                    "$ref": "#/definitions/validation.Result"
+                },
+                "data": {
+                    "type": "object"
+                },
+                "dataValidationInfo": {
+                    "type": "object"
+                },
+                "error": {
+                    "description": "Contains details if success is false",
+                    "type": "object",
+                    "$ref": "#/definitions/cartResultError"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "controller.getCartResult": {
+            "type": "object",
+            "properties": {
+                "cart": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Cart"
+                },
+                "cartValidationResult": {
+                    "type": "object",
+                    "$ref": "#/definitions/validation.Result"
+                }
+            }
+        },
+        "controller.placeOrderContext": {
+            "type": "object",
+            "properties": {
+                "cart": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Cart"
+                },
+                "failedReason": {
+                    "type": "string"
+                },
+                "orderInfos": {
+                    "type": "object",
+                    "$ref": "#/definitions/controller.placedOrderInfos"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "stateData": {
+                    "type": "object",
+                    "$ref": "#/definitions/process.StateData"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.placedOrderInfos": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "paymentInfos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/application.PlaceOrderPaymentInfo"
+                    }
+                },
+                "placedDecoratedCart": {
+                    "type": "object",
+                    "$ref": "#/definitions/decorator.DecoratedCart"
+                },
+                "placedOrderInfos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/placeorder.PlacedOrderInfo"
+                    }
+                }
+            }
+        },
+        "controller.startPlaceOrderResult": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "decorator.DecoratedCart": {
+            "type": "object",
+            "properties": {
+                "cart": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Cart"
+                },
+                "decoratedDeliveries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/decorator.DecoratedDelivery"
+                    }
+                }
+            }
+        },
+        "decorator.DecoratedCartItem": {
+            "type": "object",
+            "properties": {
+                "item": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Item"
+                },
+                "product": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.BasicProduct"
+                }
+            }
+        },
+        "decorator.DecoratedDelivery": {
+            "type": "object",
+            "properties": {
+                "decoratedItems": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/decorator.DecoratedCartItem"
+                    }
+                },
+                "delivery": {
+                    "type": "object",
+                    "$ref": "#/definitions/cart.Delivery"
+                }
+            }
+        },
+        "domain.BasicProduct": {
+            "type": "object"
+        },
+        "domain.CategoryTeaser": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "description": "Code the idendifier of the Category",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name - speaking name of the category",
+                    "type": "string"
+                },
+                "path": {
+                    "description": "The Path (root to leaf) for this Category - separated by \"/\"",
+                    "type": "string"
+                }
+            }
+        },
+        "domain.Error": {
+            "type": "object",
+            "properties": {
+                "defaultLabel": {
+                    "description": "DefaultLabel - a speaking error label. OFten used to show to end user - in case no translation exists",
+                    "type": "string"
+                },
+                "messageKey": {
+                    "description": "MessageKey - a key of the error message. Often used to pass to translation func in the template",
+                    "type": "string"
+                }
+            }
+        },
+        "domain.FlowActionData": {
+            "type": "object",
+            "properties": {
+                "displayData": {
+                    "description": "DisplayData holds data, normally HTML to be displayed to the user",
+                    "type": "string"
+                },
+                "formParameter": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/domain.FormField"
+                    }
+                },
+                "url": {
+                    "description": "URL is used to pass URL data to the user if the current state needs some",
+                    "type": "string"
+                }
+            }
+        },
+        "domain.FlowStatus": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "description": "Action to perform to proceed in the payment flow. If status is \"payment_waiting_for_customer\" this field contains information about what to do - e.g. \"redirect\" or \"show_iframe\"",
+                    "type": "string"
+                },
+                "actionData": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.FlowActionData"
+                },
+                "data": {
+                    "description": "Data contains additional information related to the action / flow",
+                    "type": "object"
+                },
+                "error": {
+                    "description": "Error contains additional information in case of an error (e.g. payment failed)",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Error"
+                },
+                "status": {
+                    "description": "Status of the payment flow. E.g. \"payment_completed\", \"payment_waiting_for_customer\" or \"payment_failed\"",
+                    "type": "string"
+                }
+            }
+        },
+        "domain.FormField": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "domain.LoyaltyEarningInfo": {
+            "type": "object",
+            "properties": {
+                "default": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.LoyaltyPriceInfo": {
+            "type": "object",
+            "properties": {
+                "context": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.PriceContext"
+                },
+                "default": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "discountText": {
+                    "type": "string"
+                },
+                "discounted": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "isDiscounted": {
+                    "type": "boolean"
+                },
+                "maxPointsToSpent": {
+                    "type": "string"
+                },
+                "minPointsToSpent": {
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Type - Name( or Type) of the Loyalty program",
+                    "type": "string"
+                }
+            }
+        },
+        "domain.Price": {
+            "type": "object"
+        },
+        "domain.PriceContext": {
+            "type": "object",
+            "properties": {
+                "channelCode": {
+                    "type": "string"
+                },
+                "customerGroup": {
+                    "type": "string"
+                },
+                "locale": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.PriceInfo": {
+            "type": "object",
+            "properties": {
+                "activeBase": {
+                    "type": "string"
+                },
+                "activeBaseAmount": {
+                    "type": "string"
+                },
+                "activeBaseUnit": {
+                    "type": "string"
+                },
+                "campaignRules": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "context": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.PriceContext"
+                },
+                "default": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "denyMoreDiscounts": {
+                    "type": "boolean"
+                },
+                "discountText": {
+                    "type": "string"
+                },
+                "discounted": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.Price"
+                },
+                "isDiscounted": {
+                    "type": "boolean"
+                },
+                "taxClass": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.SimpleProduct": {
+            "type": "object",
+            "properties": {
+                "activePrice": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.PriceInfo"
+                },
+                "attributes": {
+                    "type": "object",
+                    "$ref": "#/definitions/ProductAttributes"
+                },
+                "availablePrices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PriceInfo"
+                    }
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.CategoryTeaser"
+                    }
+                },
+                "categoryToCodeMapping": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "identifier": {
+                    "type": "string"
+                },
+                "isNew": {
+                    "type": "boolean"
+                },
+                "isSaleable": {
+                    "type": "boolean"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "loyaltyEarnings": {
+                    "description": "LoyaltyEarnings optional infos about potential loyalty earnings",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.LoyaltyEarningInfo"
+                    }
+                },
+                "loyaltyPrices": {
+                    "description": "LoyaltyPrices - Optional infos for products that can be paid in a loyalty program",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.LoyaltyPriceInfo"
+                    }
+                },
+                "mainCategory": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.CategoryTeaser"
+                },
+                "marketPlaceCode": {
+                    "type": "string"
+                },
+                "media": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductMedia"
+                    }
+                },
+                "retailerCode": {
+                    "type": "string"
+                },
+                "retailerName": {
+                    "type": "string"
+                },
+                "retailerSku": {
+                    "type": "string"
+                },
+                "saleableFrom": {
+                    "type": "string"
+                },
+                "saleableTo": {
+                    "type": "string"
+                },
+                "shortDescription": {
+                    "type": "string"
+                },
+                "stockLevel": {
+                    "type": "string"
+                },
+                "teaser": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.TeaserData"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "visibleFrom": {
+                    "type": "string"
+                },
+                "visibleTo": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.TeaserData": {
+            "type": "object",
+            "properties": {
+                "marketPlaceCode": {
+                    "description": "The sku that should be used to link from Teasers",
+                    "type": "string"
+                },
+                "media": {
+                    "description": "Media",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductMedia"
+                    }
+                },
+                "preSelectedVariantSku": {
+                    "description": "PreSelectedVariantSku - might be set for configurables to give a hint to link to a variant of a configurable (That might be the case if a user filters for an attribute and in the teaser the variant with that attribute is shown)",
+                    "type": "string"
+                },
+                "shortDescription": {
+                    "type": "string"
+                },
+                "shortTitle": {
+                    "type": "string"
+                },
+                "teaserAvailablePrices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PriceInfo"
+                    }
+                },
+                "teaserLoyaltyEarningInfo": {
+                    "description": "TeaserLoyaltyEarning optional teaser for the loyalty earning used in grid / list view",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.LoyaltyEarningInfo"
+                },
+                "teaserLoyaltyPriceInfo": {
+                    "description": "TeaserLoyaltyPriceInfo - optional the Loyaltyprice that can be used for teaser (e.g. on listing views)",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.LoyaltyPriceInfo"
+                },
+                "teaserPrice": {
+                    "description": "TeaserPrice is the price that should be shown in teasers (listview)",
+                    "type": "object",
+                    "$ref": "#/definitions/domain.PriceInfo"
+                },
+                "teaserPriceIsFromPrice": {
+                    "description": "TeaserPriceIsFromPrice - is set to true in cases where a product might have different prices (e.g. configurable)",
+                    "type": "boolean"
+                },
+                "urlslug": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.ValidationInfo": {
+            "type": "object"
+        },
+        "flamingo.Logger": {
+            "type": "object"
+        },
+        "placeorder.CreditCardInfo": {
+            "type": "object",
+            "properties": {
+                "anonymizedCardNumber": {
+                    "type": "string"
+                },
+                "cardHolder": {
+                    "type": "string"
+                },
+                "expire": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "placeorder.PlacedOrderInfo": {
+            "type": "object",
+            "properties": {
+                "deliveryCode": {
+                    "type": "string"
+                },
+                "orderNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "process.StateData": {
+            "type": "object"
+        },
+        "validation.ItemValidationError": {
+            "type": "object",
+            "properties": {
+                "errorMessageKey": {
+                    "type": "string"
+                },
+                "itemID": {
+                    "type": "string"
+                }
+            }
+        },
+        "validation.Result": {
+            "type": "object",
+            "properties": {
+                "commonErrorMessageKey": {
+                    "type": "string"
+                },
+                "hasCommonError": {
+                    "type": "boolean"
+                },
+                "itemResults": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/validation.ItemValidationError"
+                    }
+                }
+            }
+        }
+    }
+}
