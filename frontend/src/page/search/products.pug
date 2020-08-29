@@ -1,0 +1,18 @@
+extends /template/base/base
+
+include /organism/productList/productList
+include /atom/debug/debug
+
+block maincontent
+  main.mt-5.pt-4.dark-grey-text.category
+    h2.mt-4.h2.text-center Search result
+    p.text-center #{searchMeta.numResults} hits for your search for
+      i  "#{searchMeta.query}"
+    .wrapper
+      nav.m-2(id="sidebar")
+        //+debug(searchMeta)
+      div.m-2(id="content")
+        //+debug(searchResult)
+        +productList(searchResult["products"].hits, searchResult["products"].paginationInfo)
+    //+debug(productSearchResult)
+    //+debug(categoryTree)

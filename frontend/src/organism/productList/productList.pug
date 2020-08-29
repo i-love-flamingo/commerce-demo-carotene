@@ -3,11 +3,11 @@ include /molecule/pagination/pagination
 include /atom/price/price
 include /atom/debug/debug
 
-mixin productList(productSearchResult)
+mixin productList(products, paginationInfo)
   //+debug(productSearchResult)
   .row.wow.fadeIn.productList
     // Grid column
-    each product in productSearchResult.products
+    each product in products
       //+debug(product)
       .col-lg-3.col-md-6.mb-4
         // Card
@@ -30,4 +30,8 @@ mixin productList(productSearchResult)
                   span.badge.badge-pill.primary-color=product.type()
             h4.font-weight-bold.blue-text
               +teaserPrice(product)
-  +pagination(productSearchResult.paginationInfo)
+  +pagination(paginationInfo)
+
+
+mixin productListByProductSearchResult(productSearchResult)
+  +productList(productSearchResult.products, productSearchResult.paginationInfo)

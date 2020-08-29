@@ -11,15 +11,17 @@
   "author": "AOE people",
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.8.6",
     "css-mqpacker": "^7.0.0",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "flamingo-carotene-babel": "^6.5.0",
-    "flamingo-carotene-core": "^6.5.13",
-    "flamingo-carotene-dev-server": "^6.5.13",
+    "flamingo-carotene-core": "^6.5.20",
+    "flamingo-carotene-dev-server": "^6.5.20",
     "flamingo-carotene-postcss": "^6.5.0",
-    "flamingo-carotene-pug": "^6.5.0",
-    "flamingo-carotene-static-asset": "^6.5.0",
-    "flamingo-carotene-webpack": "^6.5.6",
+    "flamingo-carotene-pug": "^6.5.22",
+    "flamingo-carotene-static-asset": "^6.5.19",
+    "flamingo-carotene-webpack": "^6.6.0",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-plugin-px2rem": "^0.8.1"
   }

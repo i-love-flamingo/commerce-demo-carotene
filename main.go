@@ -2,11 +2,11 @@ package main
 
 import (
 	"flamingo.me/dingo"
+	"flamingo.me/flamingo-commerce-adapter-standalone/emailplaceorder"
 	"flamingo.me/graphql"
 
-	"flamingo.me/flamingo-commerce-adapter-standalone/csvcommerce"
-	"flamingo.me/flamingo-commerce-adapter-standalone/emailplaceorder"
-	"flamingo.me/flamingo-commerce-adapter-standalone/productSearch"
+	"flamingo.me/flamingo-commerce-adapter-standalone/csvindexing"
+	"flamingo.me/flamingo-commerce-adapter-standalone/commercesearch"
 	"flamingo.me/flamingo-commerce/v3/cart"
 	"flamingo.me/flamingo-commerce/v3/category"
 	"flamingo.me/flamingo-commerce/v3/checkout"
@@ -16,7 +16,6 @@ import (
 	"flamingo.me/flamingo/v3"
 	"flamingo.me/flamingo/v3/core/healthcheck"
 	"flamingo.me/flamingo/v3/core/locale"
-	"flamingo.me/flamingo/v3/core/oauth"
 	"flamingo.me/flamingo/v3/core/requestlogger"
 	"flamingo.me/flamingo/v3/framework/config"
 	flamingoFramework "flamingo.me/flamingo/v3/framework/flamingo"
@@ -56,7 +55,6 @@ func main() {
 		new(systemendpoint.Module),
 		new(healthcheck.Module),
 		new(projectGraphql.Module),
-		new(oauth.Module),
 		//form module (required by commerce)
 		new(form.Module),
 		//flamingo-commerce modules
@@ -68,8 +66,10 @@ func main() {
 		new(payment.Module),
 		new(checkout.Module),
 		//flamingo-commerce-adpater-standalone modules:
-		new(productSearch.Module),
-		new(csvcommerce.ProductModule),
+		new(commercesearch.Module),
+		new(commercesearch.CategoryModule),
+		new(commercesearch.SearchModule),
+		new(csvindexing.ProductModule),
 		new(emailplaceorder.Module),
 		new(graphql.Module),
 		new(pugtemplate.Module),

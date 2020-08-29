@@ -2,11 +2,13 @@ flamingo:
   router:
     path: /en
 
-# Configure the module flamingo-commerce-adapter-standalone
-flamingo-commerce-adapter-standalone:
-  enableIndexing: true
-  csvCommerce:
+# Configure the modules flamingoCommerceAdapterStandalone
+flamingoCommerceAdapterStandalone:
+  commercesearch:
+    enableIndexing: true
+    repositoryAdapter: bleve
+  csvindexing:
     productCsvPath: "ressources/products/products_en.csv"
+    categoryCsvPath: "ressources/products/categories.csv"
     locale: "en_GB"
     currency: "GBP"
-    allowedImageResizeParamaters: "500x,200x,700x,40x"

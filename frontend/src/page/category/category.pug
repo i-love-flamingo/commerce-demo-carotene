@@ -28,6 +28,6 @@ block maincontent
                     - var categoryUrl = url('category.view', {code: subTreeNode.code,name: subTreeNode.name})
                     a.level2-item(href=categoryUrl class=className)=subTreeNode.name
       div.m-2(id="content")
-        +productList(productSearchResult)
+        +productList(productSearchResult.products, productSearchResult.paginationInfo)
     //+debug(productSearchResult)
     //+debug(categoryTree)

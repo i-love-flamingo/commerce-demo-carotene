@@ -17,6 +17,8 @@ junit.xml
 /vendor
 /integration-test/shared
 context_local.yml
+ressources/magento
+ressources/magento.zip
 ressources/products
 ressources/products.zip
 **/logs/pact.log

@@ -938,7 +938,7 @@ var doc = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/cartResultError"
+                            "$ref": "#/definitions/paymentResultError"
                         }
                     }
                 }
@@ -1568,17 +1568,6 @@ var doc = `{
                 }
             }
         },
-        "cartResultError": {
-            "type": "object",
-            "properties": {
-                "code": {
-                    "type": "string"
-                },
-                "message": {
-                    "type": "string"
-                }
-            }
-        },
         "checkoutError": {
             "type": "object",
             "properties": {
@@ -1595,7 +1584,7 @@ var doc = `{
             "properties": {
                 "error": {
                     "type": "object",
-                    "$ref": "#/definitions/cartResultError"
+                    "$ref": "#/definitions/paymentResultError"
                 },
                 "product": {
                     "type": "object",
@@ -1626,7 +1615,7 @@ var doc = `{
                 "error": {
                     "description": "Contains details if success is false",
                     "type": "object",
-                    "$ref": "#/definitions/cartResultError"
+                    "$ref": "#/definitions/paymentResultError"
                 },
                 "success": {
                     "type": "boolean"
@@ -1770,12 +1759,10 @@ var doc = `{
         "domain.Error": {
             "type": "object",
             "properties": {
-                "defaultLabel": {
-                    "description": "DefaultLabel - a speaking error label. OFten used to show to end user - in case no translation exists",
+                "errorCode": {
                     "type": "string"
                 },
-                "messageKey": {
-                    "description": "MessageKey - a key of the error message. Often used to pass to translation func in the template",
+                "errorMessage": {
                     "type": "string"
                 }
             }
@@ -2117,6 +2104,17 @@ var doc = `{
         },
         "flamingo.Logger": {
             "type": "object"
+        },
+        "paymentResultError": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
         },
         "placeorder.CreditCardInfo": {
             "type": "object",

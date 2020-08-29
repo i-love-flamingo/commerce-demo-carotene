@@ -79,7 +79,7 @@ commerce:
       enabled: true
       defaultTaxRate: 19
     placeOrderLogger:
-        enabled: true
+        enabled: false
         useFlamingoLog: true
         logAsFile: true
         logDirectory: "./orders/"
@@ -92,45 +92,19 @@ commerce:
   customer:
     useNilCustomerAdapter: true
   category:
-    useCategoryFixedAdapter: true
-    categoryServiceFixed:
-      tree:
-        electronics:
-          code: pc_laptops
-          name: Electronics
-          sort: 1
-          childs:
-            flat-screen_tvs:
-              code: flat-screen_tvs
-              name: Flat Screens & TV
-            headphones:
-              code: headphones
-              name: Headphones
-              childs:
-                headphone_accessories:
-                  code: headphone_accessories
-                  name: Accessories
-            tablets:
-              code: tablets
-              name: Tablets
-        clothing:
-          code: clothing
-          name: Clothes & Fashion
-          sort: 2
+    useCategoryFixedAdapter: false
+
 
 
 
 graphql:
   introspectionEnabled: true # should be turned off in prod env
 
-flamingo-commerce-adapter-standalone:
-  productSearch:
+flamingoCommerceAdapterStandalone:
+  commercesearch:
     enableIndexing: false
-    repositoryAdapter: inmemory
+    repositoryAdapter: bleve
   emailplaceorder:
     emailAddress: "flamingo@flamingo.me"
-      fromMail: "flamingo@flamingo.me"
-      fromName: "Flamingo Webstore""
-      SMTPCredentials:
-        server:   smtp.gmail.com
-        port:    465
+    fromMail: "flamingo@flamingo.me"
+    fromName: "Flamingo Webstore"

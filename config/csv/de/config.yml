@@ -20,8 +20,8 @@ core:
       location: Europe/Berlin
 
 # Configure the module flamingo-commerce-adapter-standalone
-flamingo-commerce-adapter-standalone:
-  csvCommerce:
+flamingoCommerceAdapterStandalone:
+  csvindexing:
     productCsvPath: "ressources/products/products_de.csv"
     locale: "de_DE"
     currency: "EUR"

@@ -94,4 +94,4 @@ block maincontent
         - var filterByCategory = "headphone_accessories"
         if baseData.mainCategory.code != ""
           - var filterByCategory = baseData.mainCategory.code
-        +productList(findProducts("homepagewidget",{"query":"","pageSize": "4","sortDirection":"A","sortBy":'random'},{"categories":[filterByCategory]}))
+        +productListByProductSearchResult(findProducts("homepagewidget",{"query":"","pageSize": "4","sortDirection":"A","sortBy":'random'},{"categories":[filterByCategory]}))

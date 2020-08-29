@@ -48,8 +48,10 @@ update:
 
 dockerpublish:
 	GOOS=linux go build -o flamingo-commerce-demo-carotene main.go
+	mv config/config_local.yml .
 	docker build --no-cache -t iloveflamingo/flamingo-commerce-demo-carotene .
 	docker push iloveflamingo/flamingo-commerce-demo-carotene:latest
+	mv config_local.yml config/
 
 generate-graphql:
 	go generate

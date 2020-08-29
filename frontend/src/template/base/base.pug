@@ -21,6 +21,12 @@ html(lang='en')
         #navbarSupportedContent.collapse.navbar-collapse
           // Left
           include /template/base/molecule/categoryMenu/categoryMenu
+          form(class="form-inline my-2 my-lg-0" action=url('search.search', {type: "products"}))
+            if searchMeta
+              input(class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search" value=searchMeta.query)
+            else
+              input(class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search")
+            button(class="btn btn-dark btn-sm" type="submit") Search
           // Right
           ul.navbar-nav.nav-flex-icons
             li.nav-item
@@ -31,10 +37,10 @@ html(lang='en')
                 span.badge.red.z-depth-1.mr-1=currentCount
                 i.fa.fa-shopping-cart
                 span.clearfix.d-none.d-sm-inline-block  Cart
-            li.nav-item
+            //li.nav-item
               a.nav-link.waves-effect(href='https://twitter.com/aoepeople', target='_blank')
                 i.fa.fa-twitter
-            li.nav-item
+            //li.nav-item
               a.nav-link.border.border-light.rounded.waves-effect(href='https://github.com/i-love-flamingo', target='_blank')
                 i.fa.fa-github.mr-2
                 | GitHub

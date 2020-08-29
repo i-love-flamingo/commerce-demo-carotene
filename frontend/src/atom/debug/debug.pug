@@ -1,5 +1,5 @@
 mixin debug(obj, headline)
-  if config('debug.mode')
+  if config('core.debug.mode')
     - var title = 'Debug:'
     if headline
       - title= 'Debug: ' + headline
