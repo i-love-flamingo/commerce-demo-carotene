@@ -1,14 +1,19 @@
 # Official Commerce Flamingo Demo
 
-## What's inside
+Watch online: https://demoshop.flamingo.me/en/
 
-The demo shop comes with 2 different context that already demonstrate the localisation and configuration concept of flamingo:
+Or try the powerful Flamingo-Commerce graphql console: https://demoshop.flamingo.me/en/graphql-console
 
-1.  Standalone Adapter:
-    * http://localhost:3210/en  and http://localhost:3210/de use the "flamingo-commerce-adapter-standalone" Modules and show a simple shop that gets its products from a CSV file
-    
-2.  Magento Adapter (disabled):
-    * http://localhost:3210/magento/en and http://localhost:3210/magento/de use the (very beta) "flamingo-commerce-adapter-magento2"
+## What's inside:
+
+The demo shop comes with:
+
+* Using the Flamingo Commerce Standalone Adapter: Products and Categories are indexed from a plain CSV file into an embedded indexed search (bleve). Once an order is placed Flamingo logs the order and sends an E-Mail.
+
+* The multi context feature of Flamingo is used to have 2 different locales (de and en)
+
+* An example template using pug and Flamingo Carotene is used.
+
 
 ## Getting Started
 
@@ -75,20 +80,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-## Secondary Adapters used in the Demo:
-
-* flamingo.me/flamingo-commerce-adapter-standalone:
-    * Provides "productService" Adapter to get products
-    * Provides "productSearchService" Adapter to search for products
-    * Both Adapter use the "inMemoryProductRepository" which reads products from a configired csv file during startup.
-    
-* flamingo.me/flamingo-commerce/v3/category
-    * Provides the "categoryServiceFixed" Adapter which just gets the category tree from a configuration
-
-
 ## Production ready?
 
 This demo project is **not** production ready - at least the following things need to be considered:
 
 * The template is not optimized and just for demo reasons, in a production template we would probably not use this bootstrap, material design demo as a start. Rather we would start a clean template based on the screen design.
-* The Secondary Adapters used in the demo are not full featured
+* The Secondary Adapters used in the demo are not full featured.

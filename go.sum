@@ -49,6 +49,8 @@ flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829174704-a4
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829174704-a4e2895eac89/go.mod h1:GGmpprcfJOzXOi/8S6FLvx/vx6OVmddHaQec8qdoMcQ=
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829192308-6729ac553c6a h1:mwvr711iRdZlu99blSmOWZZzxGS1lrpKKXZfjFKOBH0=
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829192308-6729ac553c6a/go.mod h1:BFZDloWm3jlKS0VmNl3/MJnbJbuVhQ+7TAidk8L2msI=
+flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829221808-6912a23fab2f h1:1jI92jvwbT6HyhN0Ip2dXkZOhhQAcM1KbubcsPgUwG8=
+flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829221808-6912a23fab2f/go.mod h1:BFZDloWm3jlKS0VmNl3/MJnbJbuVhQ+7TAidk8L2msI=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1 h1:GJ7OKKgWJx455dZJYCh/cHtdmIa+NEtnHnBvmAKXU/0=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1/go.mod h1:Dv0jLLTiSeFbhX7JNW2YXZ8kvelvGVzmGQ+zmr4qhHc=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190402215213-dfbf3253cdea h1:vqzvBk1jpiEQ3147PYeUMk6g3gFyiP7rrjyuQr5lYzM=
@@ -144,6 +146,8 @@ flamingo.me/pugtemplate v1.1.5-0.20200829214643-749c6fe95e0c h1:yWFeXaagCglZUXy/
 flamingo.me/pugtemplate v1.1.5-0.20200829214643-749c6fe95e0c/go.mod h1:jhoYixt7j9ZkLjwMS/ZeYUqRVaNFF+dCa1CuzHNDdRM=
 flamingo.me/swagger v0.0.0-20200520124928-8b41535a33ab h1:BvN5UK4tuIEFvjfIkvDF/+iLgbzh8LWDCQHNN4l1bis=
 flamingo.me/swagger v0.0.0-20200520124928-8b41535a33ab/go.mod h1:HqCkdQb0COCenQ2BNlAWv9Mjyo+F3xqt4hxFX3VjDac=
+flamingo.me/swagger v0.0.0-20200520213138-1fd324185e36 h1:uwUK4wiMZ7q+PiF7v8PRMSM7+rT3fmEN8GpzDLaVYuw=
+flamingo.me/swagger v0.0.0-20200520213138-1fd324185e36/go.mod h1:HqCkdQb0COCenQ2BNlAWv9Mjyo+F3xqt4hxFX3VjDac=
 git.apache.org/thrift.git v0.0.0-20180902110319-2566ecd5d999/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqblrnkyeyg=
 git.apache.org/thrift.git v0.12.0 h1:CMxsZlAmxKs+VAZMlDDL0wXciMblJcutQbEe3A9CYUM=
 git.apache.org/thrift.git v0.12.0/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqblrnkyeyg=

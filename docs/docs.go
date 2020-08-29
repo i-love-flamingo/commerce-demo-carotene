@@ -938,7 +938,7 @@ var doc = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/paymentResultError"
+                            "$ref": "#/definitions/cartResultError"
                         }
                     }
                 }
@@ -1568,6 +1568,17 @@ var doc = `{
                 }
             }
         },
+        "cartResultError": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "checkoutError": {
             "type": "object",
             "properties": {
@@ -1584,7 +1595,7 @@ var doc = `{
             "properties": {
                 "error": {
                     "type": "object",
-                    "$ref": "#/definitions/paymentResultError"
+                    "$ref": "#/definitions/cartResultError"
                 },
                 "product": {
                     "type": "object",
@@ -1615,7 +1626,7 @@ var doc = `{
                 "error": {
                     "description": "Contains details if success is false",
                     "type": "object",
-                    "$ref": "#/definitions/paymentResultError"
+                    "$ref": "#/definitions/cartResultError"
                 },
                 "success": {
                     "type": "boolean"
@@ -2104,17 +2115,6 @@ var doc = `{
         },
         "flamingo.Logger": {
             "type": "object"
-        },
-        "paymentResultError": {
-            "type": "object",
-            "properties": {
-                "code": {
-                    "type": "string"
-                },
-                "message": {
-                    "type": "string"
-                }
-            }
         },
         "placeorder.CreditCardInfo": {
             "type": "object",

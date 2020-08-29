@@ -105,6 +105,7 @@ flamingoCommerceAdapterStandalone:
     enableIndexing: false
     repositoryAdapter: bleve
   emailplaceorder:
-    emailAddress: "flamingo@flamingo.me"
-    fromMail: "flamingo@flamingo.me"
-    fromName: "Flamingo Webstore"
+    credentials:
+      emailAddress: "flamingo@flamingo.me"
+      fromMail: "flamingo@flamingo.me"
+      fromName: "Flamingo Webstore"

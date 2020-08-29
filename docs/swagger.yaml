@@ -405,6 +405,13 @@ definitions:
       type:
         type: string
     type: object
+  cartResultError:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    type: object
   checkoutError:
     properties:
       code:
@@ -415,7 +422,7 @@ definitions:
   controller.APIResult:
     properties:
       error:
-        $ref: '#/definitions/paymentResultError'
+        $ref: '#/definitions/cartResultError'
         type: object
       product:
         $ref: '#/definitions/domain.BasicProduct'
@@ -436,7 +443,7 @@ definitions:
       dataValidationInfo:
         type: object
       error:
-        $ref: '#/definitions/paymentResultError'
+        $ref: '#/definitions/cartResultError'
         description: Contains details if success is false
         type: object
       success:
@@ -772,13 +779,6 @@ definitions:
   domain.ValidationInfo:
     type: object
   flamingo.Logger:
-    type: object
-  paymentResultError:
-    properties:
-      code:
-        type: string
-      message:
-        type: string
     type: object
   placeorder.CreditCardInfo:
     properties:
@@ -1418,7 +1418,7 @@ paths:
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/paymentResultError'
+            $ref: '#/definitions/cartResultError'
       summary: Get the payment status of current cart (or last placed cart)
       tags:
       - v1 Payment ajax API

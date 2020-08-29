@@ -3,8 +3,8 @@ flamingo:
     cookie:
       secure: false
     backend: memory
-core:
   debug:
     mode: true
+core:
   zap:
     loglevel: Debug
