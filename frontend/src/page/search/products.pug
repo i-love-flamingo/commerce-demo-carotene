@@ -37,7 +37,7 @@ block maincontent
                   each facetItem in facet.items
                     -
                       addUrlParam = {}
-                      addUrlParam[filterKey] = facetItem.value
+                      addUrlParam[facetKey] = facetItem.value
                     li
                       a(href=url('', addUrlParam)) #{capitalize(facetItem.label)} (#{facetItem.count})
 
