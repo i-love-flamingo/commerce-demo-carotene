@@ -100,10 +100,16 @@ commerce:
 graphql:
   introspectionEnabled: true # should be turned off in prod env
 
+
 flamingoCommerceAdapterStandalone:
   commercesearch:
-    enableIndexing: false
+    enableIndexing: true
     repositoryAdapter: bleve
+    bleveAdapter:
+      enableCategoryFacet: true
+      facetConfig:
+      - attributeCode: brandCode
+        amount: 10
   emailplaceorder:
     credentials:
       emailAddress: "flamingo@flamingo.me"

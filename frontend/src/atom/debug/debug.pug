@@ -1,5 +1,5 @@
 mixin debug(obj, headline)
-  if config('core.debug.mode')
+  if config('flamingo.debug.mode')
     - var title = 'Debug:'
     if headline
       - title= 'Debug: ' + headline

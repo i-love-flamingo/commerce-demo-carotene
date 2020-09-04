@@ -1,27 +1,7 @@
 [
   {
-    "id":"facetoption_lensPolarization_false",
-    "translation":"Not Polarized"
-  },
-  {
-    "id":"facetoption_lensPolarization_true",
-    "translation":"Polarized"
-  },
-  {
-    "id":"facetoption_isExclusiveProduct_false",
-    "translation":"not exclusive"
-  },
-  {
-    "id":"facetoption_isExclusiveProduct_true",
-    "translation":"exclusive"
-  },
-  {
-    "id":"facetoption_isFeatured_false",
-    "translation":"not featured"
-  },
-  {
-    "id":"facetoption_isFeatured_true",
-    "translation":"featured"
+    "id":"facet.header.brandCode",
+    "translation":"Brand"
   },
   {
     "id":"search.result.titleWithQuery",

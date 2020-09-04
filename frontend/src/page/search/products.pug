@@ -3,16 +3,45 @@ extends /template/base/base
 include /organism/productList/productList
 include /atom/debug/debug
 
+mixin catTreeItems(facetItems, queryS)
+  each facetItem in facetItems
+    li
+      -
+        urlValues = {type: "products", q: queryS}
+        urlValues["category"] = facetItem.value
+
+      a(href=url('search.search', urlValues)) #{facetItem.label} (#{facetItem.count})
+      if facetItem.items
+        ul
+          +catTreeItems(facetItem.items, queryS)
+
 block maincontent
-  main.mt-5.pt-4.dark-grey-text.category
-    h2.mt-4.h2.text-center Search result
+  main.mt-5.p-4.dark-grey-text.category
+    h2.mt-4.mb-4.h2.text-center Search result
     p.text-center #{searchMeta.numResults} hits for your search for
       i  "#{searchMeta.query}"
-    .wrapper
-      nav.m-2(id="sidebar")
-        //+debug(searchMeta)
-      div.m-2(id="content")
-        //+debug(searchResult)
+    .row
+      nav.col-md-3.order-md-first
+        button.d-block.d-md-none.btn.btn-primary.btn-block.mb-3(type="button" data-toggle="collapse" data-target="#filters") Filters &dtrif;
+        div.collapse.d-md-block(id="filters")
+          if searchResult["products"].facets["category"]
+            h2=__("facet.header.category").setDefaultLabel("Category")
+            ul
+              +catTreeItems(searchResult["products"].facets["category"].items,searchMeta.query)
+          each facet, facetKey in searchResult["products"].facets
+            if facetKey == "category"
+            else
+              h2=__("facet.header."+facetKey).setDefaultLabel(capitalize(facetKey))
+              if facet.items
+                ul
+                  each facetItem in facet.items
+                    -
+                      addUrlParam = {}
+                      addUrlParam[filterKey] = facetItem.value
+                    li
+                      a(href=url('', addUrlParam)) #{capitalize(facetItem.label)} (#{facetItem.count})
+
+      div.col-md-9.order-md-last(id="")
         +productList(searchResult["products"].hits, searchResult["products"].paginationInfo)
     //+debug(productSearchResult)
     //+debug(categoryTree)

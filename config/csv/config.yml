@@ -4,9 +4,6 @@ flamingo:
 
 # Configure the modules flamingoCommerceAdapterStandalone
 flamingoCommerceAdapterStandalone:
-  commercesearch:
-    enableIndexing: true
-    repositoryAdapter: bleve
   csvindexing:
     productCsvPath: "ressources/products/products_en.csv"
     categoryCsvPath: "ressources/products/categories.csv"

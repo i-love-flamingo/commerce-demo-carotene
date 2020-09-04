@@ -17,27 +17,21 @@ cart.item.remove:
 cart.loyalty.label:
   other: Heathrow Reward points
 cart.reserveInfo.collectedAtShop:
-  other: The items must be paid for and collected at the shop you have made the purchase
-    from on your day of travel, prior to flying.
+  other: The items must be paid for and collected at the shop you have made the purchase from on your day of travel, prior to flying.
 cart.reserveInfo.individualStorePolicy:
-  other: Reservations will be confirmed in accordance with individual store policy,
-    which our customer service team will verify to you.
+  other: Reservations will be confirmed in accordance with individual store policy, which our customer service team will verify to you.
 cart.reserveInfo.noPayment:
-  other: No payment is taken and you have no obligation to purchase your reserved
-    shopping requests if you change your mind.
+  other: No payment is taken and you have no obligation to purchase your reserved shopping requests if you change your mind.
 cart.total.label:
   other: Total
 checkout.back_to_cart:
   other: Back to cart
 checkout.cart_item_error_hint:
-  other: There are invalid items in your cart. Please check below and resolve the
-    issue.
+  other: There are invalid items in your cart. Please check below and resolve the issue.
 checkout.error.terms_and_conditions_required:
   other: Please accept the terms and conditions.
 checkout.legalConfirmation.termsAndConditions:
-  other: Check here to indicate that you have read and agree to the <a href="{{.PrivacyNoticeUrl}}"
-    target="blank">privacy policies</a> and <a href="{{.TermsAndConditionsUrl}}" target="blank">terms
-    and conditions</a> of the Heathrow Boutique.
+  other: Check here to indicate that you have read and agree to the <a href="{{.PrivacyNoticeUrl}}" target="blank">privacy policies</a> and <a href="{{.TermsAndConditionsUrl}}" target="blank">terms and conditions</a> of the Heathrow Boutique.
 checkout.no_items_in_cart:
   other: No Items in your cart
 checkout.success_message1:
@@ -54,18 +48,8 @@ error.common.headline:
   other: Error occured
 error.homeButton:
   other: Back to home
-facetoption_isExclusiveProduct_false:
-  other: not exclusive
-facetoption_isExclusiveProduct_true:
-  other: exclusive
-facetoption_isFeatured_false:
-  other: not featured
-facetoption_isFeatured_true:
-  other: featured
-facetoption_lensPolarization_false:
-  other: Not Polarized
-facetoption_lensPolarization_true:
-  other: Polarized
+facet.header.brandCode:
+  other: Brand
 miniCart.buttonCartView:
   other: Shopping Bag
 miniCart.buttonReserveAndCollect:
@@ -93,8 +77,7 @@ product.attribute.washingInstructions:
 search.footer.callNow:
   other: Call now +44 (0)800 678 5324
 search.footer.description:
-  other: Our Shopping Services team are available to answer any questions that you
-    have about brands, products or services at Heathrow.
+  other: Our Shopping Services team are available to answer any questions that you have about brands, products or services at Heathrow.
 search.footer.headline:
   other: Can’t see what you want?
 search.found.brands:
@@ -146,7 +129,6 @@ search.suggestion.title:
 searchNoResultsHeader.buttonLabel:
   other: Search again
 searchNoResultsHeader.text:
-  other: Please check for misspellings or broaden your search by using fewer keywords.<br>Alternatively,
-    browse our products by selecting a category from the menu.
+  other: Please check for misspellings or broaden your search by using fewer keywords.<br>Alternatively, browse our products by selecting a category from the menu.
 searchNoResultsHeader.title:
   other: We couldn't find any results <br>that match your search

@@ -51,6 +51,8 @@ flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829192308-67
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829192308-6729ac553c6a/go.mod h1:BFZDloWm3jlKS0VmNl3/MJnbJbuVhQ+7TAidk8L2msI=
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829221808-6912a23fab2f h1:1jI92jvwbT6HyhN0Ip2dXkZOhhQAcM1KbubcsPgUwG8=
 flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200829221808-6912a23fab2f/go.mod h1:BFZDloWm3jlKS0VmNl3/MJnbJbuVhQ+7TAidk8L2msI=
+flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200904193420-4001dfc25cce h1:eMzJ0di8PEIEY3PIGchCLNWg6hPUm7OR6AdD1ziIvN4=
+flamingo.me/flamingo-commerce-adapter-standalone v0.0.1-beta.0.20200904193420-4001dfc25cce/go.mod h1:Bdtp27GsYND3WgeBs4zt2iCZYFPzX3VNnYfHqTO8U9Y=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1 h1:GJ7OKKgWJx455dZJYCh/cHtdmIa+NEtnHnBvmAKXU/0=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1/go.mod h1:Dv0jLLTiSeFbhX7JNW2YXZ8kvelvGVzmGQ+zmr4qhHc=
 flamingo.me/flamingo-commerce/v3 v3.0.0-beta.1.0.20190402215213-dfbf3253cdea h1:vqzvBk1jpiEQ3147PYeUMk6g3gFyiP7rrjyuQr5lYzM=
@@ -97,6 +99,10 @@ flamingo.me/flamingo-commerce/v3 v3.3.0 h1:z4mQxmwmv6iNUq0FA/YyUkRliqBGys7e3UNMM
 flamingo.me/flamingo-commerce/v3 v3.3.0/go.mod h1:1maYExLXk2gGGrNeJ/S8rT/Cws21yOPvCMFF6drP4/I=
 flamingo.me/flamingo-commerce/v3 v3.3.1-0.20200829191916-b2d851444347 h1:dvt8W6ZMg27CB7i4a7C3nN+WiDv9b55+zLmo0PcxsOs=
 flamingo.me/flamingo-commerce/v3 v3.3.1-0.20200829191916-b2d851444347/go.mod h1:BMlFWNTMucrs3z9bTEYY6azDbFnIb0ZDH9bVNi8bjkA=
+flamingo.me/flamingo-commerce/v3 v3.3.1-0.20200831171617-1db70b384288 h1:7AMu8EsF5aamKnimLjw/OqBdP6An8cL3enjE4XtqMhw=
+flamingo.me/flamingo-commerce/v3 v3.3.1-0.20200831171617-1db70b384288/go.mod h1:BMlFWNTMucrs3z9bTEYY6azDbFnIb0ZDH9bVNi8bjkA=
+flamingo.me/flamingo-commerce/v3 v3.3.1-0.20200904150134-2ee09e6ec33b h1:8sdPhoZZXZJEqCQSNJ+PVKa1y42YaSqmSjGJZrBwvGk=
+flamingo.me/flamingo-commerce/v3 v3.3.1-0.20200904150134-2ee09e6ec33b/go.mod h1:BMlFWNTMucrs3z9bTEYY6azDbFnIb0ZDH9bVNi8bjkA=
 flamingo.me/flamingo/v3 v3.0.0-beta.1 h1:re3uxGtUWSwKpsFANXGOBX0qJoP2AA5V1yZ3Jb2ZbQ4=
 flamingo.me/flamingo/v3 v3.0.0-beta.1/go.mod h1:DUYtZWF8zGyACglnKKcqWsKtgUSUJFZoZh7NpBzQ9wQ=
 flamingo.me/flamingo/v3 v3.0.0-beta.1.0.20190402212643-e7f067aac32f h1:csqLyMf3JsBynzlYh6o7tgGL8WCAACslYY4+WWalXkQ=
@@ -148,6 +154,8 @@ flamingo.me/swagger v0.0.0-20200520124928-8b41535a33ab h1:BvN5UK4tuIEFvjfIkvDF/+
 flamingo.me/swagger v0.0.0-20200520124928-8b41535a33ab/go.mod h1:HqCkdQb0COCenQ2BNlAWv9Mjyo+F3xqt4hxFX3VjDac=
 flamingo.me/swagger v0.0.0-20200520213138-1fd324185e36 h1:uwUK4wiMZ7q+PiF7v8PRMSM7+rT3fmEN8GpzDLaVYuw=
 flamingo.me/swagger v0.0.0-20200520213138-1fd324185e36/go.mod h1:HqCkdQb0COCenQ2BNlAWv9Mjyo+F3xqt4hxFX3VjDac=
+flamingo.me/swagger v0.0.0-20200904191647-041b9dd247c7 h1:60RrG5XXXH9LHcPDU6kUSkD9qf+wYpGejbjA7hjeWF4=
+flamingo.me/swagger v0.0.0-20200904191647-041b9dd247c7/go.mod h1:HqCkdQb0COCenQ2BNlAWv9Mjyo+F3xqt4hxFX3VjDac=
 git.apache.org/thrift.git v0.0.0-20180902110319-2566ecd5d999/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqblrnkyeyg=
 git.apache.org/thrift.git v0.12.0 h1:CMxsZlAmxKs+VAZMlDDL0wXciMblJcutQbEe3A9CYUM=
 git.apache.org/thrift.git v0.12.0/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqblrnkyeyg=

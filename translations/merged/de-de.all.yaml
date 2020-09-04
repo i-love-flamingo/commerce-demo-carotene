@@ -48,17 +48,7 @@ error.common.headline:
   other: ""
 error.homeButton:
   other: ""
-facetoption_isExclusiveProduct_false:
-  other: ""
-facetoption_isExclusiveProduct_true:
-  other: ""
-facetoption_isFeatured_false:
-  other: ""
-facetoption_isFeatured_true:
-  other: ""
-facetoption_lensPolarization_false:
-  other: ""
-facetoption_lensPolarization_true:
+facet.header.brandCode:
   other: ""
 header.welcome.subtitle:
   other: Standart demo shop mit carotene templates
