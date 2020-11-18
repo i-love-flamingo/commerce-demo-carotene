@@ -5,7 +5,13 @@ flamingo:
 # Configure the modules flamingoCommerceAdapterStandalone
 flamingoCommerceAdapterStandalone:
   csvindexing:
-    productCsvPath: "ressources/products/products_en.csv"
-    categoryCsvPath: "ressources/products/categories.csv"
+    products:
+      file:
+        path: "ressources/products/products_en.csv"
+        delimiter: ","
+    categories:
+      file:
+        path: "ressources/products/categories.csv"
+        delimiter: ","
     locale: "en_GB"
     currency: "GBP"

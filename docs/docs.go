@@ -608,9 +608,16 @@ var doc = `{
                         "in": "formData"
                     },
                     {
-                        "type": "boolean",
+                        "type": "string",
                         "description": "locationCode",
                         "name": "locationCode",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "desired date/time in RFC3339",
+                        "name": "desiredTime",
                         "in": "formData"
                     }
                 ],
@@ -998,55 +1005,27 @@ var doc = `{
         }
     },
     "definitions": {
-        "ProductAttribute": {
+        "CategoryAttribute": {
             "type": "object",
             "properties": {
                 "code": {
-                    "description": "Code is the internal attribute identifier",
-                    "type": "string"
-                },
-                "codeLabel": {
-                    "description": "CodeLabel is the human readable (perhaps localized) attribute name",
                     "type": "string"
                 },
                 "label": {
-                    "description": "Label is the human readable (perhaps localized) attribute value",
                     "type": "string"
                 },
-                "rawValue": {
-                    "description": "RawValue is the untouched original value of the attribute",
-                    "type": "object"
-                },
-                "unitCode": {
-                    "description": "UnitCode is the internal code of the attribute values measuring unit",
-                    "type": "string"
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.AttributeValue"
+                    }
                 }
             }
         },
-        "ProductAttributes": {
+        "CategoryAttributes": {
             "type": "object",
             "additionalProperties": {
-                "$ref": "#/definitions/ProductAttribute"
-            }
-        },
-        "ProductMedia": {
-            "type": "object",
-            "properties": {
-                "mimeType": {
-                    "type": "string"
-                },
-                "reference": {
-                    "type": "string"
-                },
-                "title": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                },
-                "usage": {
-                    "type": "string"
-                }
+                "$ref": "#/definitions/CategoryAttribute"
             }
         },
         "application.PlaceOrderPaymentInfo": {
@@ -1747,6 +1726,17 @@ var doc = `{
                 }
             }
         },
+        "domain.AttributeValue": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "rawValue": {
+                    "type": "object"
+                }
+            }
+        },
         "domain.BasicProduct": {
             "type": "object"
         },
@@ -1770,10 +1760,12 @@ var doc = `{
         "domain.Error": {
             "type": "object",
             "properties": {
-                "errorCode": {
+                "defaultLabel": {
+                    "description": "DefaultLabel - a speaking error label. OFten used to show to end user - in case no translation exists",
                     "type": "string"
                 },
-                "errorMessage": {
+                "messageKey": {
+                    "description": "MessageKey - a key of the error message. Often used to pass to translation func in the template",
                     "type": "string"
                 }
             }
@@ -1794,6 +1786,10 @@ var doc = `{
                 "url": {
                     "description": "URL is used to pass URL data to the user if the current state needs some",
                     "type": "string"
+                },
+                "walletDetails": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.WalletDetails"
                 }
             }
         },
@@ -1879,6 +1875,29 @@ var doc = `{
                 }
             }
         },
+        "domain.Media": {
+            "type": "object"
+        },
+        "domain.PaymentRequestAPI": {
+            "type": "object",
+            "properties": {
+                "completeURL": {
+                    "type": "string"
+                },
+                "details": {
+                    "type": "string"
+                },
+                "merchantValidationURL": {
+                    "type": "string"
+                },
+                "methods": {
+                    "type": "string"
+                },
+                "options": {
+                    "type": "string"
+                }
+            }
+        },
         "domain.Price": {
             "type": "object"
         },
@@ -1949,7 +1968,7 @@ var doc = `{
                 },
                 "attributes": {
                     "type": "object",
-                    "$ref": "#/definitions/ProductAttributes"
+                    "$ref": "#/definitions/CategoryAttributes"
                 },
                 "availablePrices": {
                     "type": "array",
@@ -2014,7 +2033,7 @@ var doc = `{
                 "media": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ProductMedia"
+                        "$ref": "#/definitions/domain.Media"
                     }
                 },
                 "retailerCode": {
@@ -2067,7 +2086,7 @@ var doc = `{
                     "description": "Media",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ProductMedia"
+                        "$ref": "#/definitions/domain.Media"
                     }
                 },
                 "preSelectedVariantSku": {
@@ -2112,6 +2131,18 @@ var doc = `{
         },
         "domain.ValidationInfo": {
             "type": "object"
+        },
+        "domain.WalletDetails": {
+            "type": "object",
+            "properties": {
+                "paymentRequestAPI": {
+                    "type": "object",
+                    "$ref": "#/definitions/domain.PaymentRequestAPI"
+                },
+                "usedPaymentMethod": {
+                    "type": "string"
+                }
+            }
         },
         "flamingo.Logger": {
             "type": "object"

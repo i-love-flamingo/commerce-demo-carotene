@@ -102,6 +102,17 @@ graphql:
 
 
 flamingoCommerceAdapterStandalone:
+  csvindexing:
+    products:
+      file:
+        path: "ressources/products/products_en.csv"
+        delimiter: ","
+    categories:
+      file:
+        path: "ressources/products/categories.csv"
+        delimiter: ","
+    locale: "en_GB"
+    currency: "GBP"
   commercesearch:
     enableIndexing: true
     repositoryAdapter: bleve
@@ -111,7 +122,6 @@ flamingoCommerceAdapterStandalone:
       - attributeCode: brandCode
         amount: 10
   emailplaceorder:
-    credentials:
-      emailAddress: "flamingo@flamingo.me"
-      fromMail: "flamingo@flamingo.me"
-      fromName: "Flamingo Webstore"
+    emailAddress: "flamingo@flamingo.me"
+    fromMail: "flamingo@flamingo.me"
+    fromName: "Flamingo Webstore"

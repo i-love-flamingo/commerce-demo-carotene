@@ -22,6 +22,9 @@ core:
 # Configure the module flamingo-commerce-adapter-standalone
 flamingoCommerceAdapterStandalone:
   csvindexing:
-    productCsvPath: "ressources/products/products_de.csv"
+    products:
+      file:
+        path: "ressources/products/products_de.csv"
+        delimiter: ","
     locale: "de_DE"
     currency: "EUR"
