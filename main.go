@@ -2,11 +2,10 @@ package main
 
 import (
 	"flamingo.me/dingo"
-	"flamingo.me/flamingo-commerce-adapter-standalone/emailplaceorder"
 	"flamingo.me/graphql"
 
-	"flamingo.me/flamingo-commerce-adapter-standalone/csvindexing"
 	"flamingo.me/flamingo-commerce-adapter-standalone/commercesearch"
+	"flamingo.me/flamingo-commerce-adapter-standalone/csvindexing"
 	"flamingo.me/flamingo-commerce/v3/cart"
 	"flamingo.me/flamingo-commerce/v3/category"
 	"flamingo.me/flamingo-commerce/v3/checkout"
@@ -25,8 +24,9 @@ import (
 	"flamingo.me/form"
 	"flamingo.me/pugtemplate"
 
-	projectGraphql "flamingo.me/commerce-demo-carotene/graphql"
 	"flamingo.me/swagger"
+
+	projectGraphql "flamingo.me/commerce-demo-carotene/graphql"
 )
 
 //go:generate rm -f graphql/generated.go
@@ -70,7 +70,7 @@ func main() {
 		new(commercesearch.CategoryModule),
 		new(commercesearch.SearchModule),
 		new(csvindexing.ProductModule),
-		new(emailplaceorder.Module),
+		//new(emailplaceorder.Module),
 		new(graphql.Module),
 		new(pugtemplate.Module),
 		new(swagger.Module),

@@ -79,7 +79,7 @@ commerce:
       enabled: true
       defaultTaxRate: 19
     placeOrderLogger:
-        enabled: false
+        enabled: true
         useFlamingoLog: true
         logAsFile: true
         logDirectory: "./orders/"
