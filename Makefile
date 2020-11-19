@@ -5,10 +5,10 @@ DROPREPLACE?=-dropreplace flamingo.me/flamingo/v3 -dropreplace flamingo.me/flami
 .PHONY: prepare-product-data download-product-data build serve serve-jaeger jaeger-docker local unlocal frontend frontend-build translation update dockerpublish
 
 prepare-product-data:
-	cd ressources && zip -r products.zip products
+	cd resources && zip -r products.zip products
 
 download-product-data:
-	cd ressources && wget https://github.com/i-love-flamingo/commerce-demo-carotene/releases/download/productdata1/products.zip && unzip products.zip
+	cd resources && wget https://github.com/i-love-flamingo/commerce-demo-carotene/releases/download/productdata1/products.zip && unzip products.zip
 
 build:
 	go build main.go
