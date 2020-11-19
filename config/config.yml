@@ -105,11 +105,11 @@ flamingoCommerceAdapterStandalone:
   csvindexing:
     products:
       file:
-        path: "ressources/products/products_en.csv"
+        path: "resources/products/products_en.csv"
         delimiter: ","
     categories:
       file:
-        path: "ressources/products/categories.csv"
+        path: "resources/products/categories.csv"
         delimiter: ","
     locale: "en_GB"
     currency: "GBP"

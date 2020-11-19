@@ -17,10 +17,10 @@ junit.xml
 /vendor
 /integration-test/shared
 context_local.yml
-ressources/magento
-ressources/magento.zip
-ressources/products
-ressources/products.zip
+resources/magento
+resources/magento.zip
+resources/products
+resources/products.zip
 **/logs/pact.log
 **/pacts/*.json
 config/config_local.yml
