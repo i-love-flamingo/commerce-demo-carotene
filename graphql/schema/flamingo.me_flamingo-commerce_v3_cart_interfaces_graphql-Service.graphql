@@ -137,7 +137,6 @@ type Commerce_Cart_DefaultPaymentSelection implements Commerce_Cart_PaymentSelec
 type Commerce_CartDecoratedDelivery {
     delivery: Commerce_CartDelivery!
     decoratedItems: [Commerce_CartDecoratedItem!]
-    getDecoratedCartItemById(id: ID!): Commerce_CartDecoratedItem
 }
 
 type Commerce_CartDelivery {
@@ -405,6 +404,8 @@ input Commerce_Cart_DeliveryAddressInput {
     method: String
     "Optional Shipping Method"
     carrier: String
+    "Optional desired delivery date / time"
+    desiredTime: Time
 }
 
 type Commerce_Cart_DeliveryAddressForm {
@@ -418,6 +419,9 @@ type Commerce_Cart_DeliveryAddressForm {
     method: String
     "Shipping Carrier"
     carrier: String
+    "Optional desired delivery date / time"
+    desiredTime: Time
+
     "Validation of supplied delivery address, empty if address is valid"
     validationInfo: Commerce_Cart_Form_ValidationInfo
     "Shows if the request was successfully processed"

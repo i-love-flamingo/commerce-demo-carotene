@@ -1,39 +1,19 @@
 basePath: /en
 definitions:
-  ProductAttribute:
+  CategoryAttribute:
     properties:
       code:
-        description: Code is the internal attribute identifier
-        type: string
-      codeLabel:
-        description: CodeLabel is the human readable (perhaps localized) attribute name
         type: string
       label:
-        description: Label is the human readable (perhaps localized) attribute value
         type: string
-      rawValue:
-        description: RawValue is the untouched original value of the attribute
-        type: object
-      unitCode:
-        description: UnitCode is the internal code of the attribute values measuring unit
-        type: string
+      values:
+        items:
+          $ref: '#/definitions/domain.AttributeValue'
+        type: array
     type: object
-  ProductAttributes:
+  CategoryAttributes:
     additionalProperties:
-      $ref: '#/definitions/ProductAttribute'
-    type: object
-  ProductMedia:
-    properties:
-      mimeType:
-        type: string
-      reference:
-        type: string
-      title:
-        type: string
-      type:
-        type: string
-      usage:
-        type: string
+      $ref: '#/definitions/CategoryAttribute'
     type: object
   application.PlaceOrderPaymentInfo:
     properties:
@@ -526,6 +506,13 @@ definitions:
         $ref: '#/definitions/cart.Delivery'
         type: object
     type: object
+  domain.AttributeValue:
+    properties:
+      label:
+        type: string
+      rawValue:
+        type: object
+    type: object
   domain.BasicProduct:
     type: object
   domain.CategoryTeaser:
@@ -542,9 +529,11 @@ definitions:
     type: object
   domain.Error:
     properties:
-      errorCode:
+      defaultLabel:
+        description: DefaultLabel - a speaking error label. OFten used to show to end user - in case no translation exists
         type: string
-      errorMessage:
+      messageKey:
+        description: MessageKey - a key of the error message. Often used to pass to translation func in the template
         type: string
     type: object
   domain.FlowActionData:
@@ -559,6 +548,9 @@ definitions:
       url:
         description: URL is used to pass URL data to the user if the current state needs some
         type: string
+      walletDetails:
+        $ref: '#/definitions/domain.WalletDetails'
+        type: object
     type: object
   domain.FlowStatus:
     properties:
@@ -617,6 +609,21 @@ definitions:
         description: Type - Name( or Type) of the Loyalty program
         type: string
     type: object
+  domain.Media:
+    type: object
+  domain.PaymentRequestAPI:
+    properties:
+      completeURL:
+        type: string
+      details:
+        type: string
+      merchantValidationURL:
+        type: string
+      methods:
+        type: string
+      options:
+        type: string
+    type: object
   domain.Price:
     type: object
   domain.PriceContext:
@@ -664,7 +671,7 @@ definitions:
         $ref: '#/definitions/domain.PriceInfo'
         type: object
       attributes:
-        $ref: '#/definitions/ProductAttributes'
+        $ref: '#/definitions/CategoryAttributes'
         type: object
       availablePrices:
         items:
@@ -709,7 +716,7 @@ definitions:
         type: string
       media:
         items:
-          $ref: '#/definitions/ProductMedia'
+          $ref: '#/definitions/domain.Media'
         type: array
       retailerCode:
         type: string
@@ -745,7 +752,7 @@ definitions:
       media:
         description: Media
         items:
-          $ref: '#/definitions/ProductMedia'
+          $ref: '#/definitions/domain.Media'
         type: array
       preSelectedVariantSku:
         description: PreSelectedVariantSku - might be set for configurables to give a hint to link to a variant of a configurable (That might be the case if a user filters for an attribute and in the teaser the variant with that attribute is shown)
@@ -777,6 +784,14 @@ definitions:
         type: string
     type: object
   domain.ValidationInfo:
+    type: object
+  domain.WalletDetails:
+    properties:
+      paymentRequestAPI:
+        $ref: '#/definitions/domain.PaymentRequestAPI'
+        type: object
+      usedPaymentMethod:
+        type: string
     type: object
   flamingo.Logger:
     type: object
@@ -1206,7 +1221,12 @@ paths:
       - description: locationCode
         in: formData
         name: locationCode
-        type: boolean
+        type: string
+      - description: desired date/time in RFC3339
+        format: date-time
+        in: formData
+        name: desiredTime
+        type: string
       produces:
       - application/json
       responses:
