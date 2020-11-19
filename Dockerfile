@@ -1,4 +1,9 @@
-FROM docker.io/aoepeople/scratch-go-env
+FROM golang:alpine AS builder
+RUN apk update && apk add --no-cache ca-certificates tzdata && update-ca-certificates
+
+FROM scratch
+COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 ADD frontend/dist /frontend/dist
 ADD frontend/src /frontend/src
