@@ -6,6 +6,8 @@
     "npm": ">=5.2.0"
   },
   "scripts": {
+    "build": "rm -rf dist && rm -rf .cache && npx fc build",
+    "dev": "npx fc dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "AOE people",
@@ -13,15 +15,15 @@
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "css-mqpacker": "^7.0.0",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "flamingo-carotene-babel": "^6.5.0",
-    "flamingo-carotene-core": "^6.5.20",
-    "flamingo-carotene-dev-server": "^6.5.20",
-    "flamingo-carotene-postcss": "^6.5.0",
-    "flamingo-carotene-pug": "^6.5.22",
-    "flamingo-carotene-static-asset": "^6.5.19",
-    "flamingo-carotene-webpack": "^6.6.0",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "flamingo-carotene-babel": "^6.7.16",
+    "flamingo-carotene-core": "^6.7.0",
+    "flamingo-carotene-dev-server": "^6.7.17",
+    "flamingo-carotene-postcss": "^6.7.16",
+    "flamingo-carotene-pug": "^6.7.0",
+    "flamingo-carotene-static-asset": "^6.7.18",
+    "flamingo-carotene-webpack": "^6.7.19",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-plugin-px2rem": "^0.8.1"
   }
