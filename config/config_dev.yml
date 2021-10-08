@@ -2,7 +2,6 @@ flamingo:
   session:
     cookie:
       secure: false
-    backend: memory
   debug:
     mode: true
 core:
