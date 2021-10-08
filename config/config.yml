@@ -10,8 +10,6 @@ flamingo:
   debug:
     mode: false
   session:
-    cookie:
-      secure: false
     backend: memory # in prod you will use something like redis
   zap:
     loglevel: Warn
@@ -93,9 +91,6 @@ commerce:
     useNilCustomerAdapter: true
   category:
     useCategoryFixedAdapter: false
-
-
-
 
 graphql:
   introspectionEnabled: true # should be turned off in prod env
