@@ -4,7 +4,7 @@ type Commerce_Checkout_StartPlaceOrder_Result {
 # Commerce_Checkout_PlaceOrderContext represents the result of the current (running) place order mutation
 type Commerce_Checkout_PlaceOrderContext {
     # The Cart that is going to be placed
-    cart: Commerce_DecoratedCart
+    cart: Commerce_Cart_DecoratedCart
     # The placed order in case order is already placed
     orderInfos: Commerce_Checkout_PlacedOrderInfos
     # State depending on the state of payment and place order - state may contain additional infos
@@ -64,6 +64,12 @@ type Commerce_Checkout_PlaceOrderState_State_ShowHTML implements Commerce_Checko
 type Commerce_Checkout_PlaceOrderState_State_Redirect implements Commerce_Checkout_PlaceOrderState_State {
     name: String!
     URL: String!
+}
+
+type Commerce_Checkout_PlaceOrderState_State_TriggerClientSDK implements Commerce_Checkout_PlaceOrderState_State {
+    name: String!
+    URL: String!
+    data: String!
 }
 
 type Commerce_Checkout_PlaceOrderState_State_ShowWalletPayment implements Commerce_Checkout_PlaceOrderState_State {
@@ -131,11 +137,11 @@ extend type Query {
 }
 
 extend type Mutation {
-    # Only possible if state machine not active or in a final state, otherwise returns the current running process
+    # Starts a new process and will replace existing ones
     Commerce_Checkout_StartPlaceOrder(returnUrl: String!): Commerce_Checkout_StartPlaceOrder_Result!
     # Cancels to current running place order process, possible if state is not final
     Commerce_Checkout_CancelPlaceOrder: Boolean!
-    # Clears the last stored place order process, possible if state is final
+    # Clears the last stored place order process
     Commerce_Checkout_ClearPlaceOrder: Boolean!
     # Gets the last stored place order state and ensures that the state machine proceeds, non blocking
     Commerce_Checkout_RefreshPlaceOrder: Commerce_Checkout_PlaceOrderContext!

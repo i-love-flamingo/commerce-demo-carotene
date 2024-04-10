@@ -4,6 +4,7 @@ interface Commerce_Product {
     identifier: String!
     media: Commerce_Product_Media!,
     price: Commerce_Product_PriceInfo!,
+    availablePrices: [Commerce_Product_PriceInfo!],
     title: String!
     categories: Commerce_Product_Categories!
     description: String!
@@ -11,6 +12,7 @@ interface Commerce_Product {
     meta: Commerce_Product_Meta!
     loyalty: Commerce_Product_Loyalty!
     attributes: Commerce_Product_Attributes!
+    badges: Commerce_Product_Badges!
 }
 
 """
@@ -22,6 +24,7 @@ type Commerce_Product_SimpleProduct implements Commerce_Product {
     identifier: String!
     media: Commerce_Product_Media!,
     price: Commerce_Product_PriceInfo!,
+    availablePrices: [Commerce_Product_PriceInfo!],
     title: String!
     categories: Commerce_Product_Categories!
     description: String!
@@ -29,6 +32,7 @@ type Commerce_Product_SimpleProduct implements Commerce_Product {
     meta: Commerce_Product_Meta!
     loyalty: Commerce_Product_Loyalty!
     attributes: Commerce_Product_Attributes!
+    badges: Commerce_Product_Badges!
 }
 
 """
@@ -41,6 +45,7 @@ type Commerce_Product_ConfigurableProduct implements Commerce_Product {
     identifier: String!
     media: Commerce_Product_Media!,
     price: Commerce_Product_PriceInfo!,
+    availablePrices: [Commerce_Product_PriceInfo!],
     title: String!
     categories: Commerce_Product_Categories!
     description: String!
@@ -48,7 +53,48 @@ type Commerce_Product_ConfigurableProduct implements Commerce_Product {
     meta: Commerce_Product_Meta!
     loyalty: Commerce_Product_Loyalty!
     attributes: Commerce_Product_Attributes!
-    variationSelections: [Commerce_Product_VariationSelection!]
+    """
+    Contains all possible combinations of variation attributes that point to a variant,
+    as well as all possible variations to render in the frontend.
+    """
+    variantSelection: Commerce_Product_VariantSelection!
+    badges: Commerce_Product_Badges!
+}
+
+type Commerce_Product_VariantSelection {
+    variants: [Commerce_Product_VariantSelection_Match!]!
+    attributes: [Commerce_Product_VariantSelection_Attribute!]!
+}
+
+type Commerce_Product_VariantSelection_Attribute {
+    label: String!
+    code: String!
+    options: [Commerce_Product_VariantSelection_Attribute_Option!]!
+}
+
+type Commerce_Product_VariantSelection_Attribute_Option {
+    label: String!
+    unitCode: String
+    otherAttributesRestrictions: [Commerce_Product_VariantSelection_Option_OtherAttributesRestriction!]!
+}
+
+type Commerce_Product_VariantSelection_Option_OtherAttributesRestriction {
+    code: String!
+    availableOptions: [String!]!
+}
+
+type Commerce_Product_VariantSelection_Match {
+    attributes: [Commerce_Product_VariantSelection_Match_Attributes!]
+    variant: Commerce_Product_VariantSelection_Match_Variant!
+}
+
+type Commerce_Product_VariantSelection_Match_Attributes {
+    key: String!
+    value: String!
+}
+
+type Commerce_Product_VariantSelection_Match_Variant {
+    marketplaceCode: String!
 }
 
 """
@@ -62,6 +108,7 @@ type Commerce_Product_ActiveVariantProduct implements Commerce_Product {
     identifier: String!
     media: Commerce_Product_Media!,
     price: Commerce_Product_PriceInfo!,
+    availablePrices: [Commerce_Product_PriceInfo!],
     title: String!
     categories: Commerce_Product_Categories!
     description: String!
@@ -75,13 +122,36 @@ type Commerce_Product_ActiveVariantProduct implements Commerce_Product {
     variationSelections: [Commerce_Product_VariationSelection!]
     "Convenience property to access the active variant labels easily"
     activeVariationSelections: [Commerce_Product_ActiveVariationSelection!]
+    badges: Commerce_Product_Badges!
 }
+
+"""
+A bundle product, that consists of basic products.
+"""
+type Commerce_Product_BundleProduct implements Commerce_Product {
+    type: String!
+    marketPlaceCode: String!
+    identifier: String!
+    media: Commerce_Product_Media!,
+    price: Commerce_Product_PriceInfo!,
+    availablePrices: [Commerce_Product_PriceInfo!],
+    title: String!
+    categories: Commerce_Product_Categories!
+    description: String!
+    shortDescription: String!
+    meta: Commerce_Product_Meta!
+    loyalty: Commerce_Product_Loyalty!
+    attributes: Commerce_Product_Attributes!
+    badges: Commerce_Product_Badges!
+    choices: [Commerce_Product_Choice!]
+}
+
 
 "A group of attributes. E.g. 'size'"
 type Commerce_Product_VariationSelection {
     code: String!
     label: String!
-    "All possiblie variations for that attribute. E.g. 'M', 'L', 'XL'"
+    "All possible variations for that attribute. E.g. 'M', 'L', 'XL'"
     options: [Commerce_Product_VariationSelection_Option]
 }
 
@@ -90,11 +160,13 @@ type Commerce_Product_ActiveVariationSelection {
     code: String!
     label: String!
     value: String!
+    unitCode: String!
 }
 
 "An option for a group of attributes"
 type Commerce_Product_VariationSelection_Option {
     label: String!
+    unitCode: String!
     state: Commerce_Product_VariationSelection_OptionState!
     """
     Contains information about a product that matches this option.
@@ -157,6 +229,7 @@ type Commerce_Product_Loyalty_EarningInfo {
 
 type Commerce_Product_PriceContext {
     customerGroup: String!
+    deliveryCode: String!
     channelCode: String!
     locale: String!
 }
@@ -183,11 +256,20 @@ type Commerce_Product_Attributes {
 }
 
 type Commerce_Product_Attribute {
+    "Code of the attribute e.g. `productWeight`"
     code: String!
+    "Human-readable code e.g. `The Product Weight`"
     codeLabel: String!
+    "Human-readable label of a single value"
     label: String!
+    "Value of the selected attribute"
+    value: String!
+    "Unit of the attribute e.g. `kg`"
     unitCode: String!
+    "Values of a multi value attribute"
     values: [String!]
+    "Human-readable labels of a multi value attribute"
+    labels: [String!]
 }
 
 type Commerce_Product_CategoryTeaser {
@@ -198,18 +280,19 @@ type Commerce_Product_CategoryTeaser {
 }
 
 type Commerce_Product_PriceInfo {
-    default: Commerce_Price
-    discounted: Commerce_Price
+    default: Commerce_Price!
+    discounted: Commerce_Price!
     discountText: String!
-    activeBase: Float!
+    activeBase: Commerce_Price!
     activeBaseAmount: Float!
-    activeBaseUnit: String
-    isDiscounted: Boolean
+    activeBaseUnit: String!
+    isDiscounted: Boolean!
     campaignRules: [String!]
-    denyMoreDiscounts: Boolean
-    #    context: Commerce_Product_PriceContext
+    denyMoreDiscounts: Boolean!
+    context: Commerce_Product_PriceContext!
     taxClass: String!
 }
+
 
 type Commerce_Product_SearchResult {
     products: [Commerce_Product!]
@@ -217,9 +300,42 @@ type Commerce_Product_SearchResult {
     suggestions: [Commerce_Search_Suggestion!]
     searchMeta: Commerce_Search_Meta!
     hasSelectedFacet: Boolean!
+    promotion: Commerce_Search_Promotion
+    actions: [Commerce_Search_Action!]
+}
+
+type Commerce_Product_Badges {
+    all: [Commerce_Product_Badge!]
+    first: Commerce_Product_Badge
+}
+
+type Commerce_Product_Badge {
+    code:  String!
+    label: String!
+}
+
+type Commerce_Product_Choice {
+    identifier: String!
+    required: Boolean!
+    label: String!
+    options: [Commerce_Product_Option!]
+    active: Commerce_Product @deprecated(reason: "use activeOption instead")
+    activeOption: Commerce_Product_Option
+}
+
+type Commerce_Product_Option {
+    product: Commerce_Product!
+    qty: Int!
+}
+
+input Commerce_Product_ChoiceConfigurationInput {
+    identifier: String!
+    marketplaceCode: String!
+    variantMarketplaceCode: String
+    qty: Int!
 }
 
 extend type Query {
-    Commerce_Product(marketPlaceCode: String!, variantMarketPlaceCode: String): Commerce_Product
-    Commerce_Product_Search(searchRequest: Commerce_Search_Request): Commerce_Product_SearchResult!
+    Commerce_Product(marketPlaceCode: String!, variantMarketPlaceCode: String, bundleConfiguration: [Commerce_Product_ChoiceConfigurationInput!]): Commerce_Product
+    Commerce_Product_Search(searchRequest: Commerce_Search_Request!): Commerce_Product_SearchResult!
 }
