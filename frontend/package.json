@@ -1,30 +1,34 @@
 {
   "name": "flamingo-commerce-demo-theme",
-  "version": "1.1.0",
-  "description": "A flamingo-theme for the commerce carotene demo shop",
-  "engines": {
-    "npm": ">=5.2.0"
-  },
+  "version": "1.2.0",
+  "main": "postcss.config.js",
   "scripts": {
     "build": "rm -rf dist && rm -rf .cache && npx fc build",
     "dev": "npx fc dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "AOE people",
-  "main": "index.js",
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "css-mqpacker": "^7.0.0",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "flamingo-carotene-babel": "^6.7.16",
-    "flamingo-carotene-core": "^6.7.0",
-    "flamingo-carotene-dev-server": "^6.7.17",
-    "flamingo-carotene-postcss": "^6.7.16",
-    "flamingo-carotene-pug": "^6.7.0",
-    "flamingo-carotene-static-asset": "^6.7.18",
-    "flamingo-carotene-webpack": "^6.7.19",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "autoprefixer": "^10.4.16",
+    "fast-sass-loader": "^2.0.1",
+    "flamingo-carotene-core": "^9.0.0-alpha.13",
+    "flamingo-carotene-dev-server": "^9.0.0-alpha.13",
+    "flamingo-carotene-postcss": "^8.1.0",
+    "flamingo-carotene-pug": "^9.0.0-alpha.13",
+    "flamingo-carotene-static-asset": "^9.0.0-alpha.13",
+    "flamingo-carotene-webpack": "^9.0.0-alpha.13",
+    "mqpacker": "^7.0.0",
+    "node-sass-glob-importer": "^3.0.2",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-plugin-px2rem": "^0.8.1"
-  }
+  },
+  "devDependencies": {
+    "sass": "^1.69.1",
+    "sass-loader": "^13.3.2",
+    "webpack": "^5.88.2"
+  },
+  "description": ""
 }
