@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sanity:
+    name: Build, vet, test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          check-latest: true
+      - name: Build, vet, test
+        run: |
+          go build ./...
+          go vet ./...
+          go test ./...
+      - name: Build, vet, test (examples/sampleapp)
+        if: hashFiles('examples/sampleapp/go.mod') != ''
+        working-directory: examples/sampleapp
+        run: |
+          go build ./...
+          go vet ./...
+          go test ./...
